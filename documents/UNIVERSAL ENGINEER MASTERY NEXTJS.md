@@ -15,7 +15,7 @@
 
 ## 📈 Dòng thời gian Tiến hóa Next.js (2016–2026)
 
-![Dòng thời gian Tiến hóa Next.js](../public/nextjs_evolution_timeline.png)
+![Dòng thời gian Tiến hóa Next.js](./nextjs_evolution_timeline.png)
 
 **Các cột mốc quan trọng:**
 - **Tháng 10/2016**: Next.js 0.1 — Ra đời (SSR tích hợp sẵn, tách mã tự động)
@@ -258,7 +258,7 @@
 
 ## 🎯 Lộ trình Học tập Đề xuất
 
-![Lộ trình Học tập](../public/course_learning_path.png)
+![Lộ trình Học tập](./course_learning_path.png)
 
 ### Giai đoạn 1: Nền tảng (M0–M1) | 20 giờ
 - Hiểu TẠI SAO Next.js tồn tại
@@ -326,3 +326,6 @@ Dựa trên dữ liệu phát hành mới nhất (v16.2.6, Tháng 5/2026):
 | `CAREER GAP ANALYSIS` | Đánh giá kỹ năng |
 
 ---
+Suy nghĩ trước khi tạo bài giảng .
+Bài giảng cần được thiết kế chi tiết đầy đủ.
+Nếu xét thấy nội dung của Module có nhiều thứ để truyền tải chi tiết, cần tách ra nhiều phần response chat thì hỏi ý kiến tôi trước khi tạo bài giảng . 

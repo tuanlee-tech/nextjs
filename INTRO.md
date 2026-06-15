@@ -15,7 +15,7 @@
 
 ## 📈 Dòng thời gian Tiến hóa Next.js (2016–2026)
 
-![Dòng thời gian Tiến hóa Next.js](./public/nextjs_evolution_timeline.png)
+![Dòng thời gian Tiến hóa Next.js](/nextjs_evolution_timeline.png)
 
 **Các cột mốc quan trọng:**
 - **Tháng 10/2016**: Next.js 0.1 — Ra đời (SSR tích hợp sẵn, tách mã tự động)
@@ -258,7 +258,7 @@
 
 ## 🎯 Lộ trình Học tập Đề xuất
 
-![Lộ trình Học tập](./public/course_learning_path.png)
+![Lộ trình Học tập](/course_learning_path.png)
 
 ### Giai đoạn 1: Nền tảng (M0–M1) | 20 giờ
 - Hiểu TẠI SAO Next.js tồn tại
