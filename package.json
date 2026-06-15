@@ -1,0 +1,15 @@
+{
+  "name": "nextjs-mastery",
+  "version": "1.0.0",
+  "description": "Universal Engineer Mastery Next.js",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "vitepress": "latest",
+    "vue": "latest"
+  }
+}
