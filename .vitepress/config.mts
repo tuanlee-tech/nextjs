@@ -41,16 +41,12 @@ export default defineConfig({
             link: "/modules/M0/M0.2-dong-thoi-gian-tien-hoa-ay-u"
           },
           {
-            text: "M0.3 - Nhận diện Phiên bản",
-            link: "/modules/M0/M0.3-nhan-dien-phien-ban"
+            text: "M0.3 - Các công ty thực sự dùng Next.js như thế nào",
+            link: "/modules/M0/M0.3-cac-cong-ty-thuc-su-dung-next-js-nhu-the-nao"
           },
           {
-            text: "M0.4 - Các công ty thực sự dùng Next.js như thế nào",
-            link: "/modules/M0/M0.4-cac-cong-ty-thuc-su-dung-next-js-nhu-the-nao"
-          },
-          {
-            text: "M0.5 - Hiểu lầm phổ biến",
-            link: "/modules/M0/M0.5-hieu-lam-pho-bien"
+            text: "M0.4 - Hiểu lầm phổ biến",
+            link: "/modules/M0/M0.4-hieu-lam-pho-bien"
           }
         ]
       },

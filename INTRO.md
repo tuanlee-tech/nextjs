@@ -35,9 +35,8 @@
 |--------|---------|-----------|
 | M0.1 | Tại sao Next.js tồn tại | Điểm đau của SSR React thuần |
 | M0.2 | Dòng thời gian Tiến hóa đầy đủ | Lịch sử phiên bản 2016→2026 |
-| M0.3 | Nhận diện Phiên bản | Xác định kỷ nguyên từ mẫu mã nguồn |
-| M0.4 | Các công ty thực sự dùng Next.js như thế nào | Mẫu kiến trúc thực tế |
-| M0.5 | Hiểu lầm phổ biến | Những quan niệm sai lầm phá hoại dự án |
+| M0.3 | Các công ty thực sự dùng Next.js như thế nào | Mẫu kiến trúc thực tế |
+| M0.4 | Hiểu lầm phổ biến | Những quan niệm sai lầm phá hoại dự án |
 
 ### 📦 M1 — MÔ HÌNH TƯ DUY REACT CHO NEXT.JS (7 bài | ~12h)
 | Bài học | Tiêu đề | Trọng tâm |
