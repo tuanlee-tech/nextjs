@@ -29,7 +29,7 @@ export default defineConfig({
         ]
       },
       {
-        text: "M0 — ĐỊNH HƯỚNG & TIẾN HÓA",
+        text: "M0 (Optional) — ĐỊNH HƯỚNG & SỰ PHÁT TRIỂN",
         collapsed: true,
         items: [
           {
