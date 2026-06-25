@@ -30,7 +30,7 @@
 
 ## 🗺️ Phân tích Đầy đủ Các Module
 
-### 📦 M0 (Optional) — ĐỊNH HƯỚNG & SỰ PHÁT TRIỂN (5 bài | ~8h)
+### 📦 M0 (Optional) — ĐỊNH HƯỚNG & SỰ PHÁT TRIỂN (4 bài | ~8h)
 | Bài học | Tiêu đề | Trọng tâm |
 |--------|---------|-----------|
 | M0.1 | Tại sao Next.js tồn tại | Điểm đau của SSR React thuần |

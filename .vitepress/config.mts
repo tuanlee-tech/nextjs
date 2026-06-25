@@ -64,7 +64,7 @@ export default defineConfig({
           },
           {
             text: "M1.3 - Vòng đời Component",
-            link: "/modules/M1/M1.3-vong-oi-component"
+            link: "/modules/M1/M1.3-vong-doi-component"
           },
           {
             text: "M1.4 - Suspense",
@@ -72,7 +72,7 @@ export default defineConfig({
           },
           {
             text: "M1.5 - Kết xuất Đồng thời",
-            link: "/modules/M1/M1.5-ket-xuat-ong-thoi"
+            link: "/modules/M1/M1.5-ket-xuat-dong-thoi"
           },
           {
             text: "M1.6 - Hydration",
@@ -94,7 +94,7 @@ export default defineConfig({
           },
           {
             text: "M2.2 - Định tuyến File",
-            link: "/modules/M2/M2.2-inh-tuyen-file"
+            link: "/modules/M2/M2.2-dinh-tuyen-file"
           },
           {
             text: "M2.3 - getInitialProps",
