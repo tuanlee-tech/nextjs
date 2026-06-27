@@ -1,0 +1,308 @@
+# 🎓 UNIVERSAL ENGINEER MASTERY PROGRAM
+
+## 📊 Tổng Quan Chương Trình
+
+| Chỉ số | Giá trị |
+|--------|---------|
+| **Tổng số Module** | 20 (M0–M19) |
+| **Tổng số Bài học** | 143 bài |
+| **Số giờ dự kiến** | ~312 giờ |
+| **Phiên bản mục tiêu** | Next.js 16+ |
+| **Phạm vi kế thừa** | Next.js 9 → 12 (Kỷ nguyên Pages Router) |
+| **Ba kỷ nguyên chính** | Pages Router → Chuyển tiếp → App Router |
+
+
+
+## 📈 Dòng thời gian Tiến hóa Next.js (2016–2026)
+
+![Dòng thời gian Tiến hóa Next.js](/nextjs_evolution_timeline.png)
+
+**Các cột mốc quan trọng:**
+- **Tháng 10/2016**: Next.js 0.1 — Ra đời (SSR tích hợp sẵn, tách mã tự động)
+- **Tháng 10/2021**: v12.0 — Trình biên dịch SWC (dựa trên Rust, Edge Functions, Middleware)
+- **Tháng 10/2022**: v13.0 — App Router beta, React Server Components, công bố Turbopack
+- **Tháng 5/2023**: v13.4 — App Router ổn định
+- **Tháng 10/2024**: v15.0 — Turbopack mặc định, hỗ trợ React 19
+- **Tháng 10/2025**: v16.0 — **Cache Components** (`"use cache"`), `proxy.ts` thay thế `middleware.ts`, React Compiler ổn định
+- **Tháng 5/2026**: v16.2.6 — 13 bản vá bảo mật (bao gồm RCE nghiêm trọng CVE-2025-66478)
+
+
+
+## 🗺️ Phân tích Đầy đủ Các Module
+
+### 📦 M0 (Optional) — ĐỊNH HƯỚNG & SỰ PHÁT TRIỂN (4 bài | ~8h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M0.1 | Tại sao Next.js tồn tại | Điểm đau của SSR React thuần |
+| M0.2 | Dòng thời gian Tiến hóa đầy đủ | Lịch sử phiên bản 2016→2026 |
+| M0.3 | Các công ty thực sự dùng Next.js như thế nào | Mẫu kiến trúc thực tế |
+| M0.4 | Hiểu lầm phổ biến | Những quan niệm sai lầm phá hoại dự án |
+
+### 📦 M1 — MÔ HÌNH TƯ DUY REACT CHO NEXT.JS (7 bài | ~12h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M1.1 | Kết xuất | Đào sâu Reconciliation |
+| M1.2 | Reconciliation | Cách React diff hoạt động |
+| M1.3 | Vòng đời Component | Vòng đời Class vs Hooks |
+| M1.4 | Suspense | Ngữ nghĩa ranh giới, thời điểm fallback |
+| M1.5 | Kết xuất Đồng thời |  Time slicing, priorities  |
+| M1.6 | Hydration | Đồng bộ trạng thái client-server |
+| M1.7 | Khái niệm Streaming | Progressive HTML, hydration có chọn lọc |
+
+### 📦 M2 — NEXT.JS KẾ THỪA (10 bài | ~20h) 🔴 QUAN TRỌNG
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M2.1 | Pages Router | File-based routing: Định tuyến dựa trên file kế thừa |
+| M2.2 | Định tuyến File | Quy ước thư mục `pages/` |
+| M2.3 | getInitialProps | Lấy dữ liệu universal (kế thừa) |
+| M2.4 | getServerSideProps | SSR theo từng request |
+| M2.5 | getStaticProps | Lấy dữ liệu tại thời điểm Build-time |
+| M2.6 | getStaticPaths | Dynamic SSG |
+| M2.7 | API Routes | Handler `/api/*` |
+| M2.8 | ISR | Incremental Static Regeneration |
+| M2.9 | Legacy Project Anatomy | Cấu trúc code thực tế |
+| M2.10 | Chiến lược Migration | Lộ trình Migration |
+
+### 📦 M3 — CƠ BẢN APP ROUTER (12 bài | ~18h) 🟢
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M3.1 | Thư mục App | Quy ước thư mục `app/` |
+| M3.2 | Layouts | Root & nested layouts |
+| M3.3 | Layouts Lồng nhau | Layout composition |
+| M3.4 | Templates | Re-mounting behavior |
+| M3.5 | Loading | Streaming `loading.js` |
+| M3.6 | Error | `error.js` boundaries |
+| M3.7 | Not Found | Xử lý `not-found.js` |
+| M3.8 | Route Groups - Nhóm Định tuyến | Tổ chức `(group)` |
+| M3.9 | Dynamic Routes - Định tuyến Động | `[id]`, `[...slug]` |
+| M3.10 | Catch-all Routes - Định tuyến Catch-all | Tùy chọn `[[...slug]]` |
+| M3.11 | Parallel Routes - Định tuyến Song song | Slot `@folder` |
+| M3.12 | Intercepting Routes - Định tuyến Chặn | `(.)`, `(..)`, `(..)(..)` |
+
+### 📦 M4 — MÔ HÌNH TƯ DUY KẾT XUẤT (9 bài | ~16h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M4.1 | Request Lifecycle | Luồng đầy đủ request→response |
+| M4.2 | CSR |  Client-side rendering trade-offs |
+| M4.3 | SSR | Server-side rendering |
+| M4.4 | SSG | Tạo trang tĩnh |
+| M4.5 | ISR | Incremental regeneration |
+| M4.6 | Partial Prerendering - Kết xuất Trước một phần | PPR → Tiến hóa Cache Components |
+| M4.7 | Streaming | Progressive delivery |
+| M4.8 | Chi phí Hydration Cost | Phân tích Performance impact |
+| M4.9 | Rendering Trade-offs | Ma trận quyết định Decision matrix |
+
+### 📦 M5 — KIẾN TRÚC LẤY DỮ LIỆU (9 bài | ~18h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M5.1 | Lịch sử Tiến hóa | getInitialProps → fetch → RSC |
+| M5.2 | Pages Router Fetching | Legacy patterns |
+| M5.3 | App Router Fetching | Modern patterns |
+| M5.4 | Server Component Fetching | Dữ liệu async trong RSC |
+| M5.5 | Parallel Fetching - Lấy dữ liệu Song song | `Promise.all` patterns |
+| M5.6 | Waterfalls | Sequential vs parallel (Tuần tự vs song song) |
+| M5.7 | Request Deduplication - Loại bỏ Request Trùng lặp | Memoization `fetch` |
+| M5.8 | Xử lý Lỗi | Error boundaries + retries ( thử lại ) |
+| M5.9 | Data Layer Design | Repository pattern |
+
+### 📦 M6 — SERVER COMPONENTS (8 bài | ~20h) 🔴 NÂNG CAO
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M6.1 | Tại sao Server Components tồn tại | Vấn đề kích thước bundle |
+| M6.2 | Server Components | Mô hình thực thi RSC |
+| M6.3 | Client Components | `'use client'` boundaries |
+| M6.4 | Serialization - Tuần tự hóa | Quy tắc truyền props |
+| M6.5 | Boundaries | Cách tách Boundaries |
+| M6.6 | Phân tích Bundle | Zero JS to client |
+| M6.7 | Sai lầm Phổ biến | Hydration mismatches |
+| M6.8 | Production Patterns | Real-world patterns |
+
+### 📦 M7 — ĐÀO SÂU CACHING (11 bài | ~24h) 🔴 NÂNG CAO
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M7.1 | Mô hình Tư duy Cache | Kiến trúc cache 4 lớp |
+| M7.2 | Memoization Request | Deduplicate `fetch` trong render |
+| M7.3 | Data Cache | Cache dữ liệu bền vững (Persistent) |
+| M7.4 | Full Route Cache | Cache Static page (trang tĩnh) |
+| M7.5 | Router Cache | Cache prefetch phía client |
+| M7.6 | Cache Components | Chỉ định `"use cache"` directive (version 16) |
+| M7.7 | cacheTag | Vô hiệu hóa dựa trên tag |
+| M7.8 | revalidateTag | Tái xác thực revalidation SWR |
+| M7.9 | updateTag | Đọc-những-gì-bạn-viết (v16) |
+| M7.10 | Cache Invalidation Strategies - Chiến lược Vô hiệu hóa Cache | Production patterns |
+| M7.11 | Lỗi Production Thực tế | Nghiên cứu tình huống |
+
+### 📦 M8 — XÁC THỰC & PHÂN QUYỀN (7 bài | ~16h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M8.1 | Kiến trúc Session |  Stateful vs stateless - Có trạng thái vs phi trạng thái |
+| M8.2 | JWT | Thiết kế token & bảo mật |
+| M8.3 | Cookies | `httpOnly`, `Secure`, `SameSite` |
+| M8.4 | NextAuth/Auth.js | Tích hợp OAuth |
+| M8.5 | Middleware | Kiểm tra auth `proxy.ts` |
+| M8.6 | RBAC | Phân quyền dựa trên vai trò |
+| M8.7 | Mẫu Enterprise Auth | Multi-tenant, SSO |
+
+### 📦 M9 — SERVER ACTIONS (7 bài | ~18h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M9.1 | Tiến hóa | Từ API Routes → Server Actions |
+| M9.2 | Server Actions | Hàm `'use server'` |
+| M9.3 | Form Actions | Cải thiện tiến triển |
+| M9.4 | Mutations | Data mutations - Thay đổi dữ liệu |
+| M9.5 | Optimistic UI | Hook `useOptimistic` |
+| M9.6 | Xác thực | Zod + Server Actions |
+| M9.9 | Bảo mật | CSRF, giới hạn tốc độ |
+
+### 📦 M10 — TÍCH HỢP CƠ SỞ DỮ LIỆU (6 bài | ~14h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M10.1 | Prisma | Mẫu ORM |
+| M10.2 | Drizzle | Lightweight ORM |
+| M10.3 | Connection Pooling | Kết nối DB serverless |
+| M10.4 | Transactions | ACID trong Server Actions |
+| M10.5 | Vấn đề N+1 | Tối ưu truy vấn |
+| M10.6 | Repository Patterns | Data access layer |
+
+### 📦 M11 — KỸ NGHỆ HIỆU NĂNG (8 bài | ~16h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M11.1 | Bundle Analysis | `@next/bundle-analyzer` |
+| M11.2 | Dynamic Imports | `next/dynamic` |
+| M11.3 | Code Splitting | Automatic & manual |
+| M11.4 | Tối ưu Hình ảnh | `next/image` |
+| M11.5 | Fonts | Tối ưu `next/font` |
+| M11.6 | Core Web Vitals | LCP, FID, CLS, INP |
+| M11.7 | Profiling | React DevTools Profiler |
+| M11.8 | Performance Budget | Thiết lập & thực thi giới hạn |
+
+### 📦 M12 — TESTING - KIỂM THỬ (5 bài | ~10h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M12.1 | Unit Testing | Jest/Vitest + React Testing Library |
+| M12.2 | Integration Testing | Kiểm thử tương tác component |
+| M12.3 | E2E Testing | Playwright/Cypress |
+| M12.4 | Testing Server Components | Chiến lược kiểm thử RSC |
+| M12.5 | Chiến lược Testing | Pyramid & trade-offs |
+
+### 📦 M13 — DEPLOYMENT - TRIỂN KHAI (5 bài | ~10h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M13.1 | Vercel | Zero-config deployment |
+| M13.2 | Docker | Container hóa (Containerization) |
+| M13.3 | Self-hosting (Tự host) | Standalone output |
+| M13.4 | CI/CD | GitHub Actions, pipeline |
+| M13.5 | Environment Management | `.env`, cấu hình runtime |
+
+### 📦 M14 — OBSERVABILITY - QUAN SÁT (5 bài | ~12h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M14.1 | Logging | Logging có cấu trúc |
+| M14.2 | Metrics | Metrics tùy chỉnh |
+| M14.3 | Tracing | OpenTelemetry |
+| M14.4 | Giám sát Production Monitoring | Theo dõi lỗi (Sentry) |
+| M14.5 | Phản ứng Sự cố (Incident Response) | On-call patterns |
+
+### 📦 M15 — ENTERPRISE ARCHITECTURE - KIẾN TRÚC DOANH NGHIỆP (6 bài | ~14h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M15.1 | Monolith vs Modular Monolith | Quyết định kiến trúc |
+| M15.2 | Feature-based Architecture | Kiến trúc Dựa trên Tính năng, Cấu trúc thư mục |
+| M15.3 | Mở rộng Multi-team | Ranh giới đội nhóm (Team boundaries) |
+| M15.4 | Monorepo | Turborepo, Nx |
+| M15.5 | Micro Frontends | Module Federation |
+| M15.6 | Enterprise Trade-offs | Khi nào chọn gì |
+
+### 📦 M16 — DEBUGGING LAB - PHÒNG THÍ NGHIỆM DEBUG (6 bài | ~12h) 🔬
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M16.1 | Hydration Errors | Mismatch debugging |
+| M16.2 | Cache Bugs | Vấn đề dữ liệu cũ |
+| M16.3 | Rendering Bugs | SSR/CSR mismatch |
+| M16.4 | Race Conditions | Async timing bugs |
+| M16.5 | Rò rỉ bộ nhớ Memory Leaks | Phân tích heap |
+| M16.6 | Production Incidents Sự cố Production | Phân tích hậu sự cố Post-mortem analysis |
+
+### 📦 M17 — LEGACY MIGRATION LAB (5 bài | ~14h) 🔬
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M17.1 | Pages Router | Chiến lược Migration |
+| M17.2 | Legacy APIs | `getInitialProps` → hiện đại |
+| M17.3 | Legacy Patterns | Nhận diện anti-pattern |
+| M17.4 | Incremental Migration | Strangler Fig pattern |
+| M17.5 | Ràng buộc Enterprise Constraints | Zero-downtime khi migration |
+
+### 📦 M18 — CHUẨN BỊ PHỎNG VẤN (5 bài | ~10h)
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M18.1 | Junior | Cơ bản Fundamentals, JSX, hooks |
+| M18.2 | Mid |  Routing, data fetching, caching |
+| M18.3 | Senior | Architecture, performance, RSC |
+| M18.4 | Staff | System design, scaling |
+| M18.5 | Architect | Trade-offs, migration strategy |
+
+### 📦 M19 — CAPSTONE PROJECT (8 bài | ~30h) 🏗️
+| Bài học | Tiêu đề | Trọng tâm |
+|--------|---------|-----------|
+| M19.1 | SaaS Architecture | Multi-tenant design |
+| M19.2 | Auth & Organizations | Team/tenant isolation |
+| M19.3 | Roles & Permissions | RBAC implementation |
+| M19.4 | Dashboard | Data visualization |
+| M19.5 | Audit Logs | Compliance tracking |
+| M19.6 | Billing | Stripe integration |
+| M19.7 | Observability | Monitoring setup |
+| M19.8 | Performance Optimization | Core Web Vitals targets |
+
+
+
+## 🎯 Lộ trình Học tập Đề xuất
+
+![Lộ trình Học tập](/course_learning_path.png)
+
+### Giai đoạn 1: Nền tảng (M0–M1) | 20 giờ
+- Hiểu TẠI SAO Next.js tồn tại
+- Củng cố mô hình tư duy React
+- **Điều kiện tiên quyết**: Phải hoàn thành trước khi chạm vào code kế thừa
+
+### Giai đoạn 2: Thành thạo Legacy (M2) | 20 giờ
+- Thành thạo mẫu Pages Router
+- Học đọc & bảo trì code legacy
+- **Quan trọng cho**: Làm việc tại công ty dùng Next.js 9–12
+
+### Giai đoạn 3: Core App Router (M3–M7) | 96 giờ
+- Cơ bản App Router ( App Router fundamentals ) 
+- Mô hình Rendering (Rendering models)
+- Kiến trúc lấy dữ liệu (Data fetching architecture)
+- Server Components
+- **Caching Deep Dive** (module khó nhất, 24 giờ)
+- **Đây là nơi bạn trở thành Kỹ sư Cao cấp**
+
+### Giai đoạn 4: Tính năng Nâng cao (M8–M11) | 64 giờ
+- Auth, Server Actions, Database, Performance
+- Production-ready skills
+
+### Giai đoạn 5: Sẵn sàng Production (M12–M15) | 46 giờ
+- Testing, Deployment, Observability, Enterprise Architecture
+- Kỹ năng đội nhóm (Team-level skills)
+
+### Giai đoạn 6: Phòng thí nghiệm & Dự án (M16–M19) | 66 giờ
+- Debug lỗi thực tế
+- Migrate legacy code
+- Chuẩn bị phỏng vấn
+- Xây dựng SaaS production
+
+
+
+## 🆕 Topics Đặc thù Next.js 16+ (Cập nhật 2026)
+
+Dựa trên dữ liệu phát hành mới nhất (v16.2.6, Tháng 5/2026):
+
+| Tính năng | Module | Trạng thái |
+|-----------|--------|------------|
+| **Cache Components** (`"use cache"`) | M7.6 | Thay thế PPR |
+| **proxy.ts** (thay thế `middleware.ts`) | M8.5 | deprecated migration |
+| **Turbopack** (bundler mặc định) | M11.1 | Ổn định, build nhanh hơn 2-5× |
+| **React Compiler** | M1.1 | Tự động memoization |
+| **updateTag()** | M7.9 | Đọc-những-gì-bạn-viết |
+| **Build Adapters API** | M13.1 | Triển khai dựa án bên ngoài Vercel |
+| **DevTools MCP** | M16 | Debug hỗ trợ AI |
