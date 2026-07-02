@@ -83,6 +83,10 @@ export default defineConfig({
             text: 'M1.7 - Khái niệm Streaming',
             link: '/modules/M1/M1.7-khai-niem-streaming',
           },
+          {
+            text: 'M1.8 - DevOps & System Design cho Next.js Streaming',
+            link: '/modules/M1/M1.8-devops-and-system-design-cho-nextjs-streaming',
+          },
         ],
       },
       {

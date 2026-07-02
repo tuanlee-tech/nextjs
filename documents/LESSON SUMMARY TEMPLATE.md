@@ -5,8 +5,6 @@
 
 [Nội dung tóm tắt theo LESSON SUMMARY TEMPLATE ]
 
-</details>
-
 **📄 LESSON SUMMARY TEMPLATE**
 
 **📌 Lesson Summary — <Tên bài>**
@@ -338,7 +336,7 @@ là đủ để sau này nhìn vào nhớ toàn bộ.
 
 ```
 
----
+</details>
 
 **Quy tắc khi tóm tắt (Prompt nội bộ)**
 

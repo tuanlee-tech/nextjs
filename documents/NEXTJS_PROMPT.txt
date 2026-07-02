@@ -255,6 +255,7 @@ Sau khi hoàn thành chương trình học viên phải:
 | M1.5 | Kết xuất Đồng thời |  Time slicing, priorities  |
 | M1.6 | Hydration | Đồng bộ trạng thái client-server |
 | M1.7 | Khái niệm Streaming | Progressive HTML, hydration có chọn lọc |
+| M1.8 | DevOps & System Design cho Next.js Streaming | Kết hợp DevOps, system design và trade-offs |
 
 ### 📦 M2 — NEXT.JS KẾ THỪA (10 bài | ~20h) 🔴 QUAN TRỌNG
 | Bài học | Tiêu đề | Trọng tâm |
