@@ -30,6 +30,80 @@ export default defineConfig({
         ],
       },
       {
+        text: 'Engineering Playbook',
+        collapsed: true,
+        items: [
+          {
+            text: 'Giới thiệu Playbook',
+            link: '/engineering-playbook/README',
+          },
+          {
+            text: '00. Vision',
+            link: '/engineering-playbook/00-vision',
+          },
+          {
+            text: '01. Coding Standards',
+            link: '/engineering-playbook/01-coding-standards',
+          },
+          {
+            text: '02. Folder Structure',
+            link: '/engineering-playbook/02-folder-structure',
+          },
+          {
+            text: '03. Naming Convention',
+            link: '/engineering-playbook/03-naming-convention',
+          },
+          {
+            text: '04. Git Workflow',
+            link: '/engineering-playbook/04-git-workflow',
+          },
+          {
+            text: '05. Branching Strategy',
+            link: '/engineering-playbook/05-branching-strategy',
+          },
+          {
+            text: '06. Commit Convention',
+            link: '/engineering-playbook/06-commit-convention',
+          },
+          {
+            text: '07. Code Review Checklist',
+            link: '/engineering-playbook/07-code-review-checklist',
+          },
+          {
+            text: '08. Definition of Done',
+            link: '/engineering-playbook/08-definition-of-done',
+          },
+          {
+            text: '09. AI Agent Rules',
+            link: '/engineering-playbook/09-ai-agent-rules',
+          },
+          {
+            text: '10. ADR Template',
+            link: '/engineering-playbook/10-adr-template',
+          },
+          {
+            text: '11. Task Template',
+            link: '/engineering-playbook/11-task-template',
+          },
+          {
+            text: '12. Bug Report Template',
+            link: '/engineering-playbook/12-bug-report-template',
+          },
+          {
+            text: '13. Feature Template',
+            link: '/engineering-playbook/13-feature-template',
+          },
+          {
+            text: '14. Retrospective Template',
+            link: '/engineering-playbook/14-retrospective-template',
+          },
+          {
+            text: '15. AI Workflow',
+            link: '/engineering-playbook/15-ai-workflow-template',
+          },
+        ],
+      },
+      {
         text: 'M0 (Optional) — ĐỊNH HƯỚNG & SỰ PHÁT TRIỂN',
         collapsed: true,
         items: [
