@@ -25,7 +25,8 @@ src/
 ├── utils/               ← Mọi utility ở đây? Không!
 └── pages/               ← Mọi page ở đây? Không!
 
-→ Vấn đề: Sửa 1 feature phải nhảy 4-5 folder. Khó biết file nào thuộc feature nào.
+→ Vấn đề: Sửa 1 feature phải nhảy 4-5 folder.
+          Khó biết file nào thuộc feature nào.
 
 ❌ Flat structure
 src/
