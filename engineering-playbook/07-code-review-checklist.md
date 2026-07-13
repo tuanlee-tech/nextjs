@@ -23,7 +23,7 @@ Vì bạn là 1 người, checklist này dùng cho:
 
 ---
 
-### □ 1. ARCHITECTURE
+### 1. ARCHITECTURE
 
 **Question:** _Code này có phù hợp với kiến trúc hiện tại không? Có vi phạm separation of concerns không?_
 
@@ -47,7 +47,7 @@ function OrderCard({ order }: OrderCardProps) {
   // ...
 }
 
-// ✅ CÓ — Tách thành domain logic
+// ✅ NÊN — Tách thành domain logic
 // modules/commerce/utils/orderPolicy.ts
 export function canCancelOrder(order: Order): boolean {
   const isWithinWindow = order.createdAt > Date.now() - CANCEL_WINDOW_MS;
@@ -68,7 +68,7 @@ function OrderCard({ order }: OrderCardProps) {
 // ❌ KHÔNG — Import internal từ module khác
 import { useProductCache } from '@/modules/commerce/hooks/useProducts'; // Internal!
 
-// ✅ CÓ — Import public API
+// ✅ NÊN — Import public API
 import { useProducts } from '@/modules/commerce'; // Barrel export
 ```
 
@@ -80,7 +80,7 @@ import { useProducts } from '@/modules/commerce'; // Barrel export
 
 ---
 
-### □ 2. NAMING
+### 2. NAMING
 
 **Question:** _Tên có trả lời được "nó là gì, nó làm gì, nó dùng ở đâu" không?_
 
@@ -101,7 +101,7 @@ const res = fetchData();
 const flag = true;
 const handleClick = () => {};
 
-// ✅ CÓ
+// ✅ NÊN
 const orderCreatedAt = new Date();
 const productsResponse = fetchProducts();
 const shouldShowBanner = true;
@@ -112,7 +112,7 @@ const handleAddToCart = () => {};
 // ❌ KHÔNG
 interface Props { ... } // Không rõ của component nào
 
-// ✅ CÓ
+// ✅ NÊN
 interface ProductCardProps { ... }
 ```
 
@@ -123,7 +123,7 @@ interface ProductCardProps { ... }
 
 ---
 
-### □ 3. REUSABILITY
+### 3. REUSABILITY
 
 **Question:** _Có thể tách thành primitive/component nhỏ hơn không? Có đang lặp code không?_
 
@@ -151,7 +151,7 @@ function OrderList() {
   // ... sorting logic (giống hệt!)
 }
 
-// ✅ CÓ — Extract thành hook reusable
+// ✅ NÊN — Extract thành hook reusable
 function useListState<T>(defaultSort: keyof T) {
   const [sort, setSort] = useState(defaultSort);
   const [filter, setFilter] = useState('');
@@ -166,7 +166,7 @@ function DataTable({
   onRowClick, onSort, onFilter, loading, emptyMessage, rowClassName
 }: DataTableProps) { ... }
 
-// ✅ CÓ — Compound pattern
+// ✅ NÊN — Compound pattern
 <DataTable.Root data={products}>
   <DataTable.Header>
     <DataTable.Sort column="name" />
@@ -184,7 +184,7 @@ function DataTable({
 
 ---
 
-### □ 4. ACCESSIBILITY (a11y)
+### 4. ACCESSIBILITY (a11y)
 
 **Question:** _Người dùng screen reader hoặc chỉ dùng keyboard có dùng được không?_
 
@@ -205,7 +205,7 @@ function DataTable({
   <TrashIcon />
 </button>
 
-// ✅ CÓ
+// ✅ NÊN
 <button
   onClick={deleteProduct}
   aria-label="Delete product"
@@ -224,7 +224,7 @@ function DataTable({
   onChange={setSearch}
 />
 
-// ✅ CÓ
+// ✅ NÊN
 <label htmlFor="product-search">Search products</label>
 <input
   id="product-search"
@@ -246,7 +246,7 @@ function DataTable({
 
 ---
 
-### □ 5. PERFORMANCE
+### 5. PERFORMANCE
 
 **Question:** _Có re-render không cần thiết? Có lazy load? Có block main thread?_
 
@@ -268,7 +268,7 @@ function ProductList({ products }: { products: Product[] }) {
   // ...
 }
 
-// ✅ CÓ — Memoize nếu expensive
+// ✅ NÊN — Memoize nếu expensive
 function ProductList({ products }: { products: Product[] }) {
   const sortedProducts = useMemo(
     () => [...products].sort((a, b) => b.price - a.price),
@@ -282,7 +282,7 @@ function ProductList({ products }: { products: Product[] }) {
 // ❌ KHÔNG — Import cả lodash chỉ dùng debounce
 import _ from 'lodash'; // +70KB!
 
-// ✅ CÓ — Tree-shakeable import
+// ✅ NÊN — Tree-shakeable import
 import { debounce } from 'lodash-es'; // Chỉ import debounce
 // Hoặc dùng native nếu có
 ```
@@ -294,7 +294,7 @@ function calculatePortfolioValue(transactions: Transaction[]) {
   return transactions.reduce(...);
 }
 
-// ✅ CÓ — Web Worker (P3)
+// ✅ NÊN — Web Worker (P3)
 // workers/portfolio-calculator.worker.ts
 self.onmessage = (e) => {
   const result = calculatePortfolioValue(e.data);
@@ -317,7 +317,7 @@ useEffect(() => {
 
 ---
 
-### □ 6. SECURITY
+### 6. SECURITY
 
 **Question:** _Có lỗ hổng XSS, CSRF, injection, leak thông tin nhạy cảm?_
 
@@ -339,7 +339,7 @@ function Comment({ content }: { content: string }) {
   return <div dangerouslySetInnerHTML={{ __html: content }} />;
 }
 
-// ✅ CÓ — Sanitize hoặc dùng text content
+// ✅ NÊN — Sanitize hoặc dùng text content
 import DOMPurify from 'dompurify';
 function Comment({ content }: { content: string }) {
   const clean = DOMPurify.sanitize(content);
@@ -353,7 +353,7 @@ function Comment({ content }: { content: string }) {
 const data = await fetchProducts(); // any!
 setProducts(data);
 
-// ✅ CÓ — Zod validate
+// ✅ NÊN — Zod validate
 const ProductsResponseSchema = z.array(ProductSchema);
 const data = await fetchProducts();
 const products = ProductsResponseSchema.parse(data); // Runtime validation
@@ -364,7 +364,7 @@ setProducts(products);
 // ❌ KHÔNG — Log sensitive info
 console.error('Auth failed:', { token, password }); // LEAK!
 
-// ✅ CÓ — Log safe info
+// ✅ NÊN — Log safe info
 console.error('Auth failed:', {
   userId: user.id,
   reason: 'INVALID_CREDENTIALS',
@@ -380,7 +380,7 @@ console.error('Auth failed:', {
 
 ---
 
-### □ 7. TESTING
+### 7. TESTING
 
 **Question:** _Logic quan trọng có test không? Test có cover edge case không?_
 
@@ -402,7 +402,7 @@ test('sets loading state', () => {
   expect(result.current.isLoading).toBe(true); // Implementation detail!
 });
 
-// ✅ CÓ — Test behavior
+// ✅ NÊN — Test behavior
 test('displays products after loading', async () => {
   render(<ProductList />);
   expect(screen.getByRole('status')).toBeInTheDocument(); // Loading spinner
@@ -416,7 +416,7 @@ test('calculates total', () => {
   expect(calculateTotal([{ price: 100, quantity: 2 }])).toBe(200);
 });
 
-// ✅ CÓ — Test edge cases
+// ✅ NÊN — Test edge cases
 test('calculates total with edge cases', () => {
   expect(calculateTotal([])).toBe(0); // Empty
   expect(calculateTotal([{ price: 0, quantity: 1 }])).toBe(0); // Zero price
@@ -433,7 +433,7 @@ test('calculates total with edge cases', () => {
 
 ---
 
-### □ 8. TYPING
+### 8. TYPING
 
 **Question:** _TypeScript strict có pass? Có `any` không? Có type inference đúng?_
 
@@ -452,7 +452,7 @@ test('calculates total with edge cases', () => {
 // ❌ KHÔNG — any
 function processData(data: any): any { ... }
 
-// ✅ CÓ — unknown + parse
+// ✅ NÊN — unknown + parse
 function processData(data: unknown): Product {
   return ProductSchema.parse(data);
 }
@@ -467,7 +467,7 @@ interface AsyncState<T> {
 }
 // state.data và state.error có thể cùng tồn tại!
 
-// ✅ CÓ — Discriminated union
+// ✅ NÊN — Discriminated union
 type AsyncState<T> =
   | { status: 'idle' }
   | { status: 'loading' }
@@ -479,7 +479,7 @@ type AsyncState<T> =
 // ❌ KHÔNG — Ep kiểu tùy tiện
 const price = data.price as number;
 
-// ✅ CÓ — Validate trước
+// ✅ NÊN — Validate trước
 const price = typeof data.price === 'number' ? data.price : 0;
 // Hoặc dùng Zod
 const price = PriceSchema.parse(data).price;
@@ -493,7 +493,7 @@ const price = PriceSchema.parse(data).price;
 
 ---
 
-### □ 9. ERROR HANDLING
+### 9. ERROR HANDLING
 
 **Question:** _Có handle error đầy đủ? Có fallback? Có log? Có toast?_
 
@@ -515,7 +515,7 @@ function ProductList() {
   return <div>{data.map(...)}</div>; // Crash nếu data undefined!
 }
 
-// ✅ CÓ — Handle mọi state
+// ✅ NÊN — Handle mọi state
 function ProductList() {
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ['products'],
@@ -540,7 +540,7 @@ class ErrorBoundary extends Component {
   }
 }
 
-// ✅ CÓ — Error boundary với recovery
+// ✅ NÊN — Error boundary với recovery
 class CommerceErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
@@ -576,7 +576,7 @@ class CommerceErrorBoundary extends Component {
 
 ---
 
-### □ 10. DOCUMENTATION
+### 10. DOCUMENTATION
 
 **Question:** _Code tự giải thích chưa? Cần comment/ADR không?_
 
@@ -595,13 +595,13 @@ class CommerceErrorBoundary extends Component {
 // Increment count by 1
 count++;
 
-// ✅ CÓ — Comment nói "tại sao"
+// ✅ NÊN — Comment nói "tại sao"
 // Debounce 300ms vì search API có rate limit 10 req/s
 const debouncedSearch = useDebounce(search, 300);
 ```
 
 ```typescript
-// ✅ CÓ — JSDoc cho public API
+// ✅ NÊN — JSDoc cho public API
 /**
  * Calculate portfolio return rate with time-weighted method.
  *

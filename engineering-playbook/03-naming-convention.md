@@ -15,7 +15,7 @@ const d = new Date();
 const res = fetchData();
 const handleClick = () => {};
 
-// ✅ CÓ — Tên tự giải thích
+// ✅ NÊN — Tên tự giải thích
 const orderCreatedAt = new Date();
 const productsResponse = fetchProducts();
 const handleAddToCart = () => {};
@@ -115,7 +115,7 @@ const loading = true;
 const error = false;
 const admin = user.role === 'admin';
 
-// ✅ CÓ
+// ✅ NÊN
 const isLoading = true;
 const hasError = false;
 const isAdmin = user.role === 'admin';
@@ -128,7 +128,7 @@ const isAdmin = user.role === 'admin';
 const user = users.find((u) => u.id === id);
 const data = await fetchData();
 
-// ✅ CÓ — Rõ ràng kiểu dữ liệu
+// ✅ NÊN — Rõ ràng kiểu dữ liệu
 const userList: User[] = [];
 const userMap: Map<string, User> = new Map();
 const userById: Record<string, User> = {};
@@ -147,7 +147,7 @@ const users = usersResponse.data; // User[]
 const date = '2024-01-01';
 const time = Date.now();
 
-// ✅ CÓ — Rõ format và múi giờ
+// ✅ NÊN — Rõ format và múi giờ
 const createdAtISO = '2024-01-01T00:00:00Z'; // ISO 8601 string
 const createdAtTimestamp = 1704067200000; // Unix timestamp (ms)
 const createdAtDate = new Date('2024-01-01'); // Date object
@@ -270,7 +270,7 @@ enum OrderStatus {
   Confirmed = 'confirmed',
 }
 
-// ✅ CÓ — Union type + const object
+// ✅ NÊN — Union type + const object
 type OrderStatus = 'pending' | 'confirmed' | 'shipped' | 'delivered';
 
 const OrderStatus = {
@@ -480,7 +480,7 @@ export const ORDER_RETRY_CONFIG = {
 <div className="container">
 <div className="box">
 
-// ✅ CÓ — Tailwind utility hoặc semantic class
+// ✅ NÊN — Tailwind utility hoặc semantic class
 <div className="mt-4 text-red-600">
 <div className="product-card-container">
 ```

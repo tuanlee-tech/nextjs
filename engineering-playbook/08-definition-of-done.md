@@ -106,7 +106,7 @@ npm run lint
 // eslint-disable-next-line
 const data = fetchData();
 
-// ✅ CÓ — Giải thích tại sao disable
+// ✅ NÊN — Giải thích tại sao disable
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 // Reason: Third-party library type definition incomplete,
 // tracked in issue #123
@@ -141,7 +141,7 @@ npm run type-check
 // @ts-ignore
 const data: any = fetchData();
 
-// ✅ CÓ — unknown + parse
+// ✅ NÊN — unknown + parse
 const data: unknown = fetchData();
 const products = ProductSchema.parse(data);
 ```
@@ -177,7 +177,7 @@ xl: 1280px  /* Desktops */
 // ❌ KHÔNG — Chỉ desktop
 <div className="grid grid-cols-4 gap-4">
 
-// ✅ CÓ — Responsive
+// ✅ NÊN — Responsive
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 ```
 
@@ -213,7 +213,7 @@ function ProductList() {
   );
 }
 
-// ✅ CÓ — Đầy đủ loading states
+// ✅ NÊN — Đầy đủ loading states
 function ProductList() {
   const { data, isLoading } = useQuery({
     queryKey: ['products'],
@@ -259,7 +259,7 @@ function ProductList() {
   return <div>{data.map(...)}</div>; // Crash nếu error!
 }
 
-// ✅ CÓ — Error handling đầy đủ
+// ✅ NÊN — Error handling đầy đủ
 function ProductList() {
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ['products'],
@@ -309,7 +309,7 @@ function ProductList({ products }: { products: Product[] }) {
   return <div>{products.length && products.map(...)}</div>; // Hiện "0"!
 }
 
-// ✅ CÓ — Empty state rõ ràng
+// ✅ NÊN — Empty state rõ ràng
 function ProductList({ products }: { products: Product[] }) {
   if (products.length === 0) {
     return (

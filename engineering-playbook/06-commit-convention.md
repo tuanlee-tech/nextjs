@@ -20,7 +20,7 @@ git commit -m "asdf"
 git commit -m "fix bug"
 git commit -m "add stuff"
 
-# ✅ CÓ — Tự giải thích, searchable, changelog-ready
+# ✅ NÊN — Tự giải thích, searchable, changelog-ready
 git commit -m "feat(commerce): add bulk order action with optimistic update"
 git commit -m "fix(auth): prevent redirect loop when OAuth token expires"
 git commit -m "perf(table): virtualize 10k rows with TanStack Virtual"
@@ -137,7 +137,7 @@ Bạn thay đổi code?
 # ❌ KHÔNG — Một commit động chạm nhiều scope
 git commit -m "feat: add product table and fix auth and update docs"
 
-# ✅ CÓ — Tách thành nhiều commit
+# ✅ NÊN — Tách thành nhiều commit
 git commit -m "feat(commerce): add product table with sorting"
 git commit -m "fix(auth): redirect after login"
 git commit -m "docs: update API documentation"
@@ -171,7 +171,7 @@ git commit -m "feat(commerce): Adds product table."           # "Adds" + period
 git commit -m "feat(commerce): Product table added"           # Passive voice
 git commit -m "feat(commerce): add product table with sorting and filtering and pagination and export to CSV" # > 72 chars
 
-# ✅ CÓ
+# ✅ NÊN
 git commit -m "feat(commerce): add product table with sorting"
 git commit -m "feat(commerce): add table filtering"
 git commit -m "feat(commerce): add table pagination"
@@ -279,7 +279,7 @@ Co-authored-by: Claude <anthropic>"
 # ❌ KHÔNG — Commit WIP lên remote
 git commit -m "WIP: table stuff"
 
-# ✅ CÓ — Commit local với WIP prefix, squash trước push
+# ✅ NÊN — Commit local với WIP prefix, squash trước push
 git commit -m "WIP: implement table sorting"
 
 # Làm việc tiếp...
@@ -323,7 +323,7 @@ git revert -m 1 a1b2c3d
 git merge feature/EP-006
 # "Merge branch 'feature/EP-006' into develop"
 
-# ✅ CÓ — Squash merge với message clean
+# ✅ NÊN — Squash merge với message clean
 git merge --squash feature/EP-006
 git commit -m "feat(commerce): add product table with sorting and pagination"
 ```

@@ -21,7 +21,7 @@
 5. Không merge khi CI đỏ — không exception
 ```
 
----
+
 
 ## 2. BRANCH STRATEGY
 
@@ -273,6 +273,7 @@ Nếu có lý do đặc biệt, thêm comment giải thích."
 🟡 **Suggestion** — Consider, but not blocking
 🟢 **Nitpick** — Style preference, optional
 💡 **Question** — Cần clarify, không nhất thiết phải sửa
+
 ```
 
 ### 5.3 Reviewer Responsibilities
@@ -426,7 +427,7 @@ git push -u origin hotfix/revert-broken-feature
 # PR → develop (để develop cũng có revert)
 ```
 
----
+
 
 ## 9. TAG & RELEASE
 

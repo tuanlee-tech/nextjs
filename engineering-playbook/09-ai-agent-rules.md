@@ -9,7 +9,7 @@
 
 ### 1.1 AI Không Phải Oracle
 
-> **"AI đúng 70% thời gian. 20% là acceptable nhưng suboptimal. 10% là outright wrong — và 10% đó có thể phá hỏng production."**
+> **"AI đúng 70%, 20% là chấp nhận được nhưng không tối ưu. 10% là sai hoàn toàn (outright wrong) — và 10% đó có thể phá hỏng production."**
 
 ### 1.2 AI Collaboration = Code Review
 
@@ -207,7 +207,7 @@ onError: (err, newOrder, context) => {
   queryClient.setQueryData(['orders'], context.previous);
 }
 ```
-````
+
 
 ### Bug tôi phát hiện
 
@@ -238,13 +238,14 @@ onError: (err, newOrder, context) => {
 
 | Method                  | Khi dùng                   |
 | ----------------------- | -------------------------- |
-| Đọc dòng-by-dòng        | Mọi AI output              |
+| Đọc từng dòng           | Mọi AI output              |
 | Test viết tay           | Logic business, edge cases |
 | React DevTools Profiler | Performance suggestion     |
 | Lighthouse              | AI suggest optimization    |
 | Sentry test             | Error handling             |
 | Manual test             | UI flow, UX                |
 
+```
 ````
 
 ### 5.2 Nguyên tắc viết AI-WORKFLOW.md
@@ -264,7 +265,7 @@ onError: (err, newOrder, context) => {
 → Chứng minh bạn có judgment
 → Chứng minh bạn không blindly trust AI
 → Chứng minh bạn có quy trình validation
-````
+```
 
 ## 6. PROMPT LIBRARY
 
@@ -384,7 +385,7 @@ Provide 2-3 hypotheses and how to verify each.
 ### 8.1 Before Accepting Any AI Code
 
 ```markdown
-□ Đọc từng dòng — không skim
+□ Đọc từng dòng — không skim (đọc lướt hoặc bỏ qua các chi tiết)
 □ So sánh với spec — có implement đúng không?
 □ Check convention — naming, structure, pattern
 □ Identify magic — có logic không giải thích?
@@ -473,7 +474,7 @@ Co-authored-by: Claude <anthropic>"
 - "AI giúp tôi viết 10x code"
 - "Tôi tin AI vì AI giỏi hơn tôi"
 
-✅ CÓ nói:
+✅ NÊN nói:
 
 - "Tôi dùng AI như junior dev — implement theo spec tôi thiết kế"
 - "Tôi review mọi output dòng-by-dòng, có lúc từ chối vì không phù hợp"
