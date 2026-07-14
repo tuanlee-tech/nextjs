@@ -1,9 +1,11 @@
-# Engineering Playbook — 14: Retrospective Template
+# Engineering Playbook — 14: Sprint Retrospective Template
 
 > **Version:** 1.0.0  
 > **Last Updated:** 2026-07-07  
 > **Scope:** Sprint review format — 3 Projects  
-> **Principle:** "Retrospective không phải để blame. Nó là để học. Nếu sprint hoàn hảo, bạn không học được gì."
+> **Principle:** "Mục đích của nó là giúp cả nhóm nhìn lại Sprint vừa kết thúc để rút kinh nghiệm và cải thiện cách làm việc ở Sprint tiếp theo. Retrospective không phải để blame. Nó là để học. Nếu sprint hoàn hảo, bạn không học được gì."
+
+> Retrospective: Buổi tổng kết và rút kinh nghiệm
 
 ## 1. PHILOSOPHY
 
