@@ -3,7 +3,7 @@
 
 > **Định hướng:** Xây nền tảng fullstack vững chắc, dùng chung cho 2 con đường sự nghiệp khác nhau — **đi làm lên Staff/Architect** hoặc **tự làm Solo Founder** — rồi rẽ nhánh dựa trên hoàn cảnh thực tế thay vì chọn trước bằng cảm tính.
 > **Nguyên tắc cốt lõi:** Học theo chiều ngang (Project-based). Ưu tiên điểm chung trước, rẽ nhánh sau khi có đủ dữ kiện để quyết định.
-> **Thời gian dự kiến:** Lõi chung 9–12 tháng, sau đó mỗi nhánh tiếp tục 12–24 tháng tùy tốc độ.
+> **Thời gian dự kiến:** Lõi chung 9–12 tháng ở kịch bản lạc quan nhất (lấy cận dưới mỗi khối: 3+6+2 tháng); thực tế cộng dồn 3 khối thường rơi vào 11–21 tháng tùy tốc độ học và mức độ đi làm song song. Sau đó mỗi nhánh tiếp tục 12–24 tháng tùy tốc độ.
 > **Ngôn ngữ:** JavaScript/TypeScript ecosystem
 
 ---
@@ -22,7 +22,7 @@ Giải quyết việc này bằng cách:
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                          LÕI CHUNG (bắt buộc cho cả 2 nhánh)                │
-│                          Thời gian: 9–12 tháng                              │
+│                          Thời gian: 9–12 tháng (kịch bản lạc quan)          │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     ↓
                   ═══ ĐIỂM RẼ NHÁNH (checkpoint, đánh giá hoàn cảnh) ═══
@@ -41,7 +41,8 @@ Giải quyết việc này bằng cách:
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │  KHỐI 1: MASTER FRONTEND                                                    │
-│  Mục tiêu: Senior FE-ready (30–45 triệu) | Nền tảng bắt buộc cho cả 2 nhánh │
+│  Mục tiêu: Sẵn sàng phỏng vấn Senior FE (30–45 triệu) | Nền tảng bắt buộc   │
+│  cho cả 2 nhánh — LƯU Ý: đây là "sẵn sàng phỏng vấn", không phải "là senior"│
 │  Thời gian: 3–6 tháng                                                       │
 │  ─────────────────────────────────────────────────────────────────────────  │
 │  • JS/TS Engine & Runtime (V8, Event Loop, Memory Management)               │
@@ -54,9 +55,12 @@ Giải quyết việc này bằng cách:
 │  • Lighthouse CI, Core Web Vitals (LCP/INP/CLS), Bundle Optimization        │
 │  • Micro-frontends, Monorepo, PWA, i18n, Data Viz, Storybook                │
 │  • SEO Technical: JSON-LD, GEO (AI Search Optimization), Dynamic Meta       │
+│  • Frontend System Design: RADIO framework, News Feed/Autocomplete/Editor   │
+│  • Bảo mật Frontend: XSS, CSP, CORS, Auth (OAuth/JWT), Server Actions       │
+│  • Production Ops: Error tracking, Feature Flags, Rollback, Incident       │
 │  • AI Coding Agent hằng ngày: Claude Code / Cursor / Copilot agent          │
-│    mode — giao task đa bước, review output AI thay vì tự gõ từng dòng       │
-│  • Prompt & context engineering cơ bản cho dev                              │
+│    mode — VERIFY output AI (không chỉ dùng nó), giao task đa bước           │
+│  • Judgment & Ownership: trade-off dưới ambiguity, code review, mentoring   │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     ↓
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -83,6 +87,9 @@ Giải quyết việc này bằng cách:
 │  • RAG cơ bản + Vector DB (pgvector trên Postgres sẵn có, chưa              │
 │    cần Pinecone)                                                            │
 │  • AI Evaluation: kiểm thử & đánh giá chất lượng output AI                  │
+│  • Backend/API System Design: rate limiter, webhook idempotency, job        │
+│    queue chịu tải, notification system — luyện dạng bị hỏi ngược            │
+│    trade-off (vd: Redis sập thì fail open hay fail closed)                  │
 └─────────────────────────────────────────────────────────────────────────────┘
                                     ↓
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -103,6 +110,9 @@ Giải quyết việc này bằng cách:
 │    hệ thống có nhiều service)                                               │
 │  • AI-assisted security scanning trong CI/CD (đang trở thành                │
 │    chuẩn thay vì optional)                                                  │
+│  • Khung Production Readiness: bảo mật nền (secrets, SSH key-only) +        │
+│    observability nối thẳng runbook + rollback tập luyện thật + backup       │
+│    test restore thật (không chỉ setup rồi để đó)                            │
 │  ─────────────────────────────────────────────────────────────────────────  │
 │  Lưu ý: Terraform, Vault, K8s, Service Mesh, IaC nâng cao KHÔNG nằm ở đây   │
 │  nữa — chuyển sang Nhánh A vì chỉ có giá trị khi hệ thống đã có traffic     │
@@ -370,7 +380,9 @@ Không quyết định trước bằng cảm tính. Khi tới checkpoint (~thán
 ```
 Tháng 1–3:   KHỐI 1 (Master FE) — Học sâu, làm 2 project portfolio, dùng AI
              coding agent hằng ngày ngay từ đầu
-             ↳ Có thể apply job Senior FE ngay (lương 30–45 triệu)
+             ↳ Đủ nền tảng để BẮT ĐẦU phỏng vấn Senior FE (30–45 triệu) —
+             không phải "là senior", mà là đủ điều kiện để được nhận và
+             tích lũy kinh nghiệm senior thật qua công việc
 
 Tháng 4–9:   KHỐI 2 (Master BE + AI integration) — NestJS, DB, Payment,
              Search, tích hợp LLM API vào 1 project thật
@@ -378,7 +390,10 @@ Tháng 4–9:   KHỐI 2 (Master BE + AI integration) — NestJS, DB, Payment,
 
 Tháng 9–12:  KHỐI 3 (DevOps cơ bản) — Docker, CI/CD, deploy 1 sản phẩm
              hoàn chỉnh lên production
-             ↳ Đủ năng lực Fullstack thật, có portfolio deploy được
+             ↳ Đủ nền tảng kỹ thuật để tự vận hành 1 sản phẩm fullstack —
+             kinh nghiệm "fullstack thật" (xử lý sự cố, scale, trade-off
+             dưới áp lực) vẫn cần tích lũy tiếp qua thực chiến, không tự
+             động có được chỉ vì hoàn thành 3 khối
 
         ═══ ĐIỂM RẼ NHÁNH — đánh giá theo bảng tiêu chí ở mục 3 ═══
 
@@ -427,6 +442,7 @@ ngược lại — checkpoint không phải quyết định một lần vĩnh vi
 - [ ] **Mỗi tháng 1 project nhỏ** — Hoàn chỉnh, deploy, share lên GitHub
 - [ ] **Tham gia cộng đồng** — Discord/Reddit dev communities, contribute open source
 - [ ] **Checkpoint 3 tháng/lần** — Đánh giá lại tiến độ và hoàn cảnh, điều chỉnh kế hoạch thay vì cứng nhắc theo lịch 36 tháng
+- [ ] **Giữ nhịp bền vững, không burnout** — dữ liệu khảo sát solo founder gần đây cho thấy burnout (không phải chiến lược sai) là yếu tố dự báo thất bại lớn nhất. "2 giờ/ngày đều đặn trong 12 tháng" tốt hơn "6 giờ/ngày trong 2 tháng rồi bỏ cuộc". Nếu cảm thấy kiệt sức liên tục, đó là tín hiệu để giảm nhịp, không phải để cố ép thêm
 - [ ] Nhánh A: **Technical blog post định kỳ** — củng cố kiến thức + xây thương hiệu cá nhân hướng tới nhà tuyển dụng
 - [ ] Nhánh B: **"Build in Public"** — chia sẻ journey, nhận feedback, tạo accountability, hướng tới người dùng tiềm năng
 

@@ -1,11 +1,53 @@
-# CHẶN 1: MASTER FRONTEND
+# MASTER FRONTEND
 
-> **Mục tiêu:** Đạt mức Senior Frontend Developer, có thể xin việc FE Role ngay sau chặn này với mức lương 30–45 triệu (hoặc freelance $30–50/hour).
-> **Thời gian dự kiến:** 3–6 tháng (học song song với đi làm nếu đã có việc).
-> **Thuộc:** Khối Lõi Chung — bắt buộc cho cả 2 nhánh (Staff/Architect và Solo Founder).
-> **Milestone:** Có portfolio 4–6 project production-ready, trả lời được mọi câu hỏi phỏng vấn Senior FE, live code được component từ đầu.
+## Bối cảnh
+
+Roadmap này gồm **3 khối lõi chung** mà mọi Software Engineer đều cần trước khi chuyên sâu:
+
+1. Master Frontend
+2. Master Backend & Ecosystem
+3. DevOps Cơ Bản
+
+Sau khi hoàn thành cả ba khối, bạn mới quyết định đi theo một trong hai hướng:
+
+- **Staff/Architect** — phát triển sự nghiệp kỹ thuật trong doanh nghiệp.
+- **Solo Founder** — xây dựng và kinh doanh sản phẩm của riêng mình.
+
+**Master Frontend là điểm khởi đầu của toàn bộ lộ trình**, giúp bạn xây dựng tư duy phát triển giao diện hiện đại, tối ưu hiệu năng, khả năng mở rộng và chất lượng code. Đây cũng là khối giúp bạn đạt năng lực đủ để vượt qua các vòng phỏng vấn Frontend Senior trước khi mở rộng sang Backend và System Design.
 
 ---
+
+* **Mục tiêu:** Đạt **nền tảng kỹ thuật đủ để pass vòng phỏng vấn Senior FE** (30–45 triệu, hoặc freelance $30–50/hour) — KHÔNG phải "trở thành Senior" theo đúng nghĩa. Senior thật là **kinh nghiệm phán đoán** tích lũy qua production, không phải kiến thức học được trong vài tháng. Chặn này giúp bạn *đủ giỏi để được nhận vào vị trí đó và bắt đầu tích lũy kinh nghiệm senior thực chiến trong 1–2 năm tiếp theo*.
+* **Thời gian dự kiến:** 3–6 tháng để hoàn thành khối kiến thức + portfolio (học song song với đi làm nếu đã có việc). **Lưu ý:** đây là thời gian để *sẵn sàng phỏng vấn*, không phải thời gian để có đủ kinh nghiệm senior. Nhiều công ty vẫn sẽ đánh giá bạn là mid-level cho tới khi bạn có track record thật (ship feature, xử lý incident, review code người khác) — điều portfolio cá nhân không thay thế được hoàn toàn.
+* **Thuộc:** Khối Lõi Chung — bắt buộc cho cả 2 nhánh (Staff/Architect và Solo Founder).
+* **Milestone:** Có portfolio 4–6 project production-ready, trả lời được mọi câu hỏi phỏng vấn Senior FE (bao gồm **Frontend System Design** — không chỉ live code component), hiểu **bảo mật frontend cơ bản**, và biết cách **verify code do AI tạo ra** thay vì chỉ dùng nó.
+
+> **Vì sao ghi chú này quan trọng:** Nhiều roadmap tự học coi "senior" là tổng của một checklist kiến thức. Thực tế, các buổi phỏng vấn senior FE 2026 đánh giá dựa trên *judgment dưới ràng buộc mơ hồ* — cách bạn xử lý một bài toán chưa rõ ràng, đánh đổi trade-off, và giải thích quyết định — nhiều hơn là khả năng liệt kê định nghĩa. Kiến thức trong chặn này là điều kiện **cần**, không phải điều kiện **đủ**.
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  KHỐI 1: MASTER FRONTEND                                                    │
+│  Mục tiêu: Senior FE-ready (30–45 triệu) | Nền tảng bắt buộc cho cả 2 nhánh │
+│  Thời gian: 3–6 tháng                                                       │
+│  ─────────────────────────────────────────────────────────────────────────  │
+│  • JS/TS Engine & Runtime (V8, Event Loop, Memory Management)               │
+│  • TypeScript Nâng cao (Generics, Utility Types, Zod Runtime Validation)    │
+│  • React Fiber, Re-render Optimization, Next.js App Router (RSC)            │
+│  • TanStack Query, Zustand, Redux Ecosystem, State Machines (XState)        │
+│  • Tailwind Deep Dive, shadcn/ui, Component Library từ đầu                  │
+│  • Accessibility (WCAG 2.1 AA), Design System, Design Tokens                │
+│  • Vitest + Testing Library, Playwright E2E, MSW                            │
+│  • Lighthouse CI, Core Web Vitals (LCP/INP/CLS), Bundle Optimization        │
+│  • Micro-frontends, Monorepo, PWA, i18n, Data Viz, Storybook                │
+│  • SEO Technical: JSON-LD, GEO (AI Search Optimization), Dynamic Meta       │
+│  • Frontend System Design: RADIO framework, News Feed/Autocomplete/Editor   │
+│  • Bảo mật Frontend: XSS, CSP, CORS, Auth (OAuth/JWT), Server Actions       │
+│  • Production Ops: Error tracking, Feature Flags, Rollback, Incident       │
+│  • AI Coding Agent hằng ngày: Claude Code / Cursor / Copilot agent          │
+│    mode — giao task đa bước, VERIFY output AI (không chỉ dùng nó)          │
+│  • Judgment & Ownership: trade-off dưới ambiguity, code review, mentoring   │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ## PHẦN 1: MỤC TIÊU & THÔNG TIN CHẶN
 
@@ -21,6 +63,12 @@ Sau chặn này, bạn phải:
 - [ ] Viết **Unit test (Vitest)** và **E2E test (Playwright)** cho critical flows
 - [ ] Deploy được **PWA** với offline capability, push notification
 - [ ] Có **6 project production-ready** trên GitHub với CI/CD, test, monitoring
+- [ ] **Làm được 1 vòng Frontend System Design hoàn chỉnh** theo RADIO framework (Requirements → Architecture → Data Model → Interface → Optimizations) cho đề bài dạng News Feed / Autocomplete / E-commerce checkout — đây là vòng phỏng vấn RIÊNG BIỆT với live-code component, và là yếu tố phân biệt senior rõ nhất
+- [ ] Giải thích được **rủi ro bảo mật frontend cơ bản**: XSS, CSRF, CSP, và vì sao Server Actions cần authorization check riêng (không tự động an toàn chỉ vì chạy trên server)
+- [ ] Biết cách **verify code do AI agent tạo ra** — nhận diện chỗ AI sai tinh vi (logic gần đúng nhưng sai edge case, thiếu accessibility, thiếu error handling) thay vì chỉ merge vì code "chạy được"
+- [ ] Làm được ít nhất 1 lần: **review PR của người khác và viết feedback có tính xây dựng**, **viết 1 ADR (Architecture Decision Record)** giải thích trade-off cho một quyết định kỹ thuật thật
+
+> **Điều roadmap KHÔNG thể cho bạn:** kinh nghiệm xử lý incident production lúc 2 giờ sáng, cảm giác đánh đổi giữa deadline và chất lượng dưới áp lực thật từ PM, và sự tin tưởng của một team dành cho bạn qua thời gian. Đây là phần bạn chỉ tích lũy được khi đi làm — không có shortcut nào thay thế được.
 
 ### 1.2. Thời gian & Lộ trình đề xuất
 
@@ -30,14 +78,16 @@ Tháng 2:   React/Next.js Deep Dive + Project 2 (E-commerce Frontend)
 Tháng 3:   State Management (Zustand/Redux/TanStack Query) + Project 3 (Dashboard)
 Tháng 4:   Advanced (Micro-frontends, Monorepo, PWA) + Project 4 (Social Feed)
 Tháng 5:   UI Engineering (Design System, Accessibility, Animation) + Project 5 (Component Library)
-Tháng 6:   Legacy Migration + Tổng hợp Portfolio + Apply Job
+Tháng 6:   System Design + Bảo mật + Legacy Migration + Tổng hợp Portfolio + Apply Job
 ```
+
+> **Điều chỉnh thực tế:** Lộ trình 6 tháng ở trên đưa bạn đến trạng thái **"sẵn sàng phỏng vấn Senior"**, không phải "là Senior". Nên bắt đầu luyện **Frontend System Design** (mục 2.6 mới) song song từ Tháng 3 trở đi — không dồn hết vào Tháng 6 — vì đây là kỹ năng cần lặp lại nhiều lần (giống luyện thuật toán) chứ không học một lần là xong. Nếu timeline bị trễ, ưu tiên cắt bớt phần ecosystem phụ (Micro-frontends, PWA, Data Viz) trước khi cắt System Design hoặc Security — hai mục này ảnh hưởng trực tiếp đến việc pass phỏng vấn hơn.
 
 ### 1.3. Kiến thức thuộc Lõi Chung
 
 Toàn bộ chặn này thuộc **Khối 1 (Lõi Chung)** — không phân nhánh. Dù bạn chọn đi làm công ty (Nhánh A) hay tự startup (Nhánh B), bạn đều phải vượt qua chặn này.
 
----
+
 
 ## PHẦN 2: DANH MỤC KIẾN THỨC + QUYẾT ĐỊNH CÔNG NGHỆ
 
@@ -687,23 +737,127 @@ Toàn bộ chặn này thuộc **Khối 1 (Lõi Chung)** — không phân nhánh
 
 ---
 
-#### 2.5.9. AI Coding Agent (Bổ sung 2026)
+#### 2.5.9. AI Coding Agent — Verify, Không Chỉ Dùng (Bổ sung 2026)
 
-**Vấn đề:** AI có thể code nhanh hơn, nhưng cần biết cách dùng đúng để không tạo technical debt.
+**Vấn đề:** AI có thể tạo code nhanh hơn, nhưng khảo sát Stack Overflow 2025 cho thấy 66% dev bị AI tạo ra giải pháp "gần đúng nhưng sai" — sai ở chỗ tinh vi, không phải sai rõ ràng. Ở cấp senior, kỹ năng quan trọng nhất không còn là "biết prompt", mà là **biết khi nào không nên tin AI**.
 
 | Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng |
 |----------|-------------|-------------------|
-| Claude Code | Multi-file refactor, complex task | Task đơn giản (dùng Copilot inline đủ) |
+| Claude Code | Multi-file refactor, complex task, cần agent tự chạy nhiều bước | Task đơn giản (dùng Copilot inline đủ) |
 | Cursor | IDE tích hợp AI, context-aware | Không thích AI trong IDE |
 | Copilot Agent | GitHub workflow, PR review | Không dùng GitHub |
 
-**Quyết định mặc định:** Cursor hoặc Claude Code cho task phức tạp, Copilot cho inline suggestion.
+**Quyết định mặc định:** Dùng AI cho việc sinh code nhanh, nhưng **luôn tự chịu trách nhiệm 100% cho code merge vào main** — "AI viết" không phải lý do bào chữa khi có bug production.
 
-- [ ] **Claude Code / Cursor / Copilot agent mode:** Giao task đa bước, review output AI thay vì tự gõ từng dòng
-- [ ] **Prompt & context engineering cơ bản cho dev:** Cách viết prompt hiệu quả, cách review code AI
+**Anti-pattern:** Merge code AI tạo ra chỉ vì nó "chạy được" mà không đọc kỹ logic, không tự hỏi "edge case nào AI có thể đã bỏ sót".
+
+- [ ] **Giao task đa bước cho agent** (Claude Code / Cursor / Copilot agent mode) — biết cách chia nhỏ task để agent làm đúng phạm vi, tránh để agent tự ý sửa code ngoài scope
+- [ ] **Verify output có hệ thống** — không chỉ đọc lướt:
+  - [ ] Kiểm tra logic ở đúng edge case (empty state, null, race condition, network fail) — chỗ AI hay "quên"
+  - [ ] Kiểm tra accessibility — AI thường bỏ qua ARIA, keyboard nav, focus management trừ khi được yêu cầu rõ
+  - [ ] Kiểm tra error handling và security (AI hay viết code "happy path", thiếu validate input)
+  - [ ] Chạy test thật (không chỉ tin AI báo "đã test")
+- [ ] **Biết khi nào KHÔNG dùng AI:** business logic phức tạp cần hiểu domain sâu, code liên quan trực tiếp đến security/payment, refactor kiến trúc lớn cần context toàn hệ thống mà AI không có
+- [ ] **Prompt & context engineering cho dev:** viết prompt có ràng buộc rõ (constraints, edge cases cần cover), cung cấp đủ context (file liên quan, convention của team) thay vì prompt mơ hồ
+- [ ] **Đo lường thực tế:** DORA 2025 báo cáo AI khuếch đại điểm mạnh/yếu sẵn có của team — nghĩa là AI giúp một senior giỏi làm nhanh hơn, nhưng giúp một dev yếu tạo ra nhiều technical debt hơn với tốc độ nhanh hơn. Mục tiêu của chặn này là đảm bảo bạn thuộc nhóm đầu
+
+
+
+### 2.6. FRONTEND SYSTEM DESIGN, BẢO MẬT & VẬN HÀNH (Mảng bị thiếu trong hầu hết roadmap tự học)
+
+> Đây là 3 mảng quyết định bạn có pass được vòng phỏng vấn senior thật hay không, nhưng thường bị bỏ qua vì không "sexy" bằng học framework mới. Ở nhiều công ty sản phẩm (kể cả công ty VN có backing nước ngoài), vòng Frontend System Design là vòng RIÊNG BIỆT, tách khỏi vòng live-code component — và là vòng quyết định senior hay không.
 
 ---
-## PHẦN 3: HỆ THỐNG PROJECT THỰC CHIẾN + LỘ TRÌNH THỰC HIỆN
+
+#### 2.6.1. Frontend System Design
+
+**Vấn đề:** Live code Modal/Dropdown chứng minh bạn viết được component. Nhưng senior phải chứng minh được khả năng **thiết kế một hệ thống UI phức tạp từ đầu** dưới yêu cầu mơ hồ — đây là kỹ năng hoàn toàn khác, và là vòng phỏng vấn riêng ở Meta, Google, Amazon và ngày càng phổ biến ở company tầm trung.
+
+| Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng |
+|----------|-------------|-------------------|
+| RADIO Framework | Mọi buổi phỏng vấn system design — cho cấu trúc trả lời | Không có lý do để bỏ qua |
+| Bắt đầu từ UI Component đơn giản | Autocomplete, image carousel, chat input — luyện request lifecycle | Nhảy thẳng vào bài phức tạp khi chưa vững cơ bản |
+| Bắt đầu từ Application phức tạp | News feed, dashboard — luyện caching, pagination, rendering | Khi chưa luyện xong dạng UI Component |
+
+**Quyết định mặc định:** Học khung **RADIO** (Requirements → Architecture → Data Model → Interface → Optimizations), luyện theo tiến trình dễ → khó: UI Component đơn giản → Data-heavy application → Collaboration-heavy system.
+
+**Anti-pattern:** Nhảy vào code/giải pháp ngay khi vừa nghe đề bài — không dành 5-10 phút đầu để hỏi requirements & constraints (số lượng user, thiết bị, SEO có cần không, realtime hay không).
+
+- [ ] **Khung RADIO:**
+  - [ ] **R**equirements exploration — hỏi rõ scope, target user, device, scale trước khi thiết kế
+  - [ ] **A**rchitecture / high-level design — component tree, data flow, ranh giới client/server
+  - [ ] **D**ata model — entities, fields, component nào sở hữu state nào
+  - [ ] **I**nterface definition (API) — REST vs GraphQL, request/response shape, real-time (WebSocket/SSE) nếu cần
+  - [ ] **O**ptimizations — đây là phần thể hiện senior rõ nhất: performance (code splitting, virtualization, lazy load), network resilience (optimistic UI, retry, partial failure), accessibility, security
+- [ ] **Luyện tối thiểu 5-6 đề kinh điển:**
+  - [ ] Autocomplete / Search-as-you-type (debounce, request cancellation, cache)
+  - [ ] News Feed (infinite scroll, pagination, realtime update, fault-tolerant hydration)
+  - [ ] E-commerce checkout (multi-step, pricing volatility, safe state transition)
+  - [ ] Dashboard/Analytics (caching, normalization, rendering performance với data lớn)
+  - [ ] Chat application (message ordering, offline behavior, optimistic send)
+- [ ] **Xử lý câu hỏi mở rộng bắt buộc gặp:** UI xử lý ra sao khi 1 phần API fail nhưng phần khác vẫn chạy (graceful degradation), state ownership đặt ở đâu (local/lifted/global), khi nào cần BFF (Backend-for-Frontend)
+
+---
+
+#### 2.6.2. Bảo mật Frontend (Security)
+
+**Vấn đề:** Frontend không "miễn nhiễm" với bảo mật chỉ vì logic chính ở backend. Nhiều lỗ hổng thật (XSS, token bị lộ, CSRF, authorization bị bypass ở Server Action) xảy ra ở tầng frontend, và đây là chủ đề xuất hiện thường xuyên trong câu hỏi phỏng vấn senior.
+
+| Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng |
+|----------|-------------|-------------------|
+| `dangerouslySetInnerHTML` + sanitize (DOMPurify) | Bắt buộc phải render HTML từ user/CMS | Có thể render bằng text/JSX thường (mặc định luôn an toàn hơn) |
+| httpOnly Cookie cho token | Cần chống XSS đánh cắp token | Không bao giờ nên lưu token nhạy cảm ở `localStorage` nếu tránh được |
+| CSP (Content Security Policy) | Mọi production app — lớp phòng thủ bổ sung | Không bao giờ "không cần" |
+
+**Quyết định mặc định:** Mặc định KHÔNG tin dữ liệu từ bất kỳ nguồn nào (API, URL param, user input) — validate/sanitize trước khi render hoặc gửi đi. Ưu tiên httpOnly cookie hơn `localStorage` cho token nhạy cảm.
+
+**Anti-pattern:** Nghĩ rằng "Server Action / Server Component chạy trên server nên tự động an toàn" — vẫn phải tự check authorization trong từng Server Action, vì client vẫn có thể gọi trực tiếp.
+
+- [ ] **XSS (Cross-Site Scripting):** Stored/Reflected/DOM-based XSS là gì, tại sao React tự escape JSX nhưng `dangerouslySetInnerHTML` thì không, dùng DOMPurify khi bắt buộc render HTML
+- [ ] **CSRF:** Cơ chế tấn công, SameSite cookie, CSRF token cho form mutation
+- [ ] **CSP (Content Security Policy):** `script-src`, `connect-src` — chặn script lạ chạy trên trang
+- [ ] **CORS:** Hiểu đúng bản chất (trình duyệt enforce, không phải server) — lỗi CORS thường gặp và cách debug
+- [ ] **Authentication & Token:** OAuth 2.0 / OIDC flow cơ bản, JWT (access token vs refresh token), vì sao KHÔNG nên lưu token nhạy cảm ở `localStorage` (dễ bị đánh cắp qua XSS) — ưu tiên httpOnly cookie
+- [ ] **Authorization ở Server Actions/API route:** Không tin `id` gửi từ client — luôn re-check quyền truy cập ở server, kể cả khi UI đã ẩn nút
+- [ ] **Dependency security:** `npm audit`, Dependabot/Snyk — rủi ro supply chain từ package bên thứ ba
+- [ ] **Secrets:** Không bao giờ commit API key vào code client-side (mọi thứ trong bundle client đều public)
+
+---
+
+#### 2.6.3. Production Operations & Observability
+
+**Vấn đề:** Code chạy được trên máy bạn không có nghĩa nó "sống sót" ở production. Senior phải biết cách phát hiện lỗi *trước khi* user report, và xử lý khi có sự cố.
+
+| Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng |
+|----------|-------------|-------------------|
+| Sentry / Datadog RUM | Mọi production app — theo dõi lỗi & performance thật của user | Không bao giờ "không cần" ở sản phẩm có user thật |
+| Feature Flags (LaunchDarkly, hoặc tự build đơn giản) | Release rủi ro cao, cần rollback nhanh không cần deploy lại | Thay đổi nhỏ, rủi ro thấp (overkill) |
+| Canary / Gradual rollout | Sản phẩm có traffic lớn, cần giảm blast radius khi lỗi | Sản phẩm nhỏ, traffic thấp |
+
+**Quyết định mặc định:** Mọi project production phải có error tracking (Sentry) + basic feature flag cho tính năng rủi ro cao.
+
+- [ ] **Error tracking:** Setup Sentry — source map cho readable stack trace, breadcrumbs, alert threshold
+- [ ] **Real User Monitoring (RUM):** Đo Core Web Vitals thật của user (không chỉ Lighthouse lab data) — sự khác biệt giữa lab data và field data
+- [ ] **Feature Flags:** Tách deploy khỏi release, kill-switch cho tính năng lỗi mà không cần rollback code
+- [ ] **Rollback strategy:** Biết ít nhất 1 chiến lược rollback (revert deploy, feature flag off, database migration an toàn 2 chiều)
+- [ ] **Đọc hiểu incident cơ bản:** Đọc log/stack trace tìm root cause, phân biệt lỗi client-side vs network vs backend
+
+---
+
+#### 2.6.4. Judgment, Ownership & Kỹ năng Con người
+
+**Vấn đề:** Đây là phần thường KHÔNG nằm trong checklist "kiến thức" nhưng lại là tín hiệu senior rõ nhất trong buổi phỏng vấn behavioral và trong công việc thật. Bạn có thể biết hết kiến thức kỹ thuật ở trên và vẫn bị đánh giá mid-level nếu thiếu phần này.
+
+**Không có bảng "quyết định mặc định" cho mục này** — vì đây không phải kỹ thuật, mà là năng lực chỉ hình thành qua lặp lại thực tế, không học một lần là xong.
+
+- [ ] **Ownership với vấn đề mơ hồ:** Nhận một yêu cầu sản phẩm chưa rõ ràng, tự đặt câu hỏi đúng để làm rõ scope, tự chia nhỏ thành technical task thay vì chờ được giao việc cụ thể
+- [ ] **Trade-off reasoning:** Với mọi quyết định kỹ thuật, giải thích được: "tôi chọn X vì ràng buộc Y, nhưng nếu Z thay đổi tôi sẽ cân nhắc W" — đây chính xác là điều interviewer senior tìm kiếm, không phải câu trả lời "đúng" duy nhất
+- [ ] **Code review có tính xây dựng:** Review PR không chỉ tìm bug, mà giải thích *tại sao* nên sửa, đề xuất hướng thay vì chỉ chê
+- [ ] **Giao tiếp với người không chuyên kỹ thuật:** Giải thích được cho PM/designer tại sao một số việc mất thời gian hơn họ nghĩ, mà không dùng jargon
+- [ ] **Viết tài liệu quyết định (ADR):** Ghi lại bối cảnh, các lựa chọn đã cân nhắc, lý do chọn — để người sau (kể cả bạn 6 tháng sau) hiểu được "tại sao"
+- [ ] **Mentor/hỗ trợ người kém kinh nghiệm hơn:** Kể cả khi chưa có junior để mentor thật, luyện bằng cách viết lại giải thích 1 khái niệm khó theo cách một junior hiểu được
+
+
 
 ### Nguyên tắc thiết kế project:
 1. **Mỗi project = 1 sản phẩm thật** có thể đưa vào portfolio, demo cho nhà tuyển dụng
@@ -1047,7 +1201,6 @@ Toàn bộ chặn này thuộc **Khối 1 (Lõi Chung)** — không phân nhánh
 - [ ] **Monitoring:** Sentry (cả jQuery và React errors)
 - [ ] **Docs:** Migration plan, rollback strategy, ADR cho từng decision
 
----
 
 ## PHẦN 3: LỘ TRÌNH THỰC HIỆN CHI TIẾT (THEO TUẦN)
 
@@ -1223,12 +1376,324 @@ Tuần 6.3: Tổng hợp Portfolio
 └── Deliverable: Portfolio site + video demos
 
 Tuần 6.4: Apply Job
-├── Ngày 22–23: Chuẩn bị câu trả lời phỏng vấn (Event Loop, Fiber, Caching)
-├── Ngày 24–25: Live code practice (Modal, Dropdown, Data Table)
+├── Ngày 22–23: Chuẩn bị câu trả lời phỏng vấn (Event Loop, Fiber, Caching, Security cơ bản)
+├── Ngày 24–25: Live code practice (Modal, Dropdown, Data Table) + Frontend System Design practice (RADIO)
 ├── Ngày 26–27: Apply 10+ job Senior FE
 ├── Ngày 28: Review, iterate
 └── Deliverable: 10+ applications, 1+ interview scheduled
 ```
 
+> **Lưu ý quan trọng:** Đừng để Frontend System Design dồn hết vào tuần cuối này. Nên bắt đầu luyện 1 đề/tuần từ Tháng 3 trở đi (song song với học State Management) — đây là kỹ năng cần lặp lại nhiều lần để quen phản xạ, giống luyện thuật toán, không phải kiến thức học 1 lần là nhớ.
+
+
+## PHẦN 4: CHECKLIST XIN VIỆC SENIOR FE + TÀI LIỆU THAM KHẢO
+
 ---
 
+### 4.1. CHECKLIST TRƯỚC KHI APPLY JOB
+
+Bạn phải pass tất cả các mục dưới đây trước khi nhấn nút "Apply":
+
+#### Portfolio & GitHub
+
+- [ ] **6 project production-ready** trên GitHub, mỗi project có:
+  - [ ] README chi tiết: mô tả project, tech stack, architecture decisions, cách chạy local
+  - [ ] Demo link sống (Vercel/Netlify)
+  - [ ] Test coverage badge (GitHub Actions)
+  - [ ] Lighthouse score screenshot (> 90)
+  - [ ] ADR (Architecture Decision Records) cho các quyết định quan trọng
+- [ ] **Portfolio site** tổng hợp tất cả project, có video demo 2-3 phút mỗi project
+- [ ] **GitHub profile** optimized: pinned repos, bio rõ ràng, contribution graph active
+
+#### Kiến thức phải giải thích được (không đọc lại, không tra Google)
+
+- [ ] **JavaScript Engine:**
+  - [ ] Giải thích V8 compile pipeline (Ignition → TurboFan) trong 2 phút
+  - [ ] Vẽ Event Loop trên giấy: thứ tự sync → microtask → macrotask → render
+  - [ ] Giải thích tại sao `Promise.then` chạy trước `setTimeout(..., 0)`
+  - [ ] Liệt kê 3 loại memory leak phổ biến và cách phát hiện
+
+- [ ] **TypeScript:**
+  - [ ] Tại sao không dùng `any`? Sự khác biệt `any` vs `unknown`
+  - [ ] Viết `DeepPartial<T>` từ đầu không nhìn tài liệu
+  - [ ] Giải thích `infer` keyword và ví dụ thực tế
+  - [ ] Tại sao cần runtime validation (Zod) khi đã có TypeScript compile-time?
+
+- [ ] **React:**
+  - [ ] Giải thích React Fiber: tại sao cần, khác gì so với Stack Reconciler
+  - [ ] Vẽ diagram: Re-render phase vs Commit phase
+  - [ ] Tại sao `useMemo` đôi khi không giúp? Khi nào dùng, khi nào không?
+  - [ ] Tại sao Strict Mode chạy effect 2 lần? Cách viết effect idempotent
+
+- [ ] **Next.js App Router:**
+  - [ ] Phân biệt Server Component vs Client Component: 3 điểm khác biệt cốt lõi
+  - [ ] Tại sao không thêm `'use client'` ở root layout?
+  - [ ] Giải thích 4 loại cache trong Next.js và cách invalidate từng loại
+  - [ ] Tại sao Server Actions tốt hơn API route cho form submission?
+
+- [ ] **State Management:**
+  - [ ] So sánh Zustand vs Redux Toolkit: trade-offs, khi nào dùng cái nào
+  - [ ] Tại sao TanStack Query không thay thế Redux/Zustand?
+  - [ ] Giải thích optimistic update: flow, rollback, race condition
+  - [ ] Tại sao cần state normalization? Ví dụ với RTK Entity Adapter
+
+- [ ] **Performance:**
+  - [ ] Giải thích 3 Core Web Vitals: LCP, INP, CLS — cách optimize từng cái
+  - [ ] Tại sao dynamic import quan trọng? Khi nào dùng `next/dynamic`?
+  - [ ] Cách tìm bundle lớn bằng `@next/bundle-analyzer`
+  - [ ] Resource hints: `preload` vs `prefetch` vs `preconnect` — khi nào dùng cái nào
+
+- [ ] **Testing:**
+  - [ ] Nguyên tắc Testing Library: test behavior không test implementation
+  - [ ] Tại sao prefer `userEvent` over `fireEvent`?
+  - [ ] Cách mock API bằng MSW: lợi ích so với mock trong test
+  - [ ] Playwright: cách test visual regression, parallel execution
+
+- [ ] **Accessibility:**
+  - [ ] WCAG 2.1 AA: 3 tiêu chí quan trọng nhất
+  - [ ] Tại sao semantic HTML quan trọng hơn ARIA?
+  - [ ] Cách test keyboard navigation cho modal
+  - [ ] Color contrast ratio: bao nhiêu là pass?
+
+- [ ] **Architecture & Patterns:**
+  - [ ] Compound Components: pattern, use case, ví dụ
+  - [ ] State Machine: tại sao XState tốt cho checkout flow?
+  - [ ] Strangler Fig Pattern: áp dụng cho jQuery → React migration
+  - [ ] Micro-frontends: khi nào cần, khi nào overkill?
+
+- [ ] **Frontend System Design:**
+  - [ ] Trình bày được khung RADIO không cần nhìn tài liệu
+  - [ ] Thiết kế xong 1 đề (ví dụ News Feed) trong 45 phút, có nói to suy nghĩ (talk out loud)
+  - [ ] Giải thích được UI nên xử lý ra sao khi 1 phần API fail nhưng phần khác vẫn chạy
+  - [ ] Biết khi nào nên và không nên dùng micro-frontend (không phải mặc định)
+
+- [ ] **Bảo mật:**
+  - [ ] Giải thích XSS là gì, tại sao React JSX tự escape nhưng `dangerouslySetInnerHTML` thì không
+  - [ ] Giải thích tại sao KHÔNG nên lưu token nhạy cảm ở `localStorage`
+  - [ ] Giải thích tại sao Server Action vẫn cần tự check authorization, không tự động an toàn
+
+#### Live Code có thể làm trong 30-45 phút
+
+- [ ] **Build Modal từ đầu:** Focus trap, Escape to close, scroll lock, ARIA, animation
+- [ ] **Build Dropdown/Select từ đầu:** Keyboard navigation (↑↓, Enter, Escape), `aria-expanded`, positioning
+- [ ] **Build Data Table từ đầu:** Sort, filter, pagination, row selection, virtual scroll (react-window)
+- [ ] **Optimize React component:** Dùng Profiler tìm unnecessary render, apply memoization đúng cách
+- [ ] **Debug TypeScript error:** Đọc error message, fix không dùng `as` hoặc `@ts-ignore`
+- [ ] **Frontend System Design trong 45 phút:** Thiết kế 1 đề (Autocomplete hoặc News Feed) theo khung RADIO, có nói to quá trình suy nghĩ — đây là vòng RIÊNG BIỆT với live code component ở trên, cần luyện tách biệt
+
+#### Soft Skills & Communication (Tín hiệu senior rõ nhất, không nên coi là phụ)
+
+- [ ] **Giải thích cho non-technical:** Tại sao cần refactor? Tại sao accessibility quan trọng?
+- [ ] **Code Review:** Review 1 PR giả định, tìm bug + suggest improvement có tính xây dựng (không chỉ chê)
+- [ ] **Technical Writing:** Viết 1 ADR (Architecture Decision Record) cho 1 quyết định trong project — nêu rõ bối cảnh, lựa chọn đã cân nhắc, lý do chọn
+- [ ] **Trả lời câu hỏi trade-off:** Luyện trả lời dạng "Tôi chọn X vì Y, nhưng nếu Z tôi sẽ cân nhắc W" thay vì chỉ nêu 1 đáp án "đúng"
+- [ ] **Behavioral round:** Chuẩn bị 3-4 câu chuyện thật (dùng khung STAR: Situation, Task, Action, Result) về lúc xử lý bug khó, bất đồng kỹ thuật với đồng nghiệp, hoặc quyết định dưới deadline gấp
+- [ ] **Verify AI output:** Chuẩn bị 1 ví dụ cụ thể lúc bạn phát hiện và sửa lỗi tinh vi trong code do AI agent tạo ra — interviewer 2026 hay hỏi câu này
+
+---
+
+### 4.2. CÂU HỎI PHỎNG VẤN THƯỜNG GẶP & CÁCH TRẢ LỜI
+
+#### Câu hỏi về JavaScript/TypeScript
+
+**Q: Tại sao `0.1 + 0.2 !== 0.3`?**
+> A: Floating-point arithmetic trong IEEE 754. JS dùng double-precision (64-bit). `0.1` và `0.2` không biểu diễn chính xác trong binary. Giải pháp: dùng `Math.round((0.1 + 0.2) * 100) / 100` hoặc thư viện như `decimal.js` cho financial calculations.
+
+**Q: Sự khác biệt `==` và `===`? Khi nào dùng `==`?**
+> A: `==` có type coercion (so sánh sau khi convert type), `===` strict equality (không convert). **Không bao giờ dùng `==`**. Ngoại lệ duy nhất: `== null` check cả `null` và `undefined` — nhưng vẫn nên dùng `=== null || === undefined` cho rõ ràng.
+
+**Q: Tại sao `typeof null === 'object'`?**
+> A: Bug trong JS từ đầu (ECMAScript spec). `null` là primitive value nhưng `typeof` trả về `'object'` vì bit pattern của `null` giống object tag. Không thể fix vì break backward compatibility. Workaround: `value === null` để check.
+
+**Q: Giải thích `this` trong JavaScript?**
+> A: `this` phụ thuộc vào cách function được gọi, không phải nơi được định nghĩa:
+> - Method call: `obj.method()` → `this = obj`
+> - Function call: `func()` → `this = global` (strict: `undefined`)
+> - Constructor: `new Func()` → `this = new instance`
+> - Arrow function: `this` lexical (inherit từ outer scope)
+> - `call`/`apply`/`bind`: explicit binding
+
+#### Câu hỏi về React
+
+**Q: Tại sao React re-render? Liệt kê 3 lý do?**
+> A: 1) State change (useState, useReducer), 2) Props change (parent re-render), 3) Parent re-render (child re-render mặc định). Optimization: `React.memo`, `useMemo`, `useCallback` — nhưng đừng lạm dụng.
+
+**Q: `useEffect` cleanup function làm gì? Ví dụ?**
+> A: Chạy khi component unmount hoặc dependencies change. Dùng để: remove event listeners, clear timers, abort API requests, unsubscribe. Ví dụ: `useEffect(() => { const id = setInterval(...); return () => clearInterval(id); }, [])`.
+
+**Q: Tại sao `useEffect` chạy 2 lần trong Strict Mode?**
+> A: React 18+ mount → unmount → mount lại để detect side effects không idempotent. Nếu effect của bạn chạy đúng 2 lần gây bug → effect không idempotent, cần fix (ví dụ: API call không có cleanup, event listener không remove).
+
+**Q: `key` prop trong list làm gì? Tại sao không dùng index?**
+> A: `key` giúp React identify element trong list để optimize re-render (diffing). Dùng index làm `key` khi list không thay đổi order hoặc không add/remove item. **Không dùng index** khi list dynamic (sort, filter, add, remove) — gây bug state không đúng element.
+
+#### Câu hỏi về Next.js
+
+**Q: Tại sao App Router tốt hơn Pages Router?**
+> A: 1) Server Components giảm JS bundle (không gửi component code xuống client), 2) Nested layouts không re-render, 3) Server Actions đơn giản hóa mutations, 4) Caching strategy tốt hơn. Nhưng: learning curve cao hơn, ecosystem chưa fully migrate.
+
+**Q: Tại sao `fetch` trong Server Component được cache tự động?**
+> A: Next.js extends `fetch` để cache kết quả theo request. Mặc định cache trong Data Cache. Có thể control bằng `{ cache: 'force-cache' | 'no-store' | 'revalidate' }`. Khác với `axios` — không được cache tự động.
+
+#### Câu hỏi về State Management
+
+**Q: Tại sao không đưa mọi state vào global store?**
+> A: 1) Performance: mọi component subscribe đều re-render khi state change, 2) Maintainability: khó track flow, 3) Encapsulation: component nên quản lý state riêng. Rule: local state cho component, global state cho shared data.
+
+**Q: So sánh Redux vs Zustand?**
+> A: Redux: strict pattern, DevTools mạnh, ecosystem lớn, phù hợp enterprise. Zustand: ít boilerplate, dễ setup, phù hợp startup/small team. Trade-off: Redux learning curve cao nhưng scalable; Zustand nhanh nhưng ít guardrails.
+
+#### Câu hỏi về Performance
+
+**Q: Làm sao giảm LCP?**
+> A: 1) Preload hero image/font, 2) Remove render-blocking resources, 3) Server-side render critical content, 4) Optimize image (WebP, responsive sizes), 5) Use CDN.
+
+**Q: Làm sao giảm CLS?**
+> A: 1) Set `width`/`height` hoặc `aspect-ratio` cho images/videos, 2) Reserve space cho dynamic content (skeleton, min-height), 3) Không insert content trên existing content, 4) `font-display: swap` với fallback font metrics.
+
+#### Câu hỏi về Frontend System Design (vòng phỏng vấn riêng biệt)
+
+**Q: Được giao đề "Thiết kế 1 News Feed", bước đầu tiên bạn làm gì?**
+> A: KHÔNG bắt đầu code/vẽ ngay. Dành 5-10 phút hỏi requirements: đối tượng user (mobile/desktop), scale (nghìn hay triệu user), có cần realtime update không, có cần SEO không (feed public hay behind login). Sau đó mới đi vào Architecture → Data Model → Interface → Optimizations (khung RADIO). Nhảy vào giải pháp ngay là lỗi phổ biến nhất khiến ứng viên bị đánh giá thấp dù kỹ thuật ổn.
+
+**Q: UI nên xử lý thế nào khi 1 phần API fail nhưng phần khác vẫn load được?**
+> A: Thiết kế UI theo từng phần độc lập (ví dụ: catalog chính vẫn hiển thị dù API gợi ý sản phẩm bị timeout) thay vì coi cả trang là all-or-nothing. Dùng error boundary theo từng khu vực, loading/error/empty state rõ ràng cho từng phần, không để 1 API lỗi kéo sập toàn bộ trang. Đây là điểm phân biệt candidate chỉ build "happy path" với candidate có kinh nghiệm production thật.
+
+**Q: Khi nào nên dùng Micro-frontend, khi nào là over-engineering?**
+> A: Micro-frontend giúp nhiều team lớn deploy độc lập không block nhau, nhưng thêm phức tạp về shared dependencies, state sharing, và bundle duplication. KHÔNG nên dùng mặc định — chỉ hợp lý khi có nhiều team riêng biệt cần deploy độc lập thật sự. Với 1 team nhỏ, đây là over-engineering.
+
+#### Câu hỏi về Bảo mật
+
+**Q: React có tự động chống XSS không?**
+> A: JSX tự động escape giá trị khi render (`{value}` không thể chạy như HTML/script). Nhưng `dangerouslySetInnerHTML` thì KHÔNG được escape — nếu render HTML từ user input hoặc CMS mà không sanitize (ví dụ bằng DOMPurify), vẫn có thể bị XSS.
+
+**Q: Tại sao không nên lưu access token ở `localStorage`?**
+> A: `localStorage` có thể bị đọc bởi bất kỳ script nào chạy trên trang, kể cả script độc hại chèn qua lỗ hổng XSS. httpOnly cookie thì JavaScript không đọc được, nên an toàn hơn trước XSS (dù vẫn cần CSRF token để chống CSRF).
+
+**Q: Server Component/Server Action có tự động an toàn hơn Client Component không?**
+> A: Không. Chạy trên server chỉ có nghĩa code không lộ ra client, không có nghĩa tự động kiểm tra quyền. Một Server Action vẫn có thể bị gọi trực tiếp với tham số bất kỳ — phải tự check authorization (user này có quyền sửa resource này không) ngay trong Server Action, không tin dữ liệu client gửi lên.
+
+---
+
+### 4.4. TÀI LIỆU THAM KHẢO
+
+#### BẮT BUỘC ĐỌC (Đọc trước, đọc kỹ, đọc lại)
+
+| Tài liệu | Tại sao bắt buộc | Thời gian |
+|----------|-----------------|-----------|
+| **"You Don't Know JS" — Kyle Simpson** | Hiểu JS thực sự, không chỉ "dùng được". Đọc: Scope & Closures, this & Object Prototypes, Async & Performance | 2-3 tuần |
+| **"Effective TypeScript" — Dan Vanderkam** | 62 specific items, mỗi item là 1 lỗi hay gặp + cách fix. Đọc item 1-30 trước. | 2 tuần |
+| **React Docs (Beta — react.dev)** | Official source, cập nhật nhất. Đọc hết Thinking in React, State Management, Escape Hatches | 1 tuần |
+| **Next.js Documentation (App Router)** | Official source. Đọc: Routing, Data Fetching, Caching, Server Actions | 1 tuần |
+| **"Designing Data-Intensive Applications" — Martin Kleppmann (Ch 1-4)** | Nền tảng cho Chặn 4. Đọc trước để hiểu data modeling, reliability, maintainability | 2 tuần |
+| **Front End Interview Handbook — Front End System Design (frontendinterviewhandbook.com)** | Nguồn chính thống, miễn phí, dạy khung RADIO và cách trả lời cả 2 dạng: UI Component và Application. Bắt buộc đọc trước khi luyện đề | 1-2 tuần |
+| **OWASP Top 10 + OWASP Cheat Sheet cho Frontend (XSS, CSRF)** | Nguồn chuẩn ngành về bảo mật web, miễn phí, cập nhật liên tục | 3-4 ngày |
+
+#### NÊN ĐỌC (Đọc khi có thời gian, hoặc khi gặp vấn đề cụ thể)
+
+| Tài liệu | Tại sao nên đọc | Khi nào đọc |
+|----------|----------------|-------------|
+| **"JavaScript: The Definitive Guide" — David Flanagan** | Reference đầy đủ nhất. Không đọc từ đầu đến cuối, dùng như dictionary. | Khi cần tra cứu |
+| **"Building Large-Scale Web Apps" — Addy Osmani** | Patterns cho app lớn: code splitting, lazy loading, caching strategies | Tháng 2-3 |
+| **"Node.js Design Patterns" — Mario Casciaro** | Chuẩn bị cho Chặn 2. Đọc chương về module pattern, observer, middleware | Tháng 3-4 |
+| **Redux Toolkit Docs** | Official, cập nhật. Đọc: Quick Start, RTK Query, createEntityAdapter | Khi học Redux |
+| **Redux Saga Docs** | Official. Đọc: Beginner Tutorial, Declarative Effects, Testing | Khi học Saga |
+| **TanStack Query Docs** | Official. Đọc: Guides, API Reference, v5 migration | Khi học React Query |
+| **Zustand Docs** | Ngắn, dễ đọc. Đọc trong 1 buổi | Khi học Zustand |
+| **XState Docs + Visualizer** | Interactive learning. Đọc: Concepts, React integration | Khi học XState |
+| **Tailwind CSS Docs** | Reference. Đọc: Utility-First, Customizing, Plugins | Khi cần tra cứu |
+| **Radix UI Primitives Docs** | Đọc từng component: API, Accessibility, Examples | Khi build component |
+| **WCAG 2.1 Guidelines** | Official. Đọc: Perceivable, Operable, Understandable | Khi học a11y |
+| **"The Lean Startup" — Eric Ries** | Mindset cho Solo Founder. Đọc: Build-Measure-Learn, MVP, Pivot | Tháng 5-6 |
+
+#### KHÓA HỌC ONLINE (Nên đầu tư)
+
+| Khóa học | Giá trị | Khi nào học |
+|----------|---------|-------------|
+| **Epic Web — Kent C. Dodds** | Testing, Remix, advanced React patterns. Kent là expert về testing. | Tháng 2-3 |
+| **Total TypeScript — Matt Pocock** | TypeScript từ beginner đến advanced. Matt là "TypeScript translator". | Tháng 1 |
+| **Frontend Masters** | Subscription hàng năm. Khóa về React, Performance, System Design. | Liên tục |
+| **React.gg** | Interactive learning React. Dạng game, dễ nhớ. | Tháng 1 |
+
+#### BLOG & NEWSLETTER (Theo dõi hàng tuần)
+
+| Nguồn | Tại sao theo dõi |
+|-------|-----------------|
+| **Overreacted — Dan Abramov** | React core team, insights sâu về React internals |
+| **Kent C. Dodds Blog** | Testing, React patterns, career advice |
+| **Vercel Engineering Blog** | Next.js updates, best practices, case studies |
+| **Web.dev — Google** | Web standards, Core Web Vitals, performance |
+| **Smashing Magazine** | UX, accessibility, frontend trends |
+| **CSS-Tricks** | CSS, UI patterns (archive vẫn giá trị) |
+| **Josh W Comeau Blog** | CSS, React, animation — giải thích rất trực quan |
+| **Lee Robinson (Vercel)** | Next.js, React Server Components, performance |
+
+#### REPO MẪU & OPEN SOURCE (Đọc code, học pattern)
+
+| Repo | Tại sao đọc |
+|------|------------|
+| **shadcn/ui** | Cách tổ chức component, dùng Radix, Tailwind, TypeScript |
+| **TanStack Query** | Source code để hiểu caching mechanism |
+| **Zustand** | Source code rất ngắn (~100 lines core) — đọc để hiểu pattern |
+| **Next.js Commerce** | E-commerce template từ Vercel — học best practices |
+| **Cal.com** | Open source scheduling — học Next.js App Router, Prisma, tRPC |
+| **Supabase** | Open source Firebase alternative — học architecture |
+
+#### CÔNG CỤ HỌC TẬP
+
+| Công cụ | Dùng để |
+|---------|---------|
+| **Excalidraw** | Vẽ diagram (Event Loop, React Fiber, architecture) |
+| **TypeScript Playground** | Test type, experiment generics |
+| **React DevTools Profiler** | Profile app thực tế, tìm re-render |
+| **Lighthouse** | Audit performance, accessibility |
+| **axe DevTools** | Test accessibility |
+| **WebPageTest** | Deep performance analysis |
+| **Bundlephobia** | Check bundle size của dependencies |
+
+---
+
+### 4.4. CHECKLIST CUỐI CÙNG — TRƯỚC KHI KẾT THÚC CHẶN 1
+
+- [ ] **Portfolio:**
+  - [ ] 6 project trên GitHub, mỗi project có README + demo link
+  - [ ] Portfolio site tổng hợp
+  - [ ] Video demo 2-3 phút mỗi project
+  - [ ] GitHub profile optimized
+
+- [ ] **Kiến thức:**
+  - [ ] Giải thích được Event Loop, Fiber, Caching Strategy cho người khác
+  - [ ] Live code Modal, Dropdown, Data Table trong 30-45 phút
+  - [ ] Viết TypeScript không `any`, tự viết Utility Types
+  - [ ] Biết Zustand + Redux, hiểu trade-offs
+  - [ ] Optimize CWV, đọc Lighthouse report
+  - [ ] Viết Unit + E2E test
+  - [ ] Thiết kế xong 1 đề Frontend System Design hoàn chỉnh (RADIO) trong 45 phút
+  - [ ] Giải thích được XSS, CSRF, và vì sao Server Action cần tự check authorization
+  - [ ] Có ví dụ thật về lúc phát hiện lỗi tinh vi trong code do AI tạo ra
+
+- [ ] **Phỏng vấn:**
+  - [ ] Chuẩn bị câu trả lời 20+ câu hỏi phổ biến
+  - [ ] Practice live code 5+ lần
+  - [ ] Practice Frontend System Design 5+ đề khác nhau (không chỉ 1 đề quen)
+  - [ ] Mock interview với bạn bè hoặc record bản thân
+  - [ ] Chuẩn bị 3-4 câu chuyện behavioral theo khung STAR
+
+- [ ] **Apply:**
+  - [ ] CV optimized cho Senior FE (highlight project, metrics)
+  - [ ] Cover letter template cho từng loại công ty (startup vs enterprise)
+  - [ ] Apply 10+ job trong 1 tuần
+  - [ ] Theo dõi application, follow up sau 1 tuần
+
+---
+
+## KẾT THÚC CHẶN 1: MASTER FRONTEND
+
+
+> Mỗi checkbox trong checklist là một kiến thức bạn PHẢI giải thích được cho người khác. Nếu không giải thích được, chưa hiểu sâu — quay lại học.
+> 
+> Sau chặn này, bạn có thể:
+> - **Apply và có cơ hội thật** cho vị trí **Senior Frontend Developer** lương **30-45 triệu**
+> - Freelance với rate **$30-50/hour**
+>
+> **Nhưng:** hoàn thành checklist này không tự động nghĩa là bạn "là" senior. Nó nghĩa là bạn có đủ nền tảng để *được nhận* vào vị trí đó và bắt đầu tích lũy phần quan trọng nhất — kinh nghiệm phán đoán từ va chạm thực tế — mà không roadmap nào, kể cả roadmap này, có thể rút ngắn thay bạn.

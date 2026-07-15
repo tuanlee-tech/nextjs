@@ -1,185 +1,179 @@
-# PROMPT TẠO NỘI DUNG CHI TIẾT CHO TỪNG CHẶN
-## Lộ trình: Solo Fullstack — Từ React đến Staff/Architect hoặc Solo Founder
+Dựa trên cả 2 file (tổng quan + Chặn 1 đã sửa), đây là cách mình sẽ thiết kế prompt plan — theo 2 lớp: **(A) khung prompt chuẩn dùng chung** (để đảm bảo Khối 2, 3 không lặp lại lỗi của Chặn 1) và **(B) phần tùy biến riêng cho từng khối** (nội dung đặc thù Backend vs DevOps).
+
+## A. Nguyên tắc rút ra từ Chặn 1 — bắt PROMPT phải "khóa" trước
+
+Trước khi viết nội dung, prompt phải ép AI tự kiểm tra các lỗi đã gặp ở Chặn 1:
+
+1. **Không đóng khung "X tháng = Senior/thành thạo"** — chỉ được nói "đủ nền tảng để phỏng vấn/vận hành", tách rõ kiến thức vs kinh nghiệm thực chiến
+2. **Bắt buộc có "vòng phỏng vấn hệ thống" riêng cho khối đó** — Chặn 1 thiếu Frontend System Design; Khối 2 phải có **Backend/API System Design** tương đương
+3. **Bảo mật không phải mục phụ** — phải tích hợp vào từng chủ đề, không dồn vào 1 checklist cuối
+4. **Production Operations là bắt buộc, không phải "nâng cao"** — nghiên cứu hiện tại cho thấy các câu hỏi phỏng vấn 2026 giờ chấm điểm operational maturity như một tiêu chí bắt buộc ở cấp senior, không còn là điểm cộng dành riêng cho staff, và bỏ qua phần này bị coi là dấu hiệu chưa từng trực on-call
+5. **Judgment/trade-off phải có ví dụ cụ thể**, không chỉ định nghĩa — ví dụ mẫu cần dạng như KORE1 mô tả: thiết kế rate limiter rồi bị hỏi ngược "Redis backing counter sập thì fail open hay fail closed" — không có đáp án sạch, đây chính là lúc senior thể hiện phán đoán
+6. **Mỗi mục kiến thức giữ đúng format đã chuẩn hóa ở Chặn 1**: Vấn đề → Bảng lựa chọn (khi nào dùng/không dùng) → Quyết định mặc định → Anti-pattern → Checklist
+
+## B. Khung prompt chuẩn (dùng cho cả Khối 2 và Khối 3)
+
+```
+Bạn là người thiết kế chương trình đào tạo kỹ sư fullstack solo, viết tiếp
+"[TÊN KHỐI]" trong lộ trình đã có (đính kèm 00_TONG_QUAN + 01_CHAN_1 làm
+tham chiếu văn phong/cấu trúc).
+
+RÀNG BUỘC BẮT BUỘC (rút từ review Chặn 1):
+1. KHÔNG khẳng định "hoàn thành khối này = đạt trình độ X" nếu X là năng lực
+   cần kinh nghiệm thực chiến. Phân biệt rõ "đủ nền tảng kỹ thuật" vs
+   "kinh nghiệm vận hành thật".
+2. Phải có 1 mục riêng dạng "System Design" cho lĩnh vực này (không chỉ
+   liệt kê công nghệ) — dạy khung tư duy + đề luyện tập cụ thể.
+3. Bảo mật phải xuất hiện TRONG từng chủ đề liên quan, không dồn vào
+   1 checklist cuối tách biệt.
+4. Phải có mục Production Operations / vận hành thật (không phải "nâng cao,
+   học sau") — monitoring, rollback, incident, cost-awareness.
+5. Mỗi mục kỹ thuật PHẢI theo format:
+   Vấn đề → Bảng [Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng] →
+   Quyết định mặc định → Anti-pattern → Checklist con.
+6. Có phần Judgment/trade-off với VÍ DỤ CỤ THỂ (tình huống thật, không chỉ
+   định nghĩa) — mỗi ví dụ phải có tình huống bị "đẩy" thêm 1 bước
+   (interviewer hỏi ngược) để thể hiện phán đoán dưới áp lực.
+7. Giữ cấu trúc 4 phần như Chặn 1: Phần 1 (Mục tiêu, có ghi chú thực tế
+   về giới hạn của roadmap) → Phần 2 (Danh mục kiến thức) → Phần 3
+   (Project thực chiến + lộ trình tuần) → Phần 4 (Checklist + câu hỏi
+   phỏng vấn + tài liệu tham khảo, có cả System Design + Security).
+8. Trước khi xuất kết quả, tự chấm lại theo checklist ở cuối prompt này.
+
+TỰ KIỂM TRA TRƯỚC KHI TRẢ LỜI (self-check):
+- [ ] Có định nghĩa "system design" riêng cho khối này chưa?
+- [ ] Bảo mật có nằm rải trong từng mục hay bị dồn 1 chỗ?
+- [ ] Có mục vận hành production (không phải chỉ "deploy xong là hết")?
+- [ ] Câu hỏi phỏng vấn có dạng trade-off/bị đẩy thêm, hay chỉ hỏi định nghĩa?
+- [ ] Có chỗ nào ngầm hứa hẹn "học xong = senior/production-grade" không?
+```
+
+## C. Tùy biến riêng cho KHỐI 2 (Backend & Ecosystem)
+
+Nội dung trong file tổng quan đã khá tốt (đã có OWASP, JWT, rate limiting — tức là tác giả trước đó *đã* học từ kiểu lỗi này rồi). Nhưng để tránh lặp lỗi "thiếu vòng system design riêng" như Chặn 1, prompt cho Khối 2 cần ép thêm:
+
+- **"Backend/API System Design"** như 1 mục ngang hàng NestJS/DB — luyện tối thiểu 5 đề: Rate Limiter, Webhook xử lý idempotent (Stripe), Notification System, Job Queue (BullMQ) chịu tải, URL Shortener. Mỗi đề phải có phần "bị đẩy thêm" kiểu Redis sập thì sao — đúng dạng câu hỏi senior candidates name the tradeoff in their own systems khi bị hỏi network partition: mọi request trả về data mới nhất (và một số fail), hoặc mọi request thành công (và một số trả data cũ) — không thể có cả hai
+- **Idempotency & concurrency là chủ đề riêng, không lồng trong "Webhooks"** — vì idempotency và audit trail được mô tả là không còn tùy chọn ở cấp senior
+- **Debugging dưới áp lực** — thêm dạng bài "p99 latency tự nhiên tăng gấp 3 qua đêm, bạn debug thế nào" làm case study, không chỉ hỏi lý thuyết
+- **Cost-awareness** — Stripe fee, DB connection pooling cost, giá Elasticsearch vs Meilisearch khi scale — vì đây là tiêu chí bị chấm điểm ở senior interview hiện nay, không chỉ "chọn công nghệ đúng" mà còn "biết giá phải trả"
+- **Migration & rollback an toàn 2 chiều** cho Prisma — schema migration là điểm dễ gãy nhất ở production mà roadmap hiện chưa có
+
+## D. Tùy biến riêng cho KHỐI 3 (DevOps cơ bản)
+
+Nội dung tổng quan cũng đã tốt (Docker, CI/CD, Cloudflare, Sentry + OpenTelemetry). Prompt cần ép thêm phần **"Production Readiness"** làm khung tổng, vì hiện tại các mục đang liệt kê rời rạc theo công cụ chứ chưa có khung tư duy. Gợi ý ép theo 5 trụ cột đã được xác nhận là chuẩn hiện tại:
+
+1. **Bảo mật nền** — enforce strong identity, strict access control, safe secret management (SSH key-only, .env không commit, secret rotation cơ bản, UFW/fail2ban) — Khối 3 hiện thiếu hẳn phần secrets management dù đã bỏ Vault
+2. **Observability thực dùng được khi có sự cố** — không chỉ "cài Sentry" mà còn "link thẳng runbook từ alert" để lúc sự cố không phải tra tài liệu
+3. **Rollback thực chiến** — có bài tập "cố tình" deploy lỗi rồi rollback trong X phút, không chỉ đọc lý thuyết
+4. **Backup/restore phải test thật** (roadmap đã có ý này — giữ nguyên, nhấn thêm phần "test restore" là bắt buộc chứ không phải optional)
+5. **Environment parity** — dev/staging/production giống nhau đủ để không "chạy được ở máy tôi"
+
+Và vì đây target **solo founder/small team**, nên thêm 1 lưu ý quan trọng lấy từ dữ liệu khảo sát gần đây: yếu tố dự báo thất bại lớn nhất của solo founder không phải chiến lược mà là burnout, với tỷ lệ được ghi nhận khoảng 54% — nên phần DevOps cho Nhánh B cần thêm ghi chú "tự động hóa để giảm gánh nặng vận hành thủ công", không chỉ dạy công cụ.
 
 ---
 
-## NGỮ CẢNH TỔNG QUAN (ĐÃ CÓ SẴN)
 
-Bạn đang viết nội dung cho một lộ trình học fullstack chi tiết, được chia thành 5 chặn. Chương Tổng Quan đã hoàn thành, định nghĩa:
-- 3 Khối Lõi Chung (Master FE, Master BE, DevOps cơ bản)
-- 2 Nhánh rẽ: A (Staff/Architect) và B (Solo Founder)
-- Nguyên tắc học theo chiều ngang (Project-based)
-- Điểm rẽ nhánh dựa trên hoàn cảnh thực tế
+Tổng hợp 3 câu trả lời vào bản chốt: trình độ cơ bản → không cần dạy lại "API là gì" nhưng vẫn cần giải thích khái niệm NestJS từ đầu; độ dài để AI tự cân theo khối lượng kiến thức (không ép số dòng cứng); stack giữ nguyên mục 7 → khóa cứng, không cho AI đề xuất lại.
 
----
+Một điều cần thêm trước khi đưa prompt: **nên làm Khối 2 xong, review xong, rồi mới chạy Khối 3** — vì project "Solo Deploy" ở Khối 3 phụ thuộc trực tiếp vào kiến trúc BE cụ thể đã chọn ở Khối 2 (bao nhiêu service, có Redis/BullMQ hay không...). Làm đồng thời dễ bị lệch.
 
-## NHIỆM VỤ
+Đây là 2 prompt đã chốt, sẵn sàng dùng:
 
-Viết nội dung chi tiết cho **CHẶN [SỐ]: [TÊN CHẶN]** dưới dạng file Markdown hoàn chỉnh, có thể đưa vào học và thực hành ngay.
-
-Nếu nội dung quá dài thì phải chia 2-3 response và hỏi ý review trước khi làm.
-
----
-
-## CẤU TRÚC BẮT BUỘC CỦA FILE CHẶN
-
-### PHẦN 1: MỤC TIÊU & THÔNG TIN CHẶN
-- Mục tiêu đạt được sau chặn này
-- Thời gian dự kiến
-- Milestone (có thể làm gì sau chặn — ví dụ: xin việc, deploy MVP, v.v.)
-- Kiến thức nào thuộc Lõi Chung, kiến thức nào thuộc Nhánh A/B (nếu có)
-
-### PHẦN 2: DANH MỤC KIẾN THỨC + QUYẾT ĐỊNH CÔNG NGHỆ
-
-Mỗi nhóm kiến thức phải có:
+## Prompt cho KHỐI 2 (chạy trước)
 
 ```
-#### [TÊN NHÓM KIẾN THỨC]
+Bạn viết tiếp lộ trình fullstack solo, tạo file chi tiết cho
+"KHỐI 2: MASTER BACKEND & ECOSYSTEM" — tiếp nối 01_CHAN_1_FRONTEND_MASTER
+đã hoàn thành (đính kèm cả 2 file: 00_TONG_QUAN và 01_CHAN_1 làm tham
+chiếu bắt buộc về văn phong, cấu trúc, và phạm vi đã cam kết ở mục 2/7/9).
 
-**Vấn đề cần giải quyết:** [Mô tả ngắn gọn]
+BỐI CẢNH NGƯỜI HỌC:
+- Trình độ backend hiện tại: đã biết cơ bản (từng làm API/Node đơn giản)
+  → KHÔNG cần giải thích lại "API là gì", nhưng vẫn giải thích từ đầu các
+  khái niệm NestJS-specific (DI, Guards, Interceptors, Pipes) vì đây là
+  framework mới với người học.
+- Độ dài: KHÔNG ép theo số dòng cố định. Tự cân độ sâu theo khối lượng
+  kiến thức thực tế của Khối 2 (backend vốn rộng hơn frontend ở phần
+  data/integration) — ưu tiên đúng độ sâu hơn là khớp độ dài Chặn 1.
+- Stack: KHÓA CỨNG theo mục 7 của 00_TONG_QUAN (NestJS, Prisma, PostgreSQL,
+  Stripe, BullMQ+Redis, Meilisearch→Elasticsearch, Resend/Postmark,
+  pgvector). KHÔNG đề xuất lại hay so sánh với lựa chọn khác trừ khi
+  bảng "khi nào dùng/không dùng" yêu cầu (ví dụ NoSQL MongoDB khi nào
+  hợp lý hơn Postgres).
 
-| Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng |
-|----------|-------------|-------------------|
-| [Tech A] | [Scenario] | [Scenario] |
-| [Tech B] | [Scenario] | [Scenario] |
+RÀNG BUỘC BẮT BUỘC (rút từ review Chặn 1 — áp dụng y hệt):
+1. KHÔNG khẳng định "hoàn thành khối này = đạt trình độ X" nếu X cần
+   kinh nghiệm thực chiến. Phân biệt "đủ nền tảng kỹ thuật" vs "kinh
+   nghiệm vận hành thật".
+2. Phải có mục riêng "Backend/API System Design" (khung RADIO tương
+   đương cho backend, hoặc khung riêng nếu phù hợp hơn) — luyện tối
+   thiểu 5 đề: Rate Limiter, Webhook idempotent (Stripe), Notification
+   System, Job Queue chịu tải (BullMQ), URL Shortener. Mỗi đề PHẢI có
+   phần "bị đẩy thêm" kiểu interviewer hỏi ngược (vd: Redis backing
+   counter sập thì fail open hay fail closed — không có đáp án sạch).
+3. Idempotency & concurrency là mục RIÊNG, không lồng trong "Webhooks".
+4. Bảo mật (đã có OWASP/JWT/RBAC trong tổng quan) phải rải TRONG từng
+   chủ đề liên quan (vd: Auth, Payment, File Upload), không dồn 1 chỗ.
+5. Thêm mục "Cost-awareness" — Stripe fee, DB connection pooling cost,
+   chi phí Elasticsearch vs Meilisearch khi scale.
+6. Thêm "Migration & rollback an toàn 2 chiều" cho Prisma schema —
+   đây là điểm dễ gãy nhất ở production.
+7. Case study "debug dưới áp lực" — ví dụ "p99 latency tăng gấp 3 qua
+   đêm, bạn debug thế nào" — không chỉ hỏi lý thuyết.
+8. Mỗi mục kỹ thuật theo đúng format Chặn 1: Vấn đề → Bảng [Lựa chọn |
+   Khi nào dùng | Khi nào KHÔNG dùng] → Quyết định mặc định →
+   Anti-pattern → Checklist con.
+9. Giữ cấu trúc 4 phần: Phần 1 (Mục tiêu, có giới hạn thực tế) → Phần 2
+   (Danh mục kiến thức, bao gồm System Design + Security rải đều +
+   Cost-awareness) → Phần 3 (Project thực chiến — SaaS API Backend +
+   AI feature từ mục 6 tổng quan — + lộ trình tuần) → Phần 4 (Checklist
+   + câu hỏi phỏng vấn có dạng trade-off + tài liệu tham khảo).
 
-**Quyết định mặc định:** [Chọn gì + lý do]
-**Khi nào chọn khác:** [Exception cases]
-**Anti-pattern / Sai lầm thường gặp:** [Liệt kê]
-
-- [ ] **Checklist chi tiết:**
-  - [ ] Mục con 1
-  - [ ] Mục con 2
+Trước khi xuất kết quả, tự chấm lại theo checklist:
+- [ ] Có "Backend/API System Design" ngang hàng NestJS/DB chưa?
+- [ ] Bảo mật có rải trong từng mục hay dồn 1 chỗ?
+- [ ] Có case study debug dưới áp lực chưa?
+- [ ] Có ngầm hứa "học xong = senior BE" không?
+- [ ] Stack có bị đề xuất lại ngoài phạm vi cho phép không?
 ```
 
-Yêu cầu:
-- Mỗi tech phải có lý do chọn hoặc không chọn — không liệt kê khô khan
-- So sánh trade-offs rõ ràng
-- Anti-pattern phải là lỗi thực tế hay gặp, không phải lý thuyết chung chung
-- Checklist phải đủ chi tiết để tự học — không chung chung như "Học React Query"
-
-### PHẦN 3: HỆ THỐNG PROJECT THỰC CHIẾN
-
-Mỗi project phải có:
+## Prompt cho KHỐI 3 (chạy SAU khi Khối 2 đã xong — nhớ đính kèm luôn file Khối 2 vừa tạo)
 
 ```
-#### PROJECT [SỐ]: [TÊN PROJECT]
+Bạn viết tiếp file chi tiết cho "KHỐI 3: DEVOPS CƠ BẢN" — tiếp nối
+01_CHAN_1_FRONTEND_MASTER và file Khối 2 vừa hoàn thành (đính kèm cả
+00_TONG_QUAN, 01_CHAN_1, và 02_KHOI_2_BACKEND làm tham chiếu bắt buộc).
 
-**Business context:** [Tại sao project này tồn tại — không phải "để học"]
-**Vấn đề giải quyết:** [Pain point thực tế]
-**Người dùng/target:** [Ai dùng sản phẩm này]
+BỐI CẢNH: Project "Solo Deploy" ở Khối 3 PHẢI khớp chính xác kiến trúc
+đã dựng ở Khối 2 (NestJS + Prisma + PostgreSQL + Redis/BullMQ +
+Meilisearch) — không bịa kiến trúc khác.
 
-**Tech stack + Lý do chọn:**
+Độ dài: tự cân theo khối lượng kiến thức thực tế (Khối 3 vốn gọn hơn
+Khối 2 theo đúng tinh thần "rút gọn — chỉ phần ai cũng cần" ở tổng quan).
+Stack: khóa cứng theo mục 7 tổng quan (Docker, GitHub Actions, Cloudflare,
+Vercel+Railway/Render, Sentry+OpenTelemetry).
 
-| Tech | Lý do chọn | Thay thế đã cân nhắc & tại sao không chọn |
-|------|-----------|------------------------------------------|
-| [Tech] | [Lý do] | [Tech B: vì...] |
+RÀNG BUỘC BẮT BUỘC (giống Khối 2, rút từ review Chặn 1):
+1. Không khẳng định "hoàn thành = production-ready thật" — chỉ "đủ nền
+   tảng để tự vận hành", kinh nghiệm incident thật vẫn cần tích lũy.
+2. Dùng khung "Production Readiness" làm xương sống cho Phần 2 (không
+   liệt kê rời rạc theo công cụ) — 5 trụ cột: (a) Bảo mật nền [SSH
+   key-only, secrets/.env, fail2ban/UFW], (b) Observability nối thẳng
+   runbook, (c) Rollback tập luyện thật [bài tập: cố tình deploy lỗi
+   rồi rollback trong X phút], (d) Backup/restore test thật [không chỉ
+   setup], (e) Environment parity dev/staging/production.
+3. Case study incident thật: 1 kịch bản cụ thể (vd "site down lúc nửa
+   đêm, DB connection pool full") đi từ phát hiện → chẩn đoán → xử lý
+   → postmortem.
+4. Mỗi mục kỹ thuật theo đúng format Chặn 1 (Vấn đề → Bảng lựa chọn →
+   Quyết định mặc định → Anti-pattern → Checklist).
+5. Giữ cấu trúc 4 phần như Chặn 1, Phần 3 dùng đúng project "Solo Deploy"
+   đã định nghĩa ở tổng quan mục 6, nối tiếp trực tiếp kiến trúc Khối 2.
 
-**Kiến thức tự nhiên cover:** [Không nhét — chỉ liệt những gì thực sự cần dùng]
-**Deliverable:** [Sản phẩm cụ thể có thể demo]
-**Production-ready checklist:** [Deploy, test, monitoring, docs...]
+Tự chấm lại trước khi xuất:
+- [ ] Kiến trúc project Solo Deploy có khớp đúng Khối 2 không?
+- [ ] Có khung Production Readiness 5 trụ cột hay chỉ liệt kê công cụ?
+- [ ] Có case study incident thật với đủ 4 bước không?
+- [ ] Có ngầm hứa "production-ready thật" không?
 ```
 
-Yêu cầu:
-- Tối thiểu 4 project, tối đa 6 project
-- Mỗi project phải là sản phẩm thật, không phải "bài tập"
-- Complexity tăng dần
-- Kiến thức phân bổ đều — không project nào cover quá ít hoặc quá nhiều
-- Mỗi tech trong stack phải có lý do chọn cụ thể
-
-### PHẦN 4: LỘ TRÌNH THỰC HIỆN
-
-```
-Tháng X: [Tên project chính]
-├── Tuần 1: [Mục tiêu cụ thể]
-├── Tuần 2: [Mục tiêu cụ thể]
-├── Tuần 3: [Mục tiêu cụ thể]
-├── Tuần 4: [Mục tiêu cụ thể]
-└── Song song: [Kiến thức lý thuyết học cùng]
-```
-
-Yêu cầu:
-- Lộ trình theo tuần, không chung chung theo tháng
-- Mỗi tuần có deliverable cụ thể
-- Ghi rõ kiến thức lý thuyết học song song với project
-
-### PHẦN 5: CHECKLIST XIN VIỆC / ĐÁNH GIÁ
-
-- [ ] Các câu hỏi phỏng vấn phải trả lời được sau chặn này
-- [ ] Các project phải có trên GitHub với đầy đủ: README, demo link, test coverage
-- [ ] Các skill phải demonstrate được qua project
-- [ ] Các lỗi thường gặp trong phỏng vấn và cách tránh
-
-### PHẦN 6: TÀI LIỆU THAM KHẢO
-
-- Sách, documentation, course cụ thể cho từng nhóm kiến thức
-- Video, blog post, repo mẫu
-- Phân loại: Bắt buộc đọc / Nên đọc / Tham khảo
-
----
-
-## NGUYÊN TẮC VIẾT
-
-1. **Không hời hợt:** Mỗi checklist item phải đủ chi tiết để tự học — ví dụ không viết "Học Redux" mà viết "Hiểu createSlice auto-generate action types và reducers, biết so sánh với createReducer + createAction"
-
-2. **Quyết định rõ ràng:** Mỗi lựa chọn công nghệ phải có lý do, có trade-off, có scenario dùng và không dùng
-
-3. **Project là sản phẩm thật:** Mỗi project có business context, pain point, target user — không phải "để học tech X"
-
-4. **Không nhét kiến thức:** Kiến thức cover trong project phải là thứ thực sự cần dùng — nếu không cần thì không cover
-
-5. **Production-ready:** Mỗi project có checklist deploy, test, monitoring, docs — không dừng ở "chạy local"
-
-6. **JD-aware:** Nội dung phải đáp ứng yêu cầu từ JD thực tế đã phân tích — không viết lý thuyết suông
-
-7. **Solo Startup mindset:** Luôn hỏi "Nếu tôi tự làm startup, tôi có dùng cái này không?" — nếu không thì giải thích tại sao vẫn cần học
-
----
-
-## ĐỊNH DẠNG OUTPUT
-
-- File Markdown (.md)
-- Tiêu đề H1 cho tên chặn
-- Các phần dùng H2
-- Nhóm kiến thức dùng H3
-- Checklist dùng bullet + checkbox `- [ ]`
-- Bảng dùng Markdown table
-- Code snippet dùng fenced code block với language
-- Không dùng HTML thô
-- Không dùng emoji quá nhiều — tối đa 1 emoji mỗi section
-
----
-
-## VÍ DỤ MINH HỌA (PHẦN NHỎ)
-
-```markdown
-#### State Management — Client State
-
-**Vấn đề:** UI cần chia sẻ data giữa nhiều component không có quan hệ cha-con, cần reactivity, có thể cần persist.
-
-| Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng |
-|----------|-------------|-------------------|
-| React Context + useReducer | State đơn giản, < 5 component dùng, không cần middleware | State phức tạp, nhiều component, cần time-travel debug |
-| Zustand | Startup, small team, ít boilerplate, cần nhanh | Enterprise cần strict pattern, team quen Redux |
-| Redux Toolkit | Enterprise, team lớn, codebase legacy, cần DevTools | Project nhỏ, team 1-2 người, muốn ít boilerplate |
-
-**Quyết định mặc định cho Solo Startup:** Zustand — vì ít boilerplate, dễ setup, đủ cho 90% use case.
-**Khi nào chọn Redux:** Khi maintain codebase enterprise đã có Redux, hoặc team yêu cầu strict pattern.
-**Anti-pattern:** Đưa mọi state vào global store — form local state nên giữ trong component.
-
-- [ ] **Zustand chi tiết:**
-  - [ ] `create()` store với TypeScript generics
-  - [ ] Slice pattern: tách store thành authSlice, cartSlice, themeSlice
-  - [ ] Middleware: `persist` (localStorage), `devtools` (Redux DevTools compat)
-  - [ ] `subscribe` pattern cho external events (ví dụ: sync với BroadcastChannel)
-  - [ ] So sánh với Redux: khi nào dùng cái nào, trade-offs
-```
-
----
-
-## LƯU Ý QUAN TRỌNG
-
-- Đây là **chặn chi tiết** — không phải tổng quan. Mỗi mục phải đủ để người đọc tự học và thực hành.
-- Nếu kiến thức nào đã có trong chặn trước, không lặp lại — chỉ reference.
-- Nếu kiến thức nào cần cho chặn sau, ghi chú "Sẽ approfondir ở Chặn X".
-- Giữ nguyên ngôn ngữ tiếng Việt, thuật ngữ kỹ thuật giữ nguyên tiếng Anh.
