@@ -6,7 +6,7 @@
 > **Thời gian dự kiến:** Lõi chung 9–12 tháng ở kịch bản lạc quan nhất (lấy cận dưới mỗi khối: 3+6+2 tháng); thực tế cộng dồn 3 khối thường rơi vào 11–21 tháng tùy tốc độ học và mức độ đi làm song song. Sau đó mỗi nhánh tiếp tục 12–24 tháng tùy tốc độ.
 > **Ngôn ngữ:** JavaScript/TypeScript ecosystem
 
----
+
 
 ## 1. TẠI SAO TÁCH LÕI CHUNG VÀ RẼ NHÁNH
 
@@ -34,180 +34,116 @@ Giải quyết việc này bằng cách:
         └───────────────────────────────┴───────────────────────────────┘
 ```
 
----
+
 
 ## 2. LÕI CHUNG — 3 KHỐI BẮT BUỘC
 
+> **Nguyên tắc:** Mỗi khối không chỉ là checklist kiến thức, mà là **năng lực chứng minh được**. Khối 1 đã được mở rộng để phản ánh độ sâu thực tế của Senior FE 2026 — bao gồm cả kiến thức nền tảng (JS Core), kỹ năng transferrable (Web thuần, Git), và judgment (War Stories, System Design).
+
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  KHỐI 1: MASTER FRONTEND                                                    │
-│  Mục tiêu: Sẵn sàng phỏng vấn Senior FE (30–45 triệu) | Nền tảng bắt buộc   │
-│  cho cả 2 nhánh — LƯU Ý: đây là "sẵn sàng phỏng vấn", không phải "là senior"│
-│  Thời gian: 3–6 tháng                                                       │
-│  ─────────────────────────────────────────────────────────────────────────  │
-│  • JS/TS Engine & Runtime (V8, Event Loop, Memory Management)               │
-│  • TypeScript Nâng cao (Generics, Utility Types, Zod Runtime Validation)    │
-│  • React Fiber, Re-render Optimization, Next.js App Router (RSC)            │
-│  • TanStack Query, Zustand, Redux Ecosystem, State Machines (XState)        │
-│  • Tailwind Deep Dive, shadcn/ui, Component Library từ đầu                  │
-│  • Accessibility (WCAG 2.1 AA), Design System, Design Tokens                │
-│  • Vitest + Testing Library, Playwright E2E, MSW                            │
-│  • Lighthouse CI, Core Web Vitals (LCP/INP/CLS), Bundle Optimization        │
-│  • Micro-frontends, Monorepo, PWA, i18n, Data Viz, Storybook                │
-│  • SEO Technical: JSON-LD, GEO (AI Search Optimization), Dynamic Meta       │
-│  • Frontend System Design: RADIO framework, News Feed/Autocomplete/Editor   │
-│  • Bảo mật Frontend: XSS, CSP, CORS, Auth (OAuth/JWT), Server Actions       │
-│  • Production Ops: Error tracking, Feature Flags, Rollback, Incident       │
-│  • AI Coding Agent hằng ngày: Claude Code / Cursor / Copilot agent          │
-│    mode — VERIFY output AI (không chỉ dùng nó), giao task đa bước           │
-│  • Judgment & Ownership: trade-off dưới ambiguity, code review, mentoring   │
-└─────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│  KHỐI 1: MASTER FRONTEND                                                         │
+│  Mục tiêu: Sẵn sàng phỏng vấn Senior FE (30–45 triệu) | Nền tảng bắt buộc        │
+│  cho cả 2 nhánh — LƯU Ý: đây là "sẵn sàng phỏng vấn", không phải "là senior"     │
+│  Thời gian: 3–6 tháng                                                            │
+│  ─────────────────────────────────────────────────────────────────────────       │
+│  • JS Core Engine (V8, Event Loop, Memory Management)                            │
+│  • JS Core Deep Dive (Prototype, this, Execution Context, Proxy, Class)          │
+│  • TypeScript Nâng cao (Generics, Utility Types, Zod Runtime Validation)         │
+│  • Build Tool & Bundler (Webpack, Vite, Rspack, Tree-shaking)                    │
+│  • Package Manager (npm, yarn, pnpm, Lockfile, Peer Dependencies)                │
+│  • Design Patterns (Singleton, Observer, Factory, Compound, State Machine)       │
+│  • React Fiber, Re-render Optimization, React Compiler (auto-memoization)        │
+│  • Framework Evolution (Class → Hooks → 19, Pages → App Router → v16)            │
+│  • Next.js App Router (RSC, Serialization Limits, use(), Caching, Actions)       │
+│  • Error Handling & Resilience (Boundary, Graceful Degradation, Retry)           │
+│  • Form Engineering (react-hook-form, Field Arrays, Optimistic, Auto-save)       │
+│  • TanStack Query, Zustand, Redux Ecosystem (RTK, Saga, RTK Query), XState       │
+│  • Tailwind Deep Dive, shadcn/ui, Component Library từ đầu                       │
+│  • CSS Modern (@layer, Container Queries, :has(), Native Nesting)                │
+│  • Accessibility (WCAG 2.1 AA), Design System, Design Tokens                     │
+│  • Vitest + Testing Library, Playwright E2E, MSW                                 │
+│  • Lighthouse CI, Core Web Vitals (LCP/INP/CLS), LoAF API, Performance Budget    │
+│  • Tối ưu Web Thuần (CRP, Font, Image, Video, HTTP Caching, DevTools)            │
+│  • Micro-frontends, Monorepo (Turborepo), PWA, i18n, Data Viz, Storybook         │
+│  • Web APIs & Storage (IndexedDB, Observers, Broadcast Channel, Page Vis)        │
+│  • SEO Technical: JSON-LD, GEO (AI Search Optimization), Dynamic Meta            │
+│  • BFF Pattern (Backend-for-Frontend, Next.js as BFF, Standalone BFF)            │
+│  • Frontend System Design: RADIO framework, News Feed/Autocomplete/Editor        │
+│  • Bảo mật Frontend: XSS, CSP, CORS, Auth (OAuth/JWT), Server Actions            │
+│  • Supply Chain Security (lockfile, Provenance, dependency confusion)            │
+│  • Production Ops: Error tracking, RUM, Feature Flags, Rollback, Incident        │
+│  • Git Teamwork (Rebase, Merge, Conflict, Cherry-pick, Reflog, Bisect)           │
+│  • AI Coding Agent hằng ngày: Claude Code / Cursor — VERIFY output AI            │
+│  • Judgment & Ownership: trade-off dưới ambiguity, code review, mentoring        │
+│  • War Stories: Deadline, API Dispute, Code Review, AI Output, Incident          │
+└──────────────────────────────────────────────────────────────────────────────────┘
                                     ↓
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  KHỐI 2: MASTER BACKEND & ECOSYSTEM                                         │
-│  Mục tiêu: Tự build API vững chắc, tích hợp payment, search, email, AI      │
-│  Thời gian: 6–12 tháng                                                      │
-│  ─────────────────────────────────────────────────────────────────────────  │
-│  • NestJS: DI, Guards, Interceptors, Pipes, Clean Architecture / DDD        │
-│  • SQL Fundamentals: ACID, Isolation Levels, Indexing (B-Tree, Composite)   │
-│  • Prisma ORM: Schema, Migrations, N+1 Query, Transactions                  │
-│  • Database Design: Normalization, ER Modeling, Migration Strategy          │
-│  • NoSQL (MongoDB): Khi nào dùng Document thay Relational                   │
-│  • RESTful API chuẩn: HTTP Status, Pagination, Filtering, Versioning        │
-│  • GraphQL / tRPC: Type-safe API, Apollo Server, tRPC + Next.js             │
-│  • Auth: JWT (Access/Refresh), OAuth2/OIDC, RBAC/ABAC                       │
-│  • Security: OWASP Top 10, XSS, CSRF, Rate Limiting, Argon2/Bcrypt          │
-│  • Webhooks (verify signature, retry, idempotency), File Upload             │
-│  • Payment: Stripe (Checkout, Webhooks, Subscription)                       │
-│  • Search: Elasticsearch / Meilisearch (Full-text search)                   │
-│  • Email: Transactional (Resend/Postmark), Templates, Deliverability        │
-│  • Background Jobs: BullMQ + Redis (queue, schedule, retry)                 │
-│  • Real-time: WebSockets (Socket.io), Server-Sent Events (SSE)              │
-│  • Tích hợp LLM API vào sản phẩm (Anthropic/OpenAI SDK), streaming          │
-│  • RAG cơ bản + Vector DB (pgvector trên Postgres sẵn có, chưa              │
-│    cần Pinecone)                                                            │
-│  • AI Evaluation: kiểm thử & đánh giá chất lượng output AI                  │
-│  • Backend/API System Design: rate limiter, webhook idempotency, job        │
-│    queue chịu tải, notification system — luyện dạng bị hỏi ngược            │
-│    trade-off (vd: Redis sập thì fail open hay fail closed)                  │
-└─────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│  KHỐI 2: MASTER BACKEND & ECOSYSTEM                                              │
+│  Mục tiêu: Tự build API vững chắc, tích hợp payment, search, email, AI           │
+│  Thời gian: 6–12 tháng                                                           │
+│  ─────────────────────────────────────────────────────────────────────────       │
+│  • NestJS: DI, Guards, Interceptors, Pipes, Clean Architecture / DDD             │
+│  • SQL Fundamentals: ACID, Isolation Levels, Indexing (B-Tree, Composite)        │
+│  • Prisma ORM: Schema, Migrations (strategy, rollback), Transactions, N+1        │
+│  • Database Design: Normalization, ER Modeling, Migration Strategy               │
+│  • NoSQL (MongoDB): Khi nào dùng Document thay Relational                        │
+│  • RESTful API chuẩn: HTTP Status, Pagination, Filtering, Versioning             │
+│  • API Testing: Jest + Supertest (NestJS integration test), contract test        │
+│  • GraphQL / tRPC: Type-safe API, Apollo Server, tRPC + Next.js                  │
+│  • Auth: JWT (Access/Refresh), OAuth2/OIDC, RBAC/ABAC, Session Management        │
+│  • Security: OWASP Top 10, XSS, CSRF, Rate Limiting, Argon2/Bcrypt               │
+│  • Webhooks: Verify signature, Retry with backoff, Idempotency keys              │
+│  • File Upload: Validation, virus scan, signed URL, CDN upload                   │
+│  • Payment: Stripe (Checkout, Webhooks, Subscription, Idempotency)               │
+│  • Search: Elasticsearch / Meilisearch (Full-text search, typo-tolerant)         │
+│  • Email: Transactional (Resend/Postmark), Templates, Deliverability             │
+│  • Background Jobs: BullMQ + Redis (queue, schedule, retry, dead letter)         │
+│  • Real-time: WebSockets (Socket.io), Server-Sent Events (SSE)                   │
+│  • API Design: Idempotency, Rate Limiting, Throttling, Circuit Breaker           │
+│  • OpenAPI / Swagger: Auto-generated docs, client SDK generation                 │
+│  • Event-Driven: Outbox Pattern, Saga Pattern (distributed transactions)         │
+│  • Tích hợp LLM API (Anthropic/OpenAI SDK), streaming, prompt engineering        │
+│  • RAG cơ bản + Vector DB (pgvector trên Postgres, chưa cần Pinecone)            │
+│  • AI Evaluation: kiểm thử & đánh giá chất lượng output AI                       │
+│  • Multi-tenancy: Schema-based vs Row-based (cơ bản)                             │
+│  • Backend/API System Design: rate limiter, webhook idempotency, job             │
+│    queue chịu tải, notification system — luyện dạng bị hỏi ngược                 │
+│    trade-off (vd: Redis sập thì fail open hay fail closed)                       │
+└──────────────────────────────────────────────────────────────────────────────────┘
                                     ↓
-┌─────────────────────────────────────────────────────────────────────────────┐
-│  KHỐI 3: DEVOPS CƠ BẢN (rút gọn — chỉ phần ai cũng cần)                     │
-│  Mục tiêu: Solo deploy được 1 dự án hoàn chỉnh lên production               │
-│  Thời gian: 2–3 tháng                                                       │
-│  ─────────────────────────────────────────────────────────────────────────  │
-│  • Docker: Multi-stage build, docker-compose (Next + Nest + PG + Redis)     │
-│  • Linux VPS cơ bản: Ubuntu/Debian, permissions, systemd                    │
-│  • CI/CD: GitHub Actions (Lint → Test → Build → Push → Deploy)              │
-│  • Git Flow / Trunk Based cơ bản                                            │
-│  • Domain & DNS: Cloudflare (Proxy, DNS, Free SSL, DDoS protection)         │
-│  • Reverse Proxy: Nginx routing multi-service                               │
-│  • Deploy: Vercel (FE) + Railway/Render (BE) — chưa cần AWS phức tạp        │
-│  • Backup cơ bản: Automated DB backup, test restore                         │
-│  • Observability cơ bản: Sentry + structured logging +                      │
-│    OpenTelemetry basics (trước đây chỉ có Sentry/UptimeRobot, chưa đủ khi   │
-│    hệ thống có nhiều service)                                               │
-│  • AI-assisted security scanning trong CI/CD (đang trở thành                │
-│    chuẩn thay vì optional)                                                  │
-│  • Khung Production Readiness: bảo mật nền (secrets, SSH key-only) +        │
-│    observability nối thẳng runbook + rollback tập luyện thật + backup       │
-│    test restore thật (không chỉ setup rồi để đó)                            │
-│  ─────────────────────────────────────────────────────────────────────────  │
-│  Lưu ý: Terraform, Vault, K8s, Service Mesh, IaC nâng cao KHÔNG nằm ở đây   │
-│  nữa — chuyển sang Nhánh A vì chỉ có giá trị khi hệ thống đã có traffic     │
-│  lớn thật. Nhánh B gần như không bao giờ cần tới mức này.                   │
-└─────────────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│  KHỐI 3: DEVOPS CƠ BẢN (rút gọn — chỉ phần ai cũng cần)                          │
+│  Mục tiêu: Solo deploy được 1 dự án hoàn chỉnh lên production                    │
+│  Thời gian: 2–3 tháng                                                            │
+│  ─────────────────────────────────────────────────────────────────────────       │
+│  • Docker: Multi-stage build, docker-compose (Next + Nest + PG + Redis),         │
+│    networking giữa containers, volumes, health checks                            │
+│  • Linux VPS cơ bản: Ubuntu/Debian, permissions, systemd, log rotation           │
+│  • CI/CD: GitHub Actions (Lint → Test → Build → Push → Deploy),                  │
+│    AI-assisted security scanning trong pipeline                                  │
+│  • Git Flow / Trunk Based cơ bản, Conventional Commits, Semantic Versioning      │
+│  • Domain & DNS: Cloudflare (Proxy, DNS, Free SSL, DDoS protection)              │
+│  • Reverse Proxy: Nginx routing multi-service, caching, load balancing (upstream)│
+│  • SSL/TLS: Let's Encrypt auto-renewal, Cloudflare Origin CA                     │
+│  • Environment Management: Staging/Prod parity, .env best practices,             │
+│    Secrets management (GitHub Secrets, không commit secrets)                     │
+│  • Deploy: Vercel (FE) + Railway/Render (BE) — chưa cần AWS phức tạp             │
+│  • Graceful Shutdown: SIGTERM handling, connection draining                      │
+│  • Backup cơ bản: Automated DB backup (pg_dump cron), test restore thật          │
+│  • Observability cơ bản: Sentry + structured logging + OpenTelemetry basics      │
+│  • Khung Production Readiness: bảo mật nền (secrets, SSH key-only) +             │
+│    observability nối thẳng runbook + rollback tập luyện thật + backup            │
+│    test restore thật (không chỉ setup rồi để đó)                                 │
+│  ─────────────────────────────────────────────────────────────────────────       │
+│  Lưu ý: Terraform, Vault, K8s, Service Mesh, IaC nâng cao KHÔNG nằm ở đây        │
+│  nữa — chuyển sang Nhánh A vì chỉ có giá trị khi hệ thống đã có traffic          │
+│  lớn thật. Nhánh B gần như không bao giờ cần tới mức này.                        │
+└──────────────────────────────────────────────────────────────────────────────────┘
 ```
 
----
 
-### Redux Ecosystem (Enterprise State Management — vẫn tuyển dụng nhiều)
-
-> **Tại sao cần học:** Redux vẫn xuất hiện nhiều trong codebase enterprise, fintech, banking. Nhiều JD yêu cầu Redux Toolkit, Redux Saga. Biết Redux mở rộng phạm vi cơ hội việc làm, đặc biệt khi maintain hoặc migrate legacy codebase.
-
-- [ ] **Redux Core Concepts:**
-  - [ ] Store: Single source of truth, `getState()`, `subscribe()`, `dispatch()`
-  - [ ] Actions: Plain object `{ type, payload }`, action creators
-  - [ ] Reducers: Pure function `(state, action) => newState`, immutability
-  - [ ] Three Principles: Single source of truth, State is read-only, Changes made with pure functions
-  - [ ] Redux DevTools: Time-travel debugging, action replay, state diff
-
-- [ ] **Redux Toolkit (RTK) — Cách viết Redux hiện đại:**
-  - [ ] `configureStore`: Auto-setup DevTools, middleware, enhancers (thay thế `createStore` thủ công)
-  - [ ] `createSlice`: Auto-generate action types, action creators, reducers từ 1 object
-  - [ ] `createAsyncThunk`: Xử lý async logic với 3 states tự động (`pending`, `fulfilled`, `rejected`)
-  - [ ] `createEntityAdapter`: CRUD operations, sorting, normalization cho collection data
-  - [ ] `createSelector` (Reselect): Memoized selectors, derived state computation
-  - [ ] RTK DevTools integration: Action trace, state inspection
-
-- [ ] **Redux Thunk — Side effects đơn giản:**
-  - [ ] Thunk function: `(dispatch, getState) => { ... }`
-  - [ ] Async thunk pattern: Dispatch loading → API call → dispatch success/error
-  - [ ] Access `getState()` trong thunk để lấy state hiện tại
-  - [ ] **So sánh Thunk vs Saga:** Thunk cho async đơn giản (API call), Saga cho complex flows (polling, cancellation, race conditions)
-
-- [ ] **Redux Saga — Complex async flows:**
-  - [ ] Generator function (`function*`): `yield`, `next()`, iteration protocol
-  - [ ] Core effects: `call` (call function), `put` (dispatch action), `take` (listen action), `fork` (non-blocking), `spawn` (detached)
-  - [ ] Watchers vs Workers pattern: `takeEvery` (run all), `takeLatest` (cancel previous), `throttle`, `debounce`
-  - [ ] Advanced patterns:
-    - [ ] Polling: `delay` + loop để poll API định kỳ
-    - [ ] Retry: `retry` effect hoặc tự viết retry logic với exponential backoff
-    - [ ] Cancellation: `takeLatest` cancel task cũ, `race` effect (timeout pattern)
-    - [ ] Parallel execution: `all([call(task1), call(task2)])`
-    - [ ] Error boundaries: Try-catch trong saga, global error handler
-  - [ ] Testing sagas:
-    - [ ] Step-by-step testing: `gen.next().value` assert từng effect
-    - [ ] Integration testing: Run saga với mock store
-    - [ ] `cloneableGenerator` cho testing branches
-
-- [ ] **RTK Query — Server state management trong Redux ecosystem:**
-  - [ ] `createApi`: Define API slice với `reducerPath`, `baseQuery`, `endpoints`
-  - [ ] `builder.query`: GET requests, auto-caching, refetch
-  - [ ] `builder.mutation`: POST/PUT/DELETE, optimistic updates
-  - [ ] Cache management: `providesTags` (cache key), `invalidatesTags` (auto-refetch)
-  - [ ] Pagination: `merge` function cho infinite scroll
-  - [ ] Transform response: `transformResponse` để normalize data trước khi vào store
-  - [ ] **So sánh RTK Query vs TanStack Query:**
-    - [ ] RTK Query: Gắn chặt với Redux store, phù hợp khi đã dùng Redux
-    - [ ] TanStack Query: Framework-agnostic, ecosystem lớn hơn, dev tools tốt hơn
-    - [ ] Khi nào chọn cái nào: Dựa trên existing stack và team preference
-
-- [ ] **State Normalization:**
-  - [ ] Tại sao normalize: Tránh nested state, O(1) lookup, dễ update
-  - [ ] Normalizr library: Define schema, normalize API response
-  - [ ] RTK Entity Adapter: `getInitialState`, `addOne`, `upsertOne`, `removeOne`, `updateOne`, `setAll`
-  - [ ] Selectors cho normalized state: `selectAll`, `selectById`, `selectIds`, `selectEntities`
-
-- [ ] **Middleware & Enhancers:**
-  - [ ] Redux Thunk middleware: Default trong RTK, xử lý async
-  - [ ] Redux Logger: Log actions trong development
-  - [ ] Redux Persist: Persist state vào localStorage/sessionStorage (whitelist/blacklist)
-  - [ ] Custom middleware: Intercept actions, side effects
-
-- [ ] **Migration từ Redux legacy:**
-  - [ ] Class component + `connect` HOC → Function component + `useSelector`/`useDispatch` hooks
-  - [ ] `mapStateToProps` → `useSelector` (memoized, có thể dùng `shallowEqual`)
-  - [ ] `mapDispatchToProps` → `useDispatch` hoặc `bindActionCreators`
-  - [ ] `combineReducers` → `configureStore` auto-combine
-  - [ ] Plain Redux → Redux Toolkit (từng bước, không rewrite toàn bộ)
-
-- [ ] **So sánh tổng quan & Khi nào dùng cái nào:**
-  - [ ] **Redux (RTK):** Complex global state, nhiều dev cùng làm, cần time-travel debugging, enterprise codebase
-  - [ ] **Zustand:** Đơn giản, ít boilerplate, modern, phù hợp startup/small team
-  - [ ] **TanStack Query:** Server state, caching, pagination, background refetch — không thay thế Redux/Zustand mà bổ sung
-  - [ ] **Context API + useReducer:** Local state, không cần external library, anti-pattern khi state phức tạp
-  - [ ] **Kết hợp trong 1 project:** Redux/Zustand cho global UI state + TanStack Query/RTK Query cho server state
-
-- [ ] **Anti-patterns & Pitfalls:**
-  - [ ] Không đưa mọi state vào Redux (form local state giữ trong component)
-  - [ ] Không mutate state trực tiếp (dùng Immer trong RTK)
-  - [ ] Tránh deeply nested state (normalize ngay từ đầu)
-  - [ ] Không dispatch action trong reducer (side effect chỉ trong middleware/thunk/saga)
-  - [ ] Cẩn thận với `useSelector` không memoized (gây re-render không cần thiết)
-
----
 
 ## 3. ĐIỂM RẼ NHÁNH — TIÊU CHÍ QUYẾT ĐỊNH
 
@@ -223,7 +159,7 @@ Không quyết định trước bằng cảm tính. Khi tới checkpoint (~thán
 
 > Đây không phải quyết định một chiều và vĩnh viễn. Có thể đi Nhánh A vài năm để tích lũy vốn/kinh nghiệm/quan hệ rồi mới rẽ sang B — hoặc ngược lại, thử Nhánh B một thời gian rồi quay lại đi làm nếu hoàn cảnh đổi.
 
----
+
 
 ## 4. NHÁNH A: STAFF/ARCHITECT (Đi làm công ty)
 
@@ -262,6 +198,8 @@ Không quyết định trước bằng cảm tính. Khi tới checkpoint (~thán
 │  • Data Structures & Algorithms (pattern thường gặp, không cần thi đấu)     │
 │  • System Design Interview format: trình bày trong 45 phút — khác với       │
 │    "học" system design ở A1, đây là kỹ năng giao tiếp/framing riêng         │
+│  • Frontend System Design: RADIO framework, UI Component + Application      │
+│  • Behavioral Interview: War Stories, STAR format, trade-off reasoning      │
 │  • Đàm phán lương & đánh giá offer (base, equity, benefit, level)           │
 │  • Technical Writing: RFC/ADR, tài liệu kiến trúc                           │
 │  • Tech Lead: Tech Debt Management, Code Review Culture, mentoring          │
@@ -269,7 +207,7 @@ Không quyết định trước bằng cảm tính. Khi tới checkpoint (~thán
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
----
+
 
 ## 5. NHÁNH B: SOLO FOUNDER (Tự kinh doanh)
 
@@ -324,7 +262,6 @@ Không quyết định trước bằng cảm tính. Khi tới checkpoint (~thán
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
----
 
 ## 6. NGUYÊN TẮC HỌC THEO CHIỀU NGANG (PROJECT-BASED)
 
@@ -338,16 +275,16 @@ Không quyết định trước bằng cảm tính. Khi tới checkpoint (~thán
 
 | Giai đoạn | Project | Kiến thức lồng ghép |
 |------|---------|---------------------|
-| Lõi chung | **Portfolio + Blog** | Next.js App Router, Tailwind, shadcn/ui, MDX, SEO, Zod + Server Action, Lighthouse CI |
-| Lõi chung | **E-commerce Frontend** | TanStack Query, Zustand cart, Multi-step checkout (Zod + XState), PWA, Playwright E2E |
-| Lõi chung | **SaaS API Backend + AI feature** | NestJS + Prisma + PostgreSQL, JWT Auth, Stripe payment, BullMQ email queue, tích hợp LLM API + RAG cơ bản |
-| Lõi chung | **Solo Deploy** | Docker compose, GitHub Actions CI/CD, Nginx reverse proxy, Cloudflare, Sentry |
-| Nhánh A | **URL Shortener** | Caching (Redis), Rate limiting, Horizontal scaling, Load balancing |
-| Nhánh A | **Twitter/X Clone** | News feed (fan-out write vs read), Notification system, Search, Microservices |
+| Lõi chung | **Portfolio + Blog** | Next.js App Router, Tailwind, shadcn/ui, MDX, SEO, Zod + Server Action, Lighthouse CI, Git flow |
+| Lõi chung | **E-commerce Frontend** | TanStack Query, Zustand cart, Multi-step checkout (Zod + XState), PWA, Playwright E2E, Git cherry-pick |
+| Lõi chung | **SaaS API Backend + AI feature** | NestJS + Prisma + PostgreSQL, JWT Auth, Stripe payment, BullMQ email queue, tích hợp LLM API + RAG cơ bản, API testing, Webhook security |
+| Lõi chung | **Solo Deploy** | Docker compose, GitHub Actions CI/CD, Nginx reverse proxy, Cloudflare, Sentry, Backup automation, Graceful shutdown |
+| Nhánh A | **URL Shortener** | Caching (Redis), Rate limiting, Horizontal scaling, Load balancing, API versioning |
+| Nhánh A | **Twitter/X Clone** | News feed (fan-out write vs read), Notification system, Search, Microservices, Event-driven (Outbox, Saga) |
 | Nhánh B | **MVP thật có user** | Xuất phát từ B1 (đã validate), launch nhanh, đo AARRR, thu phí sớm |
 | Nhánh B | **Real-time Chat / feature theo nhu cầu thị trường** | WebSockets, Redis pub/sub — chỉ làm nếu MVP thật sự cần, không làm vì "học cho biết" |
 
----
+
 
 ## 7. STACK ĐỀ XUẤT (2026)
 
@@ -360,36 +297,44 @@ Không quyết định trước bằng cảm tính. Khi tới checkpoint (~thán
 | **Backend** | Next.js API Routes (bắt đầu) → NestJS (scale) | Cùng JS/TS ecosystem, chuyển dễ dàng |
 | **Database** | PostgreSQL (Neon / Supabase / RDS) | Relational, ACID, Prisma hỗ trợ tốt |
 | **AI / LLM** | Anthropic/OpenAI API + pgvector | RAG cơ bản trên chính Postgres, chưa cần Pinecone |
-| **AI Coding Tool** | Claude Code / Cursor / Copilot agent mode | Công cụ hằng ngày, không phải "nice to have" |
+| **AI Coding Tool** | Claude Code / Cursor / Copilot agent mode | Công cụ hằng ngày, VERIFY output, không chỉ dùng |
 | **Cache** | Redis (Upstash / Railway / self-host) | Session, rate limit, BullMQ, cache layer |
 | **Auth** | Clerk / NextAuth.js / Supabase Auth | Không tự build auth cho startup sớm |
-| **Payment** | Stripe | Checkout, Subscription, Webhooks |
+| **Payment** | Stripe | Checkout, Subscription, Webhooks, Idempotency |
 | **Search** | Meilisearch (dễ setup) → Elasticsearch (scale, Nhánh A) | Full-text search, typo-tolerant |
 | **File Storage** | AWS S3 / Cloudflare R2 | Ảnh, video, documents |
 | **Email** | Resend / Postmark | Transactional email, templates |
 | **Monitoring** | Sentry + OpenTelemetry basics | FE + BE errors, structured logging, tracing |
 | **Analytics** | PostHog / Plausible | Product analytics, funnel, retention |
 | **Deploy** | Vercel (FE) → Railway/Render (BE) → AWS/K8s (Nhánh A khi scale) | Tiến hóa theo traffic |
-| **CI/CD** | GitHub Actions | Lint, Test, Build, Deploy tự động, kèm AI security scan |
+| **CI/CD** | GitHub Actions | Lint, Test, Build, Deploy tự động, AI security scan |
 | **Domain** | Cloudflare | DNS, SSL, CDN, DDoS protection |
+| **Git** | pnpm + GitHub | Workspace, lockfile, branch protection, semantic release |
 
----
+
 
 ## 8. LỘ TRÌNH THỰC TẾ — KẾT HỢP ĐI LÀM & HỌC
 
 ```
 Tháng 1–3:   KHỐI 1 (Master FE) — Học sâu, làm 2 project portfolio, dùng AI
              coding agent hằng ngày ngay từ đầu
+             ↳ Bao gồm: JS Core, Build Tool, Package Manager, Git Teamwork,
+               Framework Evolution, Error Handling, Form Engineering, CSS Modern,
+               Web Thuần, Web APIs, BFF, War Stories, System Design practice
              ↳ Đủ nền tảng để BẮT ĐẦU phỏng vấn Senior FE (30–45 triệu) —
              không phải "là senior", mà là đủ điều kiện để được nhận và
              tích lũy kinh nghiệm senior thật qua công việc
 
 Tháng 4–9:   KHỐI 2 (Master BE + AI integration) — NestJS, DB, Payment,
              Search, tích hợp LLM API vào 1 project thật
+             ↳ Bao gồm: API Testing, Migration Strategy, Webhook Security,
+               Idempotency, Rate Limiting, OpenAPI, Event-driven patterns
              ↳ Đi làm FE Senior, học BE song song
 
 Tháng 9–12:  KHỐI 3 (DevOps cơ bản) — Docker, CI/CD, deploy 1 sản phẩm
              hoàn chỉnh lên production
+             ↳ Bao gồm: Docker networking, Health checks, Graceful shutdown,
+               Log rotation, Backup automation, SSL auto-renewal, Environment mgmt
              ↳ Đủ nền tảng kỹ thuật để tự vận hành 1 sản phẩm fullstack —
              kinh nghiệm "fullstack thật" (xử lý sự cố, scale, trade-off
              dưới áp lực) vẫn cần tích lũy tiếp qua thực chiến, không tự
@@ -400,39 +345,57 @@ Tháng 9–12:  KHỐI 3 (DevOps cơ bản) — Docker, CI/CD, deploy 1 sản ph
 Nếu chọn Nhánh A (tháng 13+):
              A1 (System Design nâng cao, 6–12 tháng) + A2 (Interview &
              Career, song song) → apply Senior/Staff tại công ty mục tiêu
+             ↳ Frontend System Design (RADIO) + Backend System Design +
+             DSA pattern + Behavioral (War Stories)
 
 Nếu chọn Nhánh B (tháng 13+):
              B1 (Validate ý tưởng, 1–2 tháng) → B2 (Deploy tối giản,
              song song) → B3 (Product/Growth/Business, liên tục)
              ↳ Launch MVP có user thật, thu phí sớm, iterate theo data
-
-Có thể đổi nhánh: đi Nhánh A vài năm tích lũy vốn rồi rẽ sang B, hoặc
-ngược lại — checkpoint không phải quyết định một lần vĩnh viễn.
 ```
 
----
+
 
 ## 9. CÁC ĐIỂM CỐT LÕI TỪ JD THỰC TẾ (ĐÃ TỔNG HỢP)
 
 | Yêu cầu JD | Thuộc khối/nhánh | Mức độ |
 |------------|---------------|--------|
 | jQuery → React migration | Khối 1 (Lõi chung) | Critical |
+| JS Core (Prototype, this, Execution Context) | Khối 1 (Lõi chung) | Critical |
+| Build Tool (Webpack/Vite) | Khối 1 (Lõi chung) | High |
+| Package Manager (pnpm, lockfile) | Khối 1 (Lõi chung) | High |
+| Git Teamwork (rebase, conflict, cherry-pick) | Khối 1 (Lõi chung) | High |
+| CSS Modern (@layer, container queries) | Khối 1 (Lõi chung) | Medium |
+| Error Handling & Resilience | Khối 1 (Lõi chung) | High |
+| Form Engineering (complex forms) | Khối 1 (Lõi chung) | High |
+| BFF Pattern | Khối 1 (Lõi chung) | Medium |
+| Web APIs (IndexedDB, Observers) | Khối 1 (Lõi chung) | Medium |
+| Tối ưu Web Thuần (CRP, HTTP caching) | Khối 1 (Lõi chung) | High |
 | Micro-frontends (Module Federation) | Khối 1 (Lõi chung) | High |
 | Monorepo (Nx, Turborepo) | Khối 1 (Lõi chung) | High |
 | PWA / Tablet-optimized | Khối 1 (Lõi chung) | Medium |
 | i18n (react-i18next) | Khối 1 (Lõi chung) | High |
 | WCAG / Accessibility | Khối 1 (Lõi chung) | High |
 | Storybook + Chromatic | Khối 1 (Lõi chung) | Medium |
+| Frontend System Design (RADIO) | Khối 1 → A2 (Nhánh A) | Critical |
+| War Stories / Behavioral | Khối 1 → A2 (Nhánh A) | Critical |
+| API Testing (Jest/Supertest) | Khối 2 (Lõi chung) | High |
+| API Versioning | Khối 2 (Lõi chung) | Medium |
+| Rate Limiting / Idempotency | Khối 2 (Lõi chung) | High |
+| Webhook Security (signature) | Khối 2 (Lõi chung) | High |
+| OpenAPI / Swagger | Khối 2 (Lõi chung) | Medium |
+| Event-driven (Outbox, Saga) | Khối 2 → A1 (Nhánh A) | High |
+| Multi-tenancy | Khối 2 (Lõi chung) | Medium |
 | AI integration / LLM API | Khối 2 (Lõi chung) | High |
 | eCommerce + SEO/GEO | Khối 1 (Lõi chung) | High |
 | GraphQL | Khối 2 (Lõi chung) | Medium |
-| Elasticsearch | Khối 2 → A1 (Nhánh A khi scale) | Medium |
+| Elasticsearch | Khối 2 → A1 (Nhánh A) | Medium |
 | Design Patterns + OOP | Khối 1–2 (Lõi chung) | High |
 | System Design + Performance | A1 (Nhánh A) | High |
-| DSA / Coding Interview | A2 (Nhánh A) | High  |
+| DSA / Coding Interview | A2 (Nhánh A) | High |
 | MVP Validation / Customer Discovery | B1 (Nhánh B) | Critical |
 
----
+
 
 ## 10. CAM KẾT & KỶ LUẬT
 
@@ -446,7 +409,7 @@ ngược lại — checkpoint không phải quyết định một lần vĩnh vi
 - [ ] Nhánh A: **Technical blog post định kỳ** — củng cố kiến thức + xây thương hiệu cá nhân hướng tới nhà tuyển dụng
 - [ ] Nhánh B: **"Build in Public"** — chia sẻ journey, nhận feedback, tạo accountability, hướng tới người dùng tiềm năng
 
----
+
 
 ## 11. CÁC TÀI LIỆU THAM KHẢO CHÍNH
 
@@ -456,12 +419,16 @@ ngược lại — checkpoint không phải quyết định một lần vĩnh vi
 - **React:** React Docs (Beta), "Building Large-Scale Web Apps" (Addy Osmani)
 - **Next.js:** Next.js Documentation (App Router), Vercel Engineering Blog
 - **Backend:** NestJS Docs, "Node.js Design Patterns" (Mario Casciaro)
-- **AI Engineering :** Anthropic Docs (docs.claude.com), tài liệu chính thức về Claude Code / MCP để hiểu agentic coding workflow
+- **DevOps:** "The Docker Book", GitHub Actions docs, Nginx docs
+- **AI Engineering:** Anthropic Docs (docs.claude.com), tài liệu chính thức về Claude Code / MCP để hiểu agentic coding workflow
+- **Frontend System Design:** Frontend Interview Handbook (frontendinterviewhandbook.com)
+- **Web Performance:** web.dev (Core Web Vitals, LoAF, CRP)
+- **Security:** OWASP Top 10, OWASP Cheat Sheet Series
 
 **Nhánh A (Staff/Architect):**
 - **System Design:** "Designing Data-Intensive Applications" (Martin Kleppmann) — **BIBLE**
 - **Interview:** tài liệu luyện DSA theo pattern (không cần thi đấu), tài liệu luyện trình bày system design dạng phỏng vấn
-- **DevOps:** "The Docker Book", "Kubernetes in Action" (khi cần)
+- **DevOps:** "Kubernetes in Action" (khi cần)
 
 **Nhánh B (Solo Founder):**
 - **Product:** "The Lean Startup" (Eric Ries), "Hooked" (Nir Eyal)
@@ -472,5 +439,3 @@ ngược lại — checkpoint không phải quyết định một lần vĩnh vi
 
 > **"Không hời hợt, nghiên cứu sâu."**
 > Mỗi checkbox trong checklist là một kiến thức bạn PHẢI giải thích được cho người khác. Nếu không giải thích được, chưa hiểu sâu — quay lại học.
-
----
