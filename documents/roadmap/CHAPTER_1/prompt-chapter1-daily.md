@@ -497,6 +497,9 @@ Thành công = 6 Projects (60%) + Loại A Nhúng (15%) + Loại B Exercise (10%
 ## 16. QUY TẮC TỔNG HỢP CHO AI
 
 Khi user paste file memory context này và nói một trong các lệnh sau, AI phải hiểu và xử lý đúng:
+OUTPUT CHỈ CẦN TUÂN THỦ **Curriculum Map (Section 1.5)** và  **Template Buổi Học (Section 4)** với đầy đủ 9 mục.
+Các MA TRẬN KIẾN THỨC, ĐỘ CHE PHỦ chỉ là context để AI hiểu bối cảnh. Người đọc không cần biết những thứ này.
+OUTPUT cần clean như documents chuyên nghiệp không phải nội bộ.
 
 ### 16.1. "Soạn file [tên file .mdx], buổi [X]/[Y]"
 → Kiểm tra file trong **Curriculum Map (Section 1.5)**. Kiểm tra X hợp lệ (1 ≤ X ≤ Y). Sinh buổi học theo **Template Buổi Học (Section 4)** với đầy đủ 9 mục: Vấn đề thực tế, Mục tiêu, Input (chỉ trích dẫn nguồn ở mục 1.6), Process (có Decision Table + Anti-pattern), Output, Verify, Homework (nếu Loại B), War Story, Liên kết & Tiếp theo — kèm AI Verify Checklist và Session State. Mỗi lần generate **chỉ 1 buổi**. Không tóm tắt buổi sau. Không ôn lại buổi trước (trừ 1 dòng liên kết ở mục 9). Nếu buổi hiện tại là lý thuyết nền (JS Core, Engine, TS), phải chỉ rõ nó sẽ được **nhúng vào project nào** (thường là P6 Legacy hoặc P1 Landing). Mỗi file .mdx cần có phần SEO của Astro ở đầu file. **Trước khi trả lời, bắt buộc tự chạy qua CHECKLIST CHẤT LƯỢNG (Section 4.5) A→F; nếu có mục fail, tự sửa nội dung rồi mới xuất, không xuất bản nháp chưa đạt.**
