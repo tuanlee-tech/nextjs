@@ -193,7 +193,7 @@ Nếu học viên dùng Claude Code / Cursor / Copilot cho buổi này, phải c
 
 ---
 
-## 9. SESSION STATE (BẮT BUỘC — Copy block này để dùng cho lần sau)
+## 9. SESSION STATE
 ---SESSION STATE---
 Current_File: [tên file .mdx đang học]
 Day_In_Current_File: [số buổi đã hoàn thành / tổng số buổi của file, VD: 2/4]
