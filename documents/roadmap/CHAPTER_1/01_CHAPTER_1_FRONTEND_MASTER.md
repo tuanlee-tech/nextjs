@@ -1783,7 +1783,7 @@ Toàn bộ chặn này thuộc **Khối 1 (Lõi Chung)** — không phân nhánh
 
 
 
-## PHẦN 9: LỘ TRÌNH THỰC HIỆN CHI TIẾT (THEO TUẦN)
+## PHẦN 9: LỘ TRÌNH THỰC HIỆN CHI TIẾT
 
 
 ### THÁNG 1: NỀN TẢNG CORE + PROJECT 1 (LANDING + BLOG)
