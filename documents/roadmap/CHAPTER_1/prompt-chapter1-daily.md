@@ -296,74 +296,104 @@ Nếu chủ đề buổi học cần nguồn không có trong danh sách trên, 
 
 ---
 
-
 ## 4. TEMPLATE BUỔI HỌC (BẮT BUỘC)
 
-Mỗi buổi học phải theo đúng cấu trúc Markdown sau:
+Mỗi buổi học phải theo đúng cấu trúc Markdown sau.
 
 ```markdown
 # BUỔI [Số tổng thể trong Chapter 1]: [Tên buổi ngắn gọn]
-**File:** `[tên file .mdx đang học]` | **Buổi trong file:** `[X/Y]` | **Thời gian:** 90–120 phút
+**File:** `[tên file .mdx đang học]` | **Buổi trong file:** `[X/Y]` | **Thời gian:** 90–130 phút
 **Project liên quan:** [P1–P6 / N/A] | **Loại bổ sung:** [A/B/C/D / N/A]
 
 ---
 
-## 0. VẤN ĐỀ THỰC TẾ (2–3 câu)
-[Tình huống/câu hỏi cụ thể khiến chủ đề này quan trọng — vd "Tại sao `this` đổi giá trị khi truyền callback?" — không mở bài bằng định nghĩa suông]
+## 0. VẤN ĐỀ THỰC TẾ (2–4 câu)
+[Tình huống production CỤ THỂ, có ít nhất 1 con số định lượng (latency, tỉ lệ lỗi, số user ảnh hưởng, thời gian debug mất) — vd không phải "this hoạt động thế nào" mà "callback trong `setTimeout` mất đúng context, khiến 12% request bị gán sai user_id trong 3 tuần trước khi phát hiện". CẤM mở bài bằng câu hỏi lý thuyết kiểu textbook.]
+
+**Vì sao cái này khó, kể cả với người có kinh nghiệm:** [1 câu — lý do bug/lựa chọn sai này không hiển nhiên ngay cả với người đã biết định nghĩa]
 
 ---
 
 ## 1. MỤC TIÊU (1 câu duy nhất)
-Học xong buổi này, học viên phải làm được gì?
+[Dùng động từ hành vi quan sát được: "giải thích được", "debug được", "phản biện được lựa chọn X trước Y trong tình huống Z" — KHÔNG dùng "hiểu được/nắm được"]
 
 ---
 
 ## 2. INPUT (15–20 phút)
 ### Tài liệu đọc
-- [Tên tài liệu + chương/section cụ thể — CHỈ lấy từ danh sách mục 1.6 NGUỒN THAM KHẢO ĐƯỢC PHÉP, không bịa nguồn ngoài danh sách]
-- [Link docs chính thức nếu có]
+- [Tên tài liệu + chương/section cụ thể — CHỈ lấy từ danh sách mục 1.6, không bịa nguồn ngoài danh sách]
 
-### 3 điểm chính cần nắm
-1. [Câu hỏi 1 – để học viên tự tìm đáp án]
+### 3 điểm chính cần nắm (câu hỏi kiểu senior đọc tài liệu, không phải recall)
+1. [Không phải "X là gì" mà "Tại sao tài liệu thiết kế X theo cách này thay vì cách hiển nhiên hơn Y — đánh đổi gì?"]
 2. [Câu hỏi 2]
 3. [Câu hỏi 3]
 
 ---
 
-## 3. PROCESS (40–50 phút)
+## 3. PROCESS (45–60 phút)
+
+### 3.0. CƠ CHẾ VẬN HÀNH BÊN TRONG (bắt buộc, trước khi code) **(MỚI — bắt buộc)**
+[Giải thích internals/nguyên lý TRƯỚC khi thực hành, kèm 1 mental model/phép ẩn dụ cụ thể để nhớ lâu. Đây là phần junior thường bỏ qua vì "chạy được là xong" — senior luôn cần hiểu trước khi viết.]
+
 ### 3.1. [Bước thực hành 1]
-[Mô tả + code/terminal nếu có. Code phải có comment giải thích từng dòng quan trọng]
+[Mô tả + code/terminal. Comment trong code phải giải thích LÝ DO (why), không chỉ mô tả cái gì (what).]
+
+#### 🥊 GÓC NHÌN JUNIOR vs SENIOR
+| | Junior thường làm | Senior thực sự làm | Vì sao khác nhau |
+|-|--------------------|----------------------|--------------------|
+| Cách tiếp cận | [...] | [...] | [Senior thấy trước hệ quả gì mà junior chưa thấy?] |
+| Điểm mù thường gặp | [Lỗi/giả định sai phổ biến] | [Câu hỏi senior tự hỏi để tránh lỗi đó] | [...] |
 
 #### ⚠️ Anti-pattern
-[1 anti-pattern phổ biến + giải thích tại sao sai]
+[1 anti-pattern phổ biến + hậu quả CỤ THỂ đo lường được (không phải "gây bug" chung chung mà "khiến bundle tăng 300KB" / "leak 40MB sau 10 phút")]
 
 #### 📊 Decision Table (nếu có lựa chọn)
-| Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng |
-|----------|-------------|-------------------|
-| [A] | ... | ... |
-| [B] | ... | ... |
+| Lựa chọn | Khi nào dùng | Khi nào KHÔNG dùng | Chi phí ẩn / rủi ro dài hạn |
+|----------|-------------|---------------------|-------------------------------|
+| [A] | ... | ... | [Cái gì sẽ đau về sau, không thấy ngay lúc chọn] |
+| [B] | ... | ... | ... |
 
 ### 3.2. [Bước thực hành 2]
 ...
+
+### 3.X. 🎯 SENIOR JUDGMENT CALL **(bắt buộc nếu chủ đề có ≥2 lựa chọn hợp lý hoặc rủi ro cao)**
+**Bối cảnh ràng buộc mơ hồ:** [vd: "Deadline 3 ngày, team 2 người mid-level, hệ thống cũ không thể refactor toàn bộ, PM yêu cầu ship trước, không có thời gian viết test đầy đủ"]
+
+**Câu hỏi:** Bạn chọn phương án nào? Không có đáp án đúng tuyệt đối — chỉ có lý do đủ thuyết phục.
+
+**Tư duy senior (học viên tự trả lời trước khi xem gợi ý):**
+1. Câu hỏi đầu tiên senior sẽ hỏi lại trước khi quyết định: [...]
+2. Yếu tố thực sự quyết định (không phải yếu tố "nghe có vẻ quan trọng"): [...]
+3. Phương án khả dĩ + lý do chọn: [...]
+4. Cái giá phải trả khi chọn phương án này (trade-off chấp nhận, không né tránh): [...]
 
 ---
 
 ## 4. OUTPUT (20–30 phút)
 ### Artifact phải hoàn thành
-- [ ] [Artifact 1 cụ thể]
+- [ ] [Artifact 1 cụ thể — gắn vào Project]
 - [ ] [Artifact 2]
-- [ ] [Artifact 3]
+
+### 🔍 Mock Code Review (senior lens)
+[10–20 dòng code mẫu — cố ý chứa 1–2 vấn đề tinh vi về judgment, KHÔNG phải lỗi cú pháp]
+**Review comment mẫu (giọng senior reviewer thật, không phải liệt kê lỗi):**
+- 🔴 [Vấn đề nghiêm trọng — vì sao nó nguy hiểm hơn vẻ ngoài]
+- 🟡 [Vấn đề không phải bug nhưng ảnh hưởng khả năng scale/maintain]
+- 🟢 [Điểm làm đúng — chỉ ra CHÍNH XÁC tại sao pattern này tốt, không khen chung chung]
 
 ---
 
-## 5. VERIFY (10–20 phút)
+## 5. VERIFY (15–20 phút)
 ### Feynman Technique
 - Tự giải thích trong 2 phút: "[Câu hỏi ngắn]"
 
-### Self-check (3 câu hỏi phỏng vấn)
-1. [Câu hỏi]
-2. [Câu hỏi]
-3. [Câu hỏi]
+### Self-check — câu hỏi phỏng vấn Senior/Staff có follow-up đào sâu **(nâng cấp)**
+1. [Câu hỏi chính] → Follow-up: "Nếu [điều kiện thay đổi — scale 10x / team đổi / deadline gấp], câu trả lời có đổi không? Tại sao?"
+2. [Câu hỏi chính] → Follow-up: [...]
+3. [Câu hỏi chính] → Follow-up: [...]
+
+### 🧭 Mental Model / Heuristic rút gọn
+> [1 câu "quy tắc ngón tay cái" senior thực sự dùng để quyết định nhanh trong tình huống tương tự tương lai — không phải định nghĩa lại kiến thức, mà là thứ có thể áp dụng cho case KHÁC chưa gặp]
 
 ### Integration Check
 - Kiến thức này nhúng vào [Project nào, task cụ thể] theo Loại A?
@@ -375,26 +405,30 @@ Học xong buổi này, học viên phải làm được gì?
 
 ---
 
-## 7. WAR STORY (1 tình huống thực chiến)
-> **[Tên tình huống]**
-> **Bối cảnh:** ...
-> **Quyết định:** ...
-> **Trade-off:** ...
-> **Bài học:** ...
+## 7. WAR STORY — postmortem thực chiến **(cấu trúc lại)**
+> **[Tên tình huống — nên chứa số liệu, vd "App crash sau 40 phút dùng vì memory leak trong closure"]**
+>
+> **Bối cảnh (số liệu cụ thể):** [Quy mô hệ thống, bao nhiêu user/traffic bị ảnh hưởng, thời điểm]
+> **Triệu chứng ban đầu:** [Dấu hiệu đầu tiên — thường MƠ HỒ, đây là chỗ senior giỏi hơn junior: nhận diện sớm khi chưa rõ ràng]
+> **Phương án đã cân nhắc:** [Ít nhất 2 phương án, lý do loại từng phương án — không chỉ kể phương án thắng]
+> **Quyết định cuối & lý do:** [...]
+> **Trade-off phải chấp nhận:** [Cái gì bị hy sinh để đổi lấy giải pháp]
+> **Kết quả đo lường được:** [Before/after cụ thể]
+> **Bài học tổng quát hoá:** [Heuristic áp dụng cho case KHÁC, không chỉ riêng case này]
 
 ---
 
-## 8. AI VERIFY CHECKLIST
+## 8. AI VERIFY CHECKLIST — gắn cụ thể vào chủ đề, không dùng placeholder chung chung **(nâng cấp)**
 Nếu học viên dùng Claude Code / Cursor / Copilot cho buổi này, phải check:
-- [ ] [Điểm 1: VD – "Kiểm tra edge case `null`/`undefined`"]
-- [ ] [Điểm 2: VD – "Verify accessibility: ARIA label"]
-- [ ] [Điểm 3: VD – "Kiểm tra error handling không chỉ happy path"]
+- [ ] [Lỗi cụ thể AI THƯỜNG mắc với ĐÚNG chủ đề này — vd "AI hay quên cleanup subscription trong useEffect khi generate code có WebSocket"]
+- [ ] [Edge case cụ thể theo domain buổi học — không phải "kiểm tra null/undefined" chung chung]
+- [ ] [Câu hỏi phản biện AI — vd "Tại sao bạn chọn pattern X thay vì Y? Nếu scale 10x thì code này còn đúng không?"]
 
 ---
 
 ## 9. LIÊN KẾT & TIẾP THEO
-- **Nối từ buổi trước:** [1 dòng duy nhất — buổi này dùng lại/kế thừa gì từ buổi trước, KHÔNG giảng lại nội dung cũ]
-- **Ngày mai học gì:** [1 dòng — lấy từ Next_Topic dự kiến, để học viên biết mạch tiếp theo]
+- **Nối từ buổi trước:** [1 dòng duy nhất — KHÔNG giảng lại nội dung cũ]
+- **Ngày mai học gì:** [1 dòng — lấy từ Next_Topic]
 
 ---
 
