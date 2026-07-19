@@ -1783,37 +1783,49 @@ Toàn bộ chặn này thuộc **Khối 1 (Lõi Chung)** — không phân nhánh
 
 
 
-## PHẦN 9: LỘ TRÌNH THỰC HIỆN CHI TIẾT (THEO TUẦN)
+## PHẦN 9: LỘ TRÌNH THỰC HIỆN CHI TIẾT
+
 
 ### THÁNG 1: NỀN TẢNG CORE + PROJECT 1 (LANDING + BLOG)
 
 ```
 Tuần 1.1: JavaScript Core + Engine + TypeScript Fundamentals
-├── Ngày 1–2: JS Core (Execution Context, this binding, Prototype chain)
-├── Ngày 3–4: V8 Engine (Ignition → TurboFan), Event Loop (Microtask vs Macrotask)
-├── Ngày 5–6: Memory Management (GC, leaks, WeakRef)
+├── Ngày 1: Execution Context (creation phase, hoisting, scope chain); this binding cơ bản
+├── Ngày 2: this binding nâng cao (call/apply/bind, arrow function); Prototype chain
+├── Ngày 3: V8 Engine pipeline (Ignition → TurboFan), JIT compilation
+├── Ngày 4: Event Loop (Call Stack, Microtask vs Macrotask, Task Queue)
+├── Ngày 5: Garbage Collection (Mark-and-Sweep, Generational GC)
+├── Ngày 6: Memory leaks (pattern thường gặp), WeakRef & WeakMap
 ├── Ngày 7: TypeScript strict mode, Type Guard, Generics basics
 └── Deliverable: Codepen/CodeSandbox demo Event Loop + TypeScript utility types
 
 Tuần 1.2: Build Tool + Package Manager + Next.js App Router + Tailwind
-├── Ngày 8–9: Build Tool (Webpack/Vite, tree-shaking, code splitting)
+├── Ngày 8: Webpack/Vite cơ bản (bundling, dev server, HMR)
+├── Ngày 9: Tree-shaking, code splitting, lazy loading
 ├── Ngày 10: Package Manager (pnpm, lockfile, peer deps, workspace)
-├── Ngày 11–12: Next.js 14 App Router (RSC, CC, Server Actions)
-├── Ngày 13–14: Tailwind config, dark mode, custom theme + shadcn/ui setup
+├── Ngày 11: Next.js 14 App Router cơ bản (file-based routing, layouts, Server Components)
+├── Ngày 12: Client Components, Server Actions
+├── Ngày 13: Tailwind config, custom theme, dark mode
+├── Ngày 14: shadcn/ui setup, tuỳ biến component
 └── Deliverable: Next.js project scaffold với Tailwind + shadcn/ui
 
 Tuần 1.3: SEO + MDX Blog + i18n + CSS Modern
-├── Ngày 15–16: SEO Technical (JSON-LD, sitemap, meta tags)
-├── Ngày 17–18: MDX blog setup (syntax highlighting, TOC)
-├── Ngày 19–20: next-i18n setup (EN/VI routing)
+├── Ngày 15: Meta tags, Open Graph, sitemap.xml
+├── Ngày 16: JSON-LD structured data, robots.txt
+├── Ngày 17: MDX blog setup cơ bản, parse markdown files
+├── Ngày 18: Syntax highlighting (rehype/remark), Table of Contents
+├── Ngày 19: next-i18n setup, locale routing
+├── Ngày 20: Translation files, language switcher
 ├── Ngày 21: CSS Modern (@layer, container queries, :has())
 └── Deliverable: Blog page hoạt động với 2 bài viết
 
 Tuần 1.4: Form + Server Actions + Git Teamwork + Deploy
-├── Ngày 22–23: Zod + Server Actions (contact form, newsletter)
+├── Ngày 22: Zod schema validation
+├── Ngày 23: Server Actions tích hợp form (contact form, newsletter)
 ├── Ngày 24: Git Teamwork (rebase, merge, conflict resolution)
 ├── Ngày 25: Lighthouse CI setup (GitHub Actions)
-├── Ngày 26–27: Deploy Vercel, custom domain, Sentry
+├── Ngày 26: Deploy Vercel, custom domain
+├── Ngày 27: Sentry error monitoring setup
 ├── Ngày 28: Review, polish, viết README
 └── Deliverable: PROJECT 1 hoàn chỉnh — live, tested, monitored
 ```
@@ -1822,30 +1834,41 @@ Tuần 1.4: Form + Server Actions + Git Teamwork + Deploy
 
 ```
 Tuần 2.1: React Fiber & Optimization + Framework Evolution
-├── Ngày 1–2: React Fiber (reconciliation, diffing, lanes)
+├── Ngày 1: React Fiber - reconciliation & diffing algorithm
+├── Ngày 2: Fiber lanes, priority scheduling
 ├── Ngày 3: Framework Evolution (Class → Hooks → 19, Pages → App Router)
 ├── Ngày 4: Profiler DevTools, tìm unnecessary renders
-├── Ngày 5–7: useMemo/useCallback đúng cách, React.memo, useRef
+├── Ngày 5: useMemo/useCallback - khi nào dùng, dependency array
+├── Ngày 6: React.memo - shallow comparison, custom comparator
+├── Ngày 7: useRef - DOM ref, mutable ref, tránh re-render
 └── Deliverable: Optimized component với Profiler report
 
 Tuần 2.2: State Management (TanStack Query + Zustand)
-├── Ngày 8–9: TanStack Query (useQuery, useMutation, cache)
-├── Ngày 10–11: Zustand (store, slices, persist middleware)
-├── Ngày 12–14: Tích hợp cả 2 trong project
+├── Ngày 8: useQuery - fetching, caching, stale time
+├── Ngày 9: useMutation, cache invalidation, optimistic update
+├── Ngày 10: Zustand store cơ bản, slices pattern
+├── Ngày 11: Persist middleware, devtools
+├── Ngày 12: Kết hợp TanStack Query (server state) + Zustand (client state) - thiết kế kiến trúc
+├── Ngày 13: Implement product catalog với TanStack Query
+├── Ngày 14: Implement cart với Zustand
 └── Deliverable: Product catalog + cart với TanStack Query + Zustand
 
 Tuần 2.3: XState + Zod + Form Engineering + i18n + Stripe
-├── Ngày 15–16: XState (checkout wizard: Cart → Shipping → Payment → Confirmation)
+├── Ngày 15: XState cơ bản - states, transitions, context
+├── Ngày 16: Checkout wizard machine (Cart → Shipping → Payment → Confirmation)
 ├── Ngày 17: Form Engineering (react-hook-form + Zod, field arrays)
 ├── Ngày 18: Zod validation multi-step form
-├── Ngày 19–20: i18n + multi-currency
+├── Ngày 19: i18n cho e-commerce (product data, routing)
+├── Ngày 20: Multi-currency handling
 ├── Ngày 21: Stripe integration (test mode)
 └── Deliverable: Checkout flow hoàn chỉnh
 
 Tuần 2.4: Error Handling + PWA + E2E + Deploy
 ├── Ngày 22: Error Handling (Error Boundary, graceful degradation)
-├── Ngày 23–24: PWA (Service Worker, offline cart, manifest)
-├── Ngày 25–26: Playwright E2E (full checkout flow)
+├── Ngày 23: Service Worker cơ bản, cache strategy
+├── Ngày 24: Offline cart, manifest.json
+├── Ngày 25: Playwright setup, viết test cho luồng đăng nhập
+├── Ngày 26: E2E test full checkout flow
 ├── Ngày 27: Lighthouse audit, optimize CWV
 ├── Ngày 28: Review, polish, viết README + ADR
 └── Deliverable: PROJECT 2 hoàn chỉnh — PWA, E2E tested, deployed
@@ -1855,29 +1878,40 @@ Tuần 2.4: Error Handling + PWA + E2E + Deploy
 
 ```
 Tuần 3.1: Redux Ecosystem + Web APIs
-├── Ngày 1–2: Redux Core (Store, Actions, Reducers)
-├── Ngày 3–4: Redux Toolkit (configureStore, createSlice, createAsyncThunk)
-├── Ngày 5–6: RTK Query (createApi, cache tags)
+├── Ngày 1: Redux Core - Store, Actions
+├── Ngày 2: Reducers, combineReducers
+├── Ngày 3: Redux Toolkit - configureStore, createSlice
+├── Ngày 4: createAsyncThunk
+├── Ngày 5: RTK Query - createApi cơ bản
+├── Ngày 6: RTK Query - cache tags, invalidation
 ├── Ngày 7: Redux Saga (effects, watchers, polling)
 └── Deliverable: Redux store với RTK + Saga demo
 
 Tuần 3.2: Dashboard UI (Data Viz + Virtual Scroll + Web Workers)
-├── Ngày 8–9: Recharts (line, bar, pie, area charts)
-├── Ngày 10–11: Data table (sort, filter, pagination)
-├── Ngày 12–13: react-window (virtual scroll 10K+ rows)
+├── Ngày 8: Recharts - line chart, bar chart
+├── Ngày 9: Recharts - pie chart, area chart
+├── Ngày 10: Data table - sort, filter
+├── Ngày 11: Data table - pagination
+├── Ngày 12: react-window cơ bản
+├── Ngày 13: Virtual scroll 10K+ rows - optimization
 ├── Ngày 14: Web Workers (CSV parse, image compression)
 └── Deliverable: Dashboard UI với chart + virtual table
 
 Tuần 3.3: Monorepo + Storybook + Chromatic + BFF
-├── Ngày 15–16: Turborepo setup (dashboard + shared-ui + types)
-├── Ngày 17–18: Storybook (document components)
-├── Ngày 19–20: Chromatic (visual regression testing)
+├── Ngày 15: Turborepo cấu trúc (apps/packages)
+├── Ngày 16: Shared-ui + types package
+├── Ngày 17: Storybook setup
+├── Ngày 18: Document components (MDX docs, controls)
+├── Ngày 19: Chromatic setup
+├── Ngày 20: Visual regression testing workflow
 ├── Ngày 21: BFF Pattern (Next.js Route Handler vs standalone)
 └── Deliverable: Monorepo với Storybook + Chromatic
 
 Tuần 3.4: Role-based UI + Real-time + Tối ưu Web Thuần + Deploy
-├── Ngày 22–23: Role-based rendering (admin vs user)
-├── Ngày 24–25: SSE hoặc Saga polling (real-time metrics)
+├── Ngày 22: Role-based rendering - concept, middleware
+├── Ngày 23: Admin vs user UI - implementation
+├── Ngày 24: SSE setup
+├── Ngày 25: Real-time metrics - implementation (SSE/Saga polling)
 ├── Ngày 26: Tối ưu Web Thuần (CRP, HTTP caching, font/image)
 ├── Ngày 27: Performance Budget + LoAF API
 ├── Ngày 28: Review, polish, viết docs
@@ -1888,29 +1922,42 @@ Tuần 3.4: Role-based UI + Real-time + Tối ưu Web Thuần + Deploy
 
 ```
 Tuần 4.1: WebSockets + Real-time + Git Advanced
-├── Ngày 1–2: Socket.io client (connection, events, rooms)
-├── Ngày 3–4: Real-time feed (new post, live comment)
-├── Ngày 5–6: Optimistic update (TanStack Query)
+├── Ngày 1: Socket.io client - connection, events
+├── Ngày 2: Socket.io - rooms, namespaces
+├── Ngày 3: Real-time feed - new post
+├── Ngày 4: Real-time feed - live comment
+├── Ngày 5: Optimistic update - concept + TanStack Query setup
+├── Ngày 6: Implement optimistic update cho feed
 ├── Ngày 7: Git Advanced (cherry-pick, reflog, bisect)
 └── Deliverable: Real-time chat + feed demo
 
 Tuần 4.2: Animation + Performance
-├── Ngày 8–9: Framer Motion (enter/exit, layout, gestures)
-├── Ngày 10–11: Animation 60fps (will-change, transform)
-├── Ngày 12–14: Infinite scroll + image lazy loading
+├── Ngày 8: Framer Motion - enter/exit animation
+├── Ngày 9: Framer Motion - layout animation, gestures
+├── Ngày 10: Animation 60fps - will-change, transform (lý thuyết)
+├── Ngày 11: Optimize animation thực tế
+├── Ngày 12: Infinite scroll - Intersection Observer
+├── Ngày 13: Implement infinite scroll cho feed
+├── Ngày 14: Image lazy loading
 └── Deliverable: Animated feed với infinite scroll
 
 Tuần 4.3: File Upload + Web Workers + Storage
-├── Ngày 15–16: Drag-drop upload, image preview
-├── Ngày 17–18: Upload progress, cancel upload
-├── Ngày 19–20: Web Workers (image compression, CSV parse)
+├── Ngày 15: Drag-drop upload cơ bản
+├── Ngày 16: Image preview
+├── Ngày 17: Upload progress (XHR/fetch progress event)
+├── Ngày 18: Cancel upload
+├── Ngày 19: Web Workers - image compression
+├── Ngày 20: Web Workers - CSV parse
 ├── Ngày 21: Web APIs & Storage (IndexedDB, Broadcast Channel)
 └── Deliverable: Upload feature với progress + compression
 
 Tuần 4.4: SEO + Deploy
-├── Ngày 22–23: Dynamic meta tags cho từng post
-├── Ngày 24–25: OG image generation
-├── Ngày 26–27: Deploy (Vercel + Railway cho WebSocket)
+├── Ngày 22: Dynamic meta tags cho từng post - lý thuyết
+├── Ngày 23: Implement dynamic meta tags
+├── Ngày 24: OG image generation setup (@vercel/og)
+├── Ngày 25: Implement OG image cho từng post
+├── Ngày 26: Deploy Vercel
+├── Ngày 27: Deploy Railway cho WebSocket
 ├── Ngày 28: Review, polish
 └── Deliverable: PROJECT 4 hoàn chỉnh — real-time, animated, deployed
 ```
@@ -1919,28 +1966,42 @@ Tuần 4.4: SEO + Deploy
 
 ```
 Tuần 5.1: Design Tokens + Component Primitives
-├── Ngày 1–2: Design tokens (primitive → semantic → component)
-├── Ngày 3–4: Style Dictionary export (CSS, JS, iOS, Android)
-├── Ngày 5–6: Radix UI primitives (Dialog, Select, Tabs)
+├── Ngày 1: Design tokens - primitive → semantic
+├── Ngày 2: Design tokens - component-level
+├── Ngày 3: Style Dictionary setup
+├── Ngày 4: Style Dictionary - export CSS, JS, iOS, Android
+├── Ngày 5: Radix UI primitives - Dialog, Select
+├── Ngày 6: Radix UI primitives - Tabs + các primitive khác
 ├── Ngày 7: Accessibility patterns (focus trap, roving tabindex)
 └── Deliverable: Design tokens + 3 Radix-based components
 
 Tuần 5.2: Custom Components
-├── Ngày 8–9: Combobox (autocomplete, keyboard nav)
-├── Ngày 10–11: Date Picker (accessible, i18n)
-├── Ngày 12–14: Data Grid (sort, filter, virtual scroll)
+├── Ngày 8: Combobox - autocomplete
+├── Ngày 9: Combobox - keyboard navigation
+├── Ngày 10: Date Picker - accessible base
+├── Ngày 11: Date Picker - i18n
+├── Ngày 12: Data Grid - sort
+├── Ngày 13: Data Grid - filter
+├── Ngày 14: Data Grid - virtual scroll
 └── Deliverable: 3 custom complex components
 
 Tuần 5.3: Storybook + Chromatic + Monorepo Publish
-├── Ngày 15–16: Storybook setup (MDX docs, controls, actions)
-├── Ngày 17–18: Chromatic visual regression
-├── Ngày 19–21: Package publish (npm/GitHub Packages, semantic versioning)
+├── Ngày 15: Storybook setup (MDX docs, controls)
+├── Ngày 16: Storybook - actions addon
+├── Ngày 17: Chromatic visual regression setup
+├── Ngày 18: Chromatic - review workflow
+├── Ngày 19: Package publish - npm/GitHub Packages setup
+├── Ngày 20: Semantic versioning
+├── Ngày 21: Publish thực tế + test install
 └── Deliverable: Published design system package
 
 Tuần 5.4: Polish + Documentation + War Stories Practice
-├── Ngày 22–23: Dark mode tokens
-├── Ngày 24–25: Animation tokens (micro-interactions)
-├── Ngày 26–27: Contribution guide, migration guide
+├── Ngày 22: Dark mode tokens - concept
+├── Ngày 23: Dark mode tokens - implement across components
+├── Ngày 24: Animation tokens - concept
+├── Ngày 25: Animation tokens - micro-interactions implement
+├── Ngày 26: Contribution guide
+├── Ngày 27: Migration guide
 ├── Ngày 28: Practice war stories (behavioral mock interview)
 └── Deliverable: PROJECT 5 hoàn chỉnh — published, documented
 ```
@@ -1949,28 +2010,42 @@ Tuần 5.4: Polish + Documentation + War Stories Practice
 
 ```
 Tuần 6.1: Migration Strategy
-├── Ngày 1–2: Strangler Fig Pattern (từng feature migrate)
-├── Ngày 3–4: Web Components (wrap React → custom element)
-├── Ngày 5–6: iframe Bridge (postMessage communication)
+├── Ngày 1: Strangler Fig Pattern - lý thuyết
+├── Ngày 2: Lên kế hoạch migrate từng feature
+├── Ngày 3: Web Components - custom element cơ bản
+├── Ngày 4: Wrap React component thành custom element
+├── Ngày 5: iframe embedding
+├── Ngày 6: postMessage communication
 ├── Ngày 7: jQuery interop (gọi plugin từ React, cleanup)
 └── Deliverable: Migration plan document + demo setup
 
 Tuần 6.2: Implement Migration
-├── Ngày 8–9: Setup jQuery app + React app chạy song song
-├── Ngày 10–11: Migrate 1 page (ví dụ: user profile)
-├── Ngày 12–14: Web Components embed React trong jQuery
+├── Ngày 8: Setup jQuery app
+├── Ngày 9: Setup React app chạy song song
+├── Ngày 10: Migrate user profile - phần UI
+├── Ngày 11: Migrate user profile - phần logic
+├── Ngày 12: Thiết kế Web Component wrapper
+├── Ngày 13: Implement embed React trong jQuery
+├── Ngày 14: Test tích hợp
 └── Deliverable: Demo app chạy song song jQuery + React
 
 Tuần 6.3: Tổng hợp Portfolio
-├── Ngày 15–16: Viết README chi tiết cho tất cả project
-├── Ngày 17–18: Tạo portfolio site tổng hợp 6 project
-├── Ngày 19–21: Quay video demo từng project (2-3 phút)
+├── Ngày 15: Viết README chi tiết cho project 1-3
+├── Ngày 16: Viết README chi tiết cho project 4-6
+├── Ngày 17: Portfolio site - setup, layout
+├── Ngày 18: Tích hợp 6 project vào portfolio site
+├── Ngày 19: Quay video demo project 1-2 (2-3 phút)
+├── Ngày 20: Quay video demo project 3-4 (2-3 phút)
+├── Ngày 21: Quay video demo project 5-6 (2-3 phút)
 └── Deliverable: Portfolio site + video demos
 
 Tuần 6.4: Apply Job
-├── Ngày 22–23: Chuẩn bị câu trả lờii phỏng vấn (Event Loop, Fiber, Caching, Security cơ bản)
-├── Ngày 24–25: Live code practice (Modal, Dropdown, Data Table) + Frontend System Design practice (RADIO)
-├── Ngày 26–27: Apply 10+ job Senior FE
+├── Ngày 22: Ôn tập Event Loop, Fiber, Caching
+├── Ngày 23: Ôn tập Security cơ bản
+├── Ngày 24: Live code practice (Modal, Dropdown, Data Table)
+├── Ngày 25: Frontend System Design practice (RADIO)
+├── Ngày 26: Apply 5+ job Senior FE
+├── Ngày 27: Apply thêm 5+ job Senior FE
 ├── Ngày 28: Review, iterate
 └── Deliverable: 10+ applications, 1+ interview scheduled
 ```

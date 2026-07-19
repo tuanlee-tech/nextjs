@@ -1065,4 +1065,275 @@ Tuần 11-12: Production ops + monitoring + cost tracking + System Design practi
 
 ---
 
+## PHẦN 8: LỘ TRÌNH THỰC HIỆN CHI TIẾT (THEO TUẦN, TỪNG NGÀY)
+
+> Mỗi "Tuần" = 7 buổi/7 ngày học liên tục (không phải tuần lịch). 6 tháng = 24 tuần = 168 buổi học.
+
+
+### THÁNG 1: NESTJS CORE + SQL/POSTGRESQL + PRISMA + DB DESIGN + PROJECT SCAFFOLD
+
+```
+Tuần 1.1: NestJS Core & Architecture
+├── Ngày 1: Dependency Injection (@Injectable, @Module, Custom Provider, Scope DEFAULT vs REQUEST)
+├── Ngày 2: Guards (@CanActivate, JWT Guard, RBAC Guard — không tin role từ client)
+├── Ngày 3: Interceptors (transform response, logging interceptor, cache interceptor Redis)
+├── Ngày 4: Pipes (ValidationPipe với class-validator, ParseIntPipe/ParseUUIDPipe, custom pipe)
+├── Ngày 5: Exception Filters (global exception filter, custom exception)
+├── Ngày 6: Middleware (Logger, CORS, Helmet, rate limiting middleware)
+├── Ngày 7: Clean Architecture / DDD cơ bản (tách Domain khỏi Infrastructure, Repository Pattern)
+└── Deliverable: NestJS module mẫu với đủ DI, Guard, Interceptor, Pipe, Exception Filter
+
+Tuần 1.2: SQL Fundamentals & PostgreSQL
+├── Ngày 8: ACID (Atomicity, Consistency, Isolation, Durability)
+├── Ngày 9: Isolation Levels — READ UNCOMMITTED, READ COMMITTED
+├── Ngày 10: Isolation Levels — REPEATABLE READ, SERIALIZABLE + trade-off tốc độ vs locking
+├── Ngày 11: Indexing — B-Tree index, Composite index (thứ tự column)
+├── Ngày 12: Indexing — Partial index, EXPLAIN ANALYZE (sequential vs index vs bitmap scan)
+├── Ngày 13: Query Optimization — SELECT * anti-pattern, N+1 query
+├── Ngày 14: Query Optimization — Pagination (offset vs cursor), CTE & Window Functions
+└── Deliverable: Bộ query mẫu đã EXPLAIN ANALYZE + tối ưu index cho bảng chính
+
+Tuần 1.3: Prisma ORM
+├── Ngày 15: Schema Definition — Model, relation (@relation), enum, composite type
+├── Ngày 16: Schema Definition nâng cao — @default, @updatedAt, Json? type
+├── Ngày 17: Migration Strategy — migrate dev vs migrate deploy vs migrate resolve, baseline migration
+├── Ngày 18: Migration & Rollback an toàn 2 chiều — Expand-contract pattern
+├── Ngày 19: Migration & Rollback — Rollback forward, backup pg_dump, zero-downtime migration
+├── Ngày 20: Transactions — $transaction interactive, timeout config, nested writes
+├── Ngày 21: N+1 Problem — dùng include/select, bật Prisma query log để phát hiện
+└── Deliverable: Prisma schema hoàn chỉnh cho SaaS API + 1 migration expand-contract thực hành
+
+Tuần 1.4: Database Design + Project Scaffold
+├── Ngày 22: ER Modeling — Entity, Attribute, Relationship (1-1, 1-N, N-M), Junction table, Soft delete
+├── Ngày 23: Constraints — NOT NULL, UNIQUE, CHECK, FOREIGN KEY, cascade vs set null
+├── Ngày 24: Audit Trail — createdAt/updatedAt tự động, bảng AuditLog riêng
+├── Ngày 25: 3NF vs Denormalized vs JSONB — khi nào dùng gì cho SaaS product
+├── Ngày 26: Project scaffold — khởi tạo NestJS project, cấu trúc module theo domain
+├── Ngày 27: Project scaffold — setup Prisma + PostgreSQL, viết schema đầu tiên cho SaaS API
+├── Ngày 28: Review, polish, viết README setup + ER diagram
+└── Deliverable: NestJS + Prisma + PostgreSQL scaffold hoàn chỉnh cho SaaS API, có ER diagram và migration đầu tiên chạy thành công
+```
+
+### THÁNG 2: AUTH (JWT/OAUTH/RBAC) + SECURITY (OWASP, RATE LIMITING) + RESTFUL API DESIGN + API TESTING
+
+```
+Tuần 2.1: Authentication & Authorization
+├── Ngày 1: JWT — Access token (short-lived), Refresh token (long-lived, lưu DB để revoke)
+├── Ngày 2: JWT — Rotate refresh token, implement với jsonwebtoken library
+├── Ngày 3: OAuth2/OIDC — Flow Authorization Code + PKCE
+├── Ngày 4: OAuth2/OIDC — ID Token, NestJS Passport (passport-google-oauth20, passport-jwt)
+├── Ngày 5: RBAC — Decorator @Roles, Guard check role từ JWT payload
+├── Ngày 6: RBAC — Bảo mật: luôn re-check quyền ở service layer, không tin client
+├── Ngày 7: Session Management — Redis session, TTL tự động expire, logout
+└── Deliverable: Auth flow JWT Access/Refresh + OAuth Google + RBAC hoạt động end-to-end
+
+Tuần 2.2: Security (OWASP, Rate Limiting, CSRF)
+├── Ngày 8: OWASP — A01 Broken Access Control, A02 Cryptographic Failures
+├── Ngày 9: OWASP — A03 Injection, A04 Insecure Design
+├── Ngày 10: OWASP — A05 Security Misconfiguration, A07 Auth Failures (brute force protection)
+├── Ngày 11: Rate Limiting — nestjs-rate-limiter hoặc custom Redis counter, per-IP/per-user
+├── Ngày 12: Rate Limiting — riêng biệt cho login endpoint (chống brute force)
+├── Ngày 13: CSRF Protection — SameSite=Strict cookie, CSRF token cho session-based auth
+├── Ngày 14: CSRF — Double-submit cookie pattern + review tổng hợp Security
+└── Deliverable: Checklist OWASP áp dụng vào API + rate limiter Redis hoạt động
+
+Tuần 2.3: RESTful API Design
+├── Ngày 15: HTTP Status đúng chuẩn — 200/201/204, 400/401/403
+├── Ngày 16: HTTP Status — 404/409/422/429/500/502/503 + Pagination offset
+├── Ngày 17: Pagination — Cursor pagination (infinite scroll vs admin table có page number)
+├── Ngày 18: Filtering & Sorting — consistent syntax, chống SQL injection qua query param
+├── Ngày 19: Versioning — URL path vs Header, quyết định dùng URL versioning
+├── Ngày 20: GraphQL/tRPC — khi nào dùng thay REST (biết để maintain, không phải default)
+├── Ngày 21: Áp dụng RESTful API Design — viết endpoint mẫu chuẩn cho project
+└── Deliverable: Bộ endpoint REST mẫu tuân thủ chuẩn HTTP status, pagination, filtering, versioning
+
+Tuần 2.4: API Testing + Áp dụng Auth/Security vào Project
+├── Ngày 22: Integration Test — Setup TestModule, test DB (SQLite in-memory hoặc test Postgres)
+├── Ngày 23: Integration Test — Test happy path (POST /auth/register → 201)
+├── Ngày 24: Integration Test — Test error path + auth flow (login → token → protected route)
+├── Ngày 25: Test DB Isolation — mỗi test chạy trong transaction rollback, hoặc seed/cleanup
+├── Ngày 26: Coverage — target > 80% service layer, > 60% controller
+├── Ngày 27: Áp dụng — implement Auth module hoàn chỉnh vào project (JWT + RBAC + OAuth)
+├── Ngày 28: Review, polish, viết integration test cho Auth module
+└── Deliverable: Auth module (JWT + RBAC) hoàn chỉnh, bảo mật theo OWASP, RESTful chuẩn, coverage > 80% cho auth flow
+```
+
+### THÁNG 3: STRIPE PAYMENT + WEBHOOK SECURITY + FILE UPLOAD + EMAIL + SEARCH (MEILISEARCH)
+
+```
+Tuần 3.1: Stripe Payment Integration
+├── Ngày 1: Checkout Session — tạo session server-side, trả session.url cho client redirect
+├── Ngày 2: Webhook Handling — lắng nghe checkout.session.completed, invoice.paid, invoice.payment_failed
+├── Ngày 3: Webhook Security chi tiết — Stripe-Signature header, constructEvent, raw body (không JSON.parse trước)
+├── Ngày 4: Webhook Handler Pattern — verify → lưu event DB (idempotency) → trả 200 → xử lý async qua queue
+├── Ngày 5: Idempotency Key (Stripe) — tạo UUID cho request tạo payment, Stripe tự dedupe 24h
+├── Ngày 6: Subscription Logic — tạo Customer → Subscription, grace period sau payment failed
+├── Ngày 7: Retry & Backoff (webhook gửi đi) + Cost Awareness — Stripe fee 2.9%+30¢, Stripe Tax
+└── Deliverable: Stripe Checkout + Webhook handler an toàn (verify signature + idempotency) hoạt động
+
+Tuần 3.2: File Upload + Email
+├── Ngày 8: File Upload Validation — check MIME type whitelist, magic bytes (không tin extension)
+├── Ngày 9: File Upload — giới hạn size, scan virus (ClamAV/Cloudflare) nếu cần
+├── Ngày 10: File Upload Bảo mật — object storage S3/R2, signed URL, filename UUID random
+├── Ngày 11: Transactional Email — welcome, password reset, invoice, notification template
+├── Ngày 12: Email — DKIM, SPF, DMARC config để tránh spam box
+├── Ngày 13: Email Queue & Retry — không gửi đồng bộ, BullMQ queue, retry 3 lần, dead letter nếu bounce
+├── Ngày 14: Áp dụng — viết flow đăng ký kèm verify email + upload tài liệu vào project
+└── Deliverable: Upload tài liệu an toàn (signed URL S3/R2) + email queue (welcome, verify) hoạt động
+
+Tuần 3.3: Search (Meilisearch → Elasticsearch)
+├── Ngày 15: Meilisearch setup — index documents từ Prisma
+├── Ngày 16: Meilisearch — sync index khi create/update/delete
+├── Ngày 17: Meilisearch — typo tolerance, ranking, filterable attributes
+├── Ngày 18: Meilisearch cost awareness — so sánh chi phí với Elasticsearch, khi nào cần chuyển
+├── Ngày 19: Elasticsearch (biết để migrate) — index mapping, analyzer (Vietnamese analyzer nếu cần)
+├── Ngày 20: Elasticsearch — Query DSL (match, term, bool, range)
+├── Ngày 21: Áp dụng — implement tìm kiếm tài liệu (Meilisearch) vào project
+└── Deliverable: Tính năng tìm kiếm tài liệu (Meilisearch) hoạt động, typo-tolerant
+
+Tuần 3.4: Tích hợp toàn bộ vào Project + Test
+├── Ngày 22: Implement Stripe Checkout + Subscription hoàn chỉnh cho SaaS trong project
+├── Ngày 23: Implement Webhook handler + idempotency đầy đủ cho project
+├── Ngày 24: Implement file upload tài liệu (S3/R2 signed URL) hoàn chỉnh
+├── Ngày 25: Implement email queue (welcome, invoice) qua Resend hoàn chỉnh
+├── Ngày 26: Implement search tài liệu (Meilisearch) hoàn chỉnh
+├── Ngày 27: Viết integration test cho payment flow + webhook flow
+├── Ngày 28: Review, polish, viết ADR (Stripe vs PayPal, Meilisearch vs Elasticsearch)
+└── Deliverable: SaaS API có thanh toán Stripe đầy đủ (Checkout + Webhook + Subscription), upload tài liệu an toàn, email queue, tìm kiếm tài liệu
+```
+
+### THÁNG 4: BACKGROUND JOBS (BULLMQ) + REAL-TIME + EVENT-DRIVEN (OUTBOX/SAGA) + IDEMPOTENCY
+
+```
+Tuần 4.1: Background Jobs (BullMQ + Redis)
+├── Ngày 1: Queue Patterns — Job Queue cơ bản (email-queue, image-processing-queue, stripe-webhook-queue)
+├── Ngày 2: Queue Patterns — Delayed Job (queue.add delay), Repeatable Job (cron daily report)
+├── Ngày 3: Retry & Dead Letter — attempts + backoff exponential, Dead Letter Queue cho manual review
+├── Ngày 4: Concurrency — giới hạn concurrency, rate limiter job (10 job/giây)
+├── Ngày 5: Worker Process — tách process riêng, graceful shutdown (đợi job xong trước khi kill)
+├── Ngày 6: Áp dụng — implement BullMQ vào project (email queue, AI processing queue)
+├── Ngày 7: Viết test cho queue (mock job, assert retry/dead letter)
+└── Deliverable: Background job (email, AI processing) chạy qua BullMQ worker riêng, có retry + dead letter
+
+Tuần 4.2: Real-time + API Design Patterns
+├── Ngày 8: Socket.io — Namespace + Room để phân chia channel
+├── Ngày 9: Socket.io — Auth JWT trong io.use() middleware, bảo mật, Redis Adapter để scale
+├── Ngày 10: SSE — Content-Type text/event-stream, connection keep-alive, auto reconnect client
+├── Ngày 11: Rate Limiting nâng cao — Token bucket vs Sliding window (Redis)
+├── Ngày 12: Circuit Breaker — 3 trạng thái CLOSED/OPEN/HALF-OPEN, dùng opossum hoặc tự implement
+├── Ngày 13: Throttling — giảm concurrency worker khi queue depth cao, shed load 503 + Retry-After
+├── Ngày 14: Áp dụng — implement SSE cho thông báo real-time (AI xử lý xong) vào project
+└── Deliverable: Notification real-time (SSE) hoạt động + circuit breaker bảo vệ khi gọi Stripe/LLM API
+
+Tuần 4.3: OpenAPI/Swagger + Idempotency & Concurrency Control
+├── Ngày 15: OpenAPI Setup — @ApiTags, @ApiOperation, @ApiResponse, DTO với class-validator
+├── Ngày 16: OpenAPI Client Generation — openapi-generator-cli tạo TypeScript client
+├── Ngày 17: Idempotency Key — client tạo Idempotency-Key UUID, server lưu mapping Redis/DB
+├── Ngày 18: Idempotency — TTL 24h, trả lại response cũ nếu key trùng (không re-process)
+├── Ngày 19: Concurrency Control — Optimistic locking (version column, throw 409 khi conflict)
+├── Ngày 20: Concurrency Control — Pessimistic locking (SELECT FOR UPDATE), Distributed Lock (Redis Redlock)
+├── Ngày 21: Audit Trail cho Idempotency — bảng IdempotencyLog (key, request_body, response)
+└── Deliverable: Swagger docs tự động đầy đủ + Idempotency key áp dụng cho mọi mutation quan trọng
+
+Tuần 4.4: Event-Driven Architecture (Outbox, Saga)
+├── Ngày 22: Outbox Pattern — khái niệm, vấn đề message mất khi DB commit xong mà app crash
+├── Ngày 23: Outbox Pattern — implement bảng Outbox, 1 transaction INSERT business row + outbox row
+├── Ngày 24: Outbox Pattern — worker poll bảng Outbox → publish message → mark processed
+├── Ngày 25: Saga Pattern — Orchestration (1 coordinator) vs Choreography (mỗi service tự publish)
+├── Ngày 26: Saga Pattern — Compensating Transaction (rollback bước trước nếu bước sau fail)
+├── Ngày 27: Eventual Consistency — UI pattern optimistic update + reconcile khi event đến
+├── Ngày 28: Áp dụng — implement Outbox Pattern vào project (đảm bảo email không mất khi user đăng ký)
+└── Deliverable: Background job xử lý ổn định, idempotency áp dụng toàn bộ mutation quan trọng, Outbox pattern đảm bảo message không mất
+```
+
+### THÁNG 5: LLM API + RAG (PGVECTOR) + AI EVALUATION + SYSTEM DESIGN PRACTICE (5 ĐỀ)
+
+```
+Tuần 5.1: LLM API Integration
+├── Ngày 1: LLM Integration — Streaming response (ReadableStream từ NestJS đến FE)
+├── Ngày 2: LLM Integration — Prompt template, version control prompt, A/B test prompt
+├── Ngày 3: LLM Integration — Temperature/Top-p config (thấp cho factual, cao cho creative)
+├── Ngày 4: LLM Integration — Timeout & fallback (Anthropic timeout 10s → fallback OpenAI/cached response)
+├── Ngày 5: RAG — Chunk documents → Embedding (OpenAI/Anthropic embedding API)
+├── Ngày 6: RAG — Lưu vào pgvector, query embedding + similarity search (<=> operator) → top 5 chunks
+├── Ngày 7: RAG — Cost awareness (embedding tính theo token, vector search tính theo dimension)
+└── Deliverable: LLM streaming response hoạt động + RAG pipeline (chunk → embedding → pgvector → prompt)
+
+Tuần 5.2: AI Evaluation + Multi-tenancy + Cost Awareness
+├── Ngày 8: AI Evaluation — không tin LLM output 100%, luôn có human-in-the-loop cho quyết định quan trọng
+├── Ngày 9: AI Evaluation — Evaluation metric (accuracy, relevance, hallucination rate), Guardrails
+├── Ngày 10: Multi-tenancy — Row-based (tenantId column), Prisma middleware tự động inject WHERE tenantId
+├── Ngày 11: Multi-tenancy — Index trên tenantId, RLS (Row Level Security) PostgreSQL nếu cần
+├── Ngày 12: Cost Awareness — Monitoring cost hàng tuần (Stripe fee, DB connection, LLM token, Email)
+├── Ngày 13: Áp dụng — implement RAG vào project (feature 'hỏi AI về nội dung tài liệu')
+├── Ngày 14: Áp dụng — implement AI Evaluation guardrail (confidence score, review queue) cho feature AI
+└── Deliverable: Feature 'hỏi AI về tài liệu' (RAG) hoạt động trong project với guardrail confidence score
+
+Tuần 5.3: System Design — Khung ADAPT + Đề 1–3
+├── Ngày 15: Khung ADAPT — Assumptions & Requirements (functional, non-functional, constraints)
+├── Ngày 16: Khung ADAPT — Design High-Level, API Design, Performance & Deep Dive, Trade-offs & Failure
+├── Ngày 17: Đề 1: Rate Limiter — thiết kế 10K req/s + bị đẩy thêm (Redis sập fail open/closed, cross-region)
+├── Ngày 18: Đề 2: Webhook Idempotent Processor — thiết kế + bị đẩy thêm (out-of-order event, DDoS giả mạo)
+├── Ngày 19: Đề 3: Job Queue Chịu Tải — thiết kế 1M jobs/ngày + bị đẩy thêm (worker crash, backlog 100K)
+├── Ngày 20: Ôn lại Đề 1–3, luyện trình bày lại thành tiếng (mock giải thích)
+├── Ngày 21: Review tuần, ghi chú lại các trade-off hay bị quên
+└── Deliverable: Giải và trình bày được khung ADAPT + 3/5 đề System Design (Rate Limiter, Webhook, Job Queue)
+
+Tuần 5.4: System Design — Đề 4–5 + Tổng ôn War Stories
+├── Ngày 22: Đề 4: Notification System — thiết kế đa kênh + bị đẩy thêm (preference thay đổi, Gmail rate limit)
+├── Ngày 23: Đề 5: URL Shortener — thiết kế + bị đẩy thêm (detect malware, tránh collision short code)
+├── Ngày 24: Luyện lại cả 5 đề dạng mock interview (tự nói to, ghi âm lại nghe)
+├── Ngày 25: Capacity estimation practice cho từng đề (QPS, storage, bandwidth)
+├── Ngày 26: Ôn lại toàn bộ Judgment & War Stories (4 tình huống: Webhook duplicate, Migration sập, p99 latency, LLM sai)
+├── Ngày 27: Viết lại 1 war story của riêng mình từ project đã làm (Bối cảnh → Áp lực → Lựa chọn → Quyết định → Đánh đổi → Bài học)
+├── Ngày 28: Review, polish
+└── Deliverable: Giải và bảo vệ được đủ 5 đề Backend System Design + có ít nhất 1 war story tự viết
+```
+
+### THÁNG 6: PRODUCTION OPS + COST AWARENESS + DEBUG UNDER PRESSURE + TỔNG HỢP PROJECT + APPLY JOB
+
+```
+Tuần 6.1: Monitoring & Observability
+├── Ngày 1: Sentry Setup — source maps NestJS, breadcrumbs (request path, userId, correlationId)
+├── Ngày 2: Sentry — Alert Slack/Discord webhook khi error rate > 1%
+├── Ngày 3: Structured Logging — JSON format (timestamp, level, traceId, userId, duration, endpoint)
+├── Ngày 4: Structured Logging — Correlation ID (x-request-id), không log sensitive data
+├── Ngày 5: Health Checks — GET /health (DB + Redis), /health/live, /health/ready
+├── Ngày 6: OpenTelemetry basics — distributed tracing khi cần tìm bottleneck cross-service
+├── Ngày 7: Áp dụng — implement Sentry + Pino + health check hoàn chỉnh vào project
+└── Deliverable: Monitoring đầy đủ (Sentry + structured logging + health check) cho project
+
+Tuần 6.2: Debug Dưới Áp Lực + Rollback & Incident Response
+├── Ngày 8: Checklist Debug 7 bước — không panic, tìm scope, log gần nhất, recent changes
+├── Ngày 9: Checklist Debug — rollback nếu deploy mới, kill switch, communication
+├── Ngày 10: Runbook — viết runbook cho 5 scenario phổ biến (DB fail, Redis fail, 500 spike, latency spike, external API timeout)
+├── Ngày 11: Rollback Strategy — code rollback (revert + CI/CD), DB rollback, feature flag kill switch
+├── Ngày 12: Incident 4 Bước — phát hiện → chẩn đoán → xử lý → postmortem (viết trong 24h, không đổ lỗi)
+├── Ngày 13: Postmortem Template — thực hành viết 1 postmortem giả định (timeline, 5 Whys, impact, action items)
+├── Ngày 14: Debug thực hành — giả lập slow query, dùng EXPLAIN ANALYZE fix N+1 thật trên project
+└── Deliverable: 5 runbook cho scenario phổ biến + 1 postmortem mẫu đã viết hoàn chỉnh
+
+Tuần 6.3: Tổng hợp Project — Production-ready Checklist
+├── Ngày 15: Code quality — TypeScript strict, ESLint + Prettier, xóa hết any
+├── Ngày 16: Tests — đảm bảo Jest integration test cover auth, payment, webhook, AI flow
+├── Ngày 17: CI/CD — GitHub Actions (Lint → Test → Build → Deploy)
+├── Ngày 18: Deploy — Docker multi-stage, docker-compose (NestJS + Postgres + Redis + Meilisearch)
+├── Ngày 19: Docs — OpenAPI/Swagger hoàn chỉnh, README setup, viết ADR (Stripe vs PayPal, Prisma vs TypeORM)
+├── Ngày 20: Git — conventional commits, branch protection, PR review
+├── Ngày 21: Cost tracking — dashboard theo dõi Stripe fee, LLM token usage, DB connection cost
+└── Deliverable: Project SaaS API Backend + AI feature đạt production-ready checklist đầy đủ
+
+Tuần 6.4: Job Checklist + Apply / Ship
+├── Ngày 22: Ôn tập kiến thức phải giải thích được — NestJS (DI, Guards/Interceptors/Pipes), Prisma, SQL
+├── Ngày 23: Ôn tập — Auth (JWT/OAuth/RBAC), Security (OWASP), Stripe, Queue (BullMQ)
+├── Ngày 24: Ôn tập — LLM + RAG, Idempotency, Event-Driven (Outbox Pattern)
+├── Ngày 25: Luyện code/debug — viết NestJS module từ đầu, Prisma schema, xử lý Stripe webhook
+├── Ngày 26: Luyện code/debug — debug slow query EXPLAIN ANALYZE, viết integration test, capacity estimation
+├── Ngày 27: Ôn câu hỏi phỏng vấn thường gặp (NestJS vs Express, webhook duplicate, Redis fail-open/closed, pgvector vs Pinecone, rollback migration) + đọc tài liệu tham khảo bắt buộc
+├── Ngày 28: Apply 5+ job Backend, hoặc ship product ra production thật
+└── Deliverable: SaaS API Backend + AI feature production-ready, sẵn sàng apply job hoặc ship thật; review và apply thêm liên tục
+```
+
+---
+
 > **Kết thúc Khối 2.** Mỗi checkbox là một năng lực bạn phải giải thích được cho ngườii khác. Nếu không giải thích được — chưa hiểu sâu. Quay lại project. Debug thật. Đọc log thật. Xử lý webhook duplicate thật. Đó là cách duy nhất để nền tảng này chuyển thành khả năng vận hành được.
